@@ -19,6 +19,10 @@ class Game001
             return $this->getSameScore();
         }
 
+        if ($this->p1_score == 4) {
+            return 'player1 advantage';
+        }
+
         return $this->getNormalScore();
     }
 
