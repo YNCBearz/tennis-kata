@@ -21,6 +21,11 @@ class Game001
 
         if ($this->isScoreOverThree()) {
             $advantage_player = $this->getAdvantagePlayer();
+
+            if ($this->isScoreDiffOverOne()) {
+                return 'player1 wins';
+            }
+
             return $advantage_player . ' advantage';
         }
 
@@ -83,5 +88,11 @@ class Game001
 
         return 'player2';
 
+    }
+
+    private function isScoreDiffOverOne()
+    {
+        $score_diff = abs($this->p1_score - $this->p2_score);
+        return ($score_diff > 1);
     }
 }
