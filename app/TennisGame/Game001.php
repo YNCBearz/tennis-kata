@@ -23,6 +23,10 @@ class Game001
             return 'player1 advantage';
         }
 
+        if ($this->p2_score == 4) {
+            return 'player2 advantage';
+        }
+
         return $this->getNormalScore();
     }
 
