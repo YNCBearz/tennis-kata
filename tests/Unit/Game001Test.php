@@ -78,10 +78,17 @@ class Game001Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    private function givenPlayerScore($score)
+    private function givenPlayer1Score($score)
     {
         for ($i = 0; $i < $score; $i++) {
             $this->game->player1Tally();
+        }
+    }
+
+    private function givenPlayer2Score($score)
+    {
+        for ($i = 0; $i < $score; $i++) {
+            $this->game->player2Tally();
         }
     }
 
@@ -91,9 +98,26 @@ class Game001Test extends TestCase
     public function getScore_Give2vs0_ReturnThirtyLove()
     {
         //Arrange
-        $this->givenPlayerScore(2);
+        $this->givenPlayer1Score(2);
 
         $expected = 'Thirty-Love';
+
+        //Act
+        $actual = $this->game->getScore();
+
+        //Assert
+        $this->assertEquals($expected, $actual);
+    }
+
+    /**
+     * @test
+     */
+    public function getScore_Give0vs3_ReturnLoveForty()
+    {
+        //Arrange
+        $this->givenPlayer2Score(3);
+
+        $expected = 'Love-Forty';
 
         //Act
         $actual = $this->game->getScore();
