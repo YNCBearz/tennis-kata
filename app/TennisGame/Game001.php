@@ -11,6 +11,11 @@ class Game001
         $pl_score = $this->pl_score;
         $p2_score = $this->p2_score;
 
+        if ($pl_score == 1 && $p2_score == 1) {
+            return 'Fifteen-All';
+        }
+
+
         if ($p2_score == 1) {
             return 'Love-Fifteen';
         }

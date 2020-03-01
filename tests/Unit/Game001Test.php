@@ -60,4 +60,21 @@ class Game001Test extends TestCase
         //Assert
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function getScore_Give1vs1_ReturnFifteenAll()
+    {
+        //Arrange
+        $this->game->player1Tally();
+        $this->game->player2Tally();
+        $expected = 'Fifteen-All';
+
+        //Act
+        $actual = $this->game->getScore();
+
+        //Assert
+        $this->assertEquals($expected, $actual);
+    }
 }
