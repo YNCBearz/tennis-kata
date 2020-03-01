@@ -29,5 +29,4 @@ class Game001Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-
 }
