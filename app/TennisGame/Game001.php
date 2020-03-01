@@ -15,19 +15,11 @@ class Game001
 
     public function getScore()
     {
-        $p1_score = $this->p1_score;
-        $p2_score = $this->p2_score;
-
-        if ($p1_score == $p2_score) {
-
-            if ($p1_score >= 4) {
-                return 'Deuce';
-            }
-
-            return $this->lookup[$p1_score] . '-All';
+        if ($this->isScoreEqual()) {
+            return $this->getSameScore();
         }
 
-        return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+        return $this->getNormalScore();
     }
 
     public function player1Tally()
@@ -38,5 +30,38 @@ class Game001
     public function player2Tally()
     {
         $this->p2_score++;
+    }
+
+    private function isScoreEqual()
+    {
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
+
+        return ($p1_score == $p2_score);
+    }
+
+    private function isDeuce()
+    {
+        $score = $this->p1_score;
+        return ($score >= 4);
+    }
+
+    private function getSameScore()
+    {
+        $score = $this->p1_score;
+
+        if ($this->isDeuce()) {
+            return 'Deuce';
+        }
+
+        return $this->lookup[$score] . '-All';
+    }
+
+    private function getNormalScore()
+    {
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
+
+        return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 }
