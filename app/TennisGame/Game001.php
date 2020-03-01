@@ -19,12 +19,9 @@ class Game001
             return $this->getSameScore();
         }
 
-        if ($this->p1_score == 4) {
-            return 'player1 advantage';
-        }
-
-        if ($this->p2_score == 4) {
-            return 'player2 advantage';
+        if ($this->isScoreOverThree()) {
+            $advantage_player = $this->getAdvantagePlayer();
+            return $advantage_player . ' advantage';
         }
 
         return $this->getNormalScore();
@@ -71,5 +68,20 @@ class Game001
         $p2_score = $this->p2_score;
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function isScoreOverThree()
+    {
+        return ($this->p1_score > 3 || $this->p2_score > 3);
+    }
+
+    private function getAdvantagePlayer()
+    {
+        if ($this->p1_score > $this->p2_score) {
+            return 'player1';
+        }
+
+        return 'player2';
+
     }
 }
