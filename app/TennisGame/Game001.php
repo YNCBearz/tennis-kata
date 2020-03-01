@@ -23,7 +23,7 @@ class Game001
             $advantage_player = $this->getAdvantagePlayer();
 
             if ($this->isScoreDiffOverOne()) {
-                return 'player1 wins';
+                return $advantage_player . ' wins';
             }
 
             return $advantage_player . ' advantage';
