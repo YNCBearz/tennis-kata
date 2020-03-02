@@ -8,7 +8,8 @@ class Game002
 
     private $lookup = [
         0 => 'Love',
-        1 => 'Fifteen'
+        1 => 'Fifteen',
+        2 => 'Thirty'
     ];
 
     public function getScore()
