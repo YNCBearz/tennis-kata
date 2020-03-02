@@ -19,6 +19,11 @@ class Game002
         $p2_score = $this->p2_score;
 
         if ($this->isScoreEqual()) {
+
+            if ($p1_score >= 3) {
+                return 'Deuce';
+            }
+
             return $this->lookup[$p1_score] . '-All';
         }
 

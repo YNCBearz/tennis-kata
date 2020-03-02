@@ -52,6 +52,13 @@ class Game002Test extends TestCase
         $this->scoreShouldBe('Forty-Fifteen');
     }
 
+    public function testGetScore_Give3vs3_ReturnDeuce()
+    {
+        $this->setPlayer1Score(3);
+        $this->setPlayer2Score(3);
+        $this->scoreShouldBe('Deuce');
+    }
+
     private function setPlayer1Score($score)
     {
         for ($i = 0; $i < $score; $i++) {
