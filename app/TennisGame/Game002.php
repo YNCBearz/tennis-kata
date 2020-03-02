@@ -27,7 +27,15 @@ class Game002
             return $this->getEqualScore();
         }
 
+        return $this->getNormalScore();
+    }
+
+    private function getNormalScore()
+    {
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+
     }
 
     private function getEqualScore()
