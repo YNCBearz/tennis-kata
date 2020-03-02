@@ -8,6 +8,10 @@ class Game002
 
     public function getScore()
     {
+        if ($this->p1_score == 1 && $this->p2_score == 1) {
+            return 'Fifteen-All';
+        }
+
         if ($this->p1_score == 1) {
             return 'Fifteen-Love';
         }
