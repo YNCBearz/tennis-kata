@@ -44,10 +44,16 @@ class Game002
                 return $this->getAdvantagePlayerScore();
             }
 
-            return $advantage_player . ' wins';
+            return $this->getPlayerWinScore();
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function getPlayerWinScore()
+    {
+        $advantage_player = $this->getAdvantagePlayer();
+        return $advantage_player . ' wins';
     }
 
     private function getAdvantagePlayerScore()
