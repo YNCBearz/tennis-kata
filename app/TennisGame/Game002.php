@@ -17,14 +17,17 @@ class Game002
     {
         if ($this->isScoreEqual()) {
 
-            if ($this->isScoreOverThree()) {
-                return $this->getDeuceScore();
-            }
-
-            return $this->getEqualScoreUnderTwo();
+            return $this->getEqualScore();
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getEqualScore()
+    {
+        return $this->isScoreOverThree()
+            ? $this->getDeuceScore()
+            : $this->getEqualScoreUnderTwo();
     }
 
     private function getDeuceScore()
