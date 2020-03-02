@@ -37,11 +37,13 @@ class Game002
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
 
-        if ($this->isScoreOverThree()) {
+        if ($this->isScoreOverFour()) {
             if ($this->isScoreDiffOne()) {
                 $advantage_player = $this->getAdvantagePlayer();
-                return $advantage_player . ' advantage';
+                return $advantage_player .' advantage';
             }
+
+            return 'player1 wins';
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
@@ -77,6 +79,11 @@ class Game002
     private function isScoreOverThree()
     {
         return ($this->p1_score >= 3 || $this->p2_score >= 3);
+    }
+
+    private function isScoreOverFour()
+    {
+        return ($this->p1_score >= 4 || $this->p2_score >= 4);
     }
 
     public function player1Tally()
