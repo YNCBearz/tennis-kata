@@ -41,13 +41,19 @@ class Game002
             $advantage_player = $this->getAdvantagePlayer();
 
             if ($this->isScoreDiffOne()) {
-                return $advantage_player .' advantage';
+                return $this->getAdvantagePlayerScore();
             }
 
             return $advantage_player . ' wins';
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function getAdvantagePlayerScore()
+    {
+        $advantage_player = $this->getAdvantagePlayer();
+        return $advantage_player . ' advantage';
     }
 
     private function getAdvantagePlayer()
