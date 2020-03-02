@@ -39,11 +39,21 @@ class Game002
 
         if ($this->isScoreOverThree()) {
             if ($this->isScoreDiffOne()) {
-                return 'player1 advantage';
+                $advantage_player = $this->getAdvantagePlayer();
+                return $advantage_player . ' advantage';
             }
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function getAdvantagePlayer()
+    {
+        if ($this->p1_score > $this->p2_score) {
+            return 'player1';
+        }
+
+        return 'player2';
     }
 
     private function isScoreDiffOne()
