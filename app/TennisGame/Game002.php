@@ -16,8 +16,8 @@ class Game002
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
 
-        if ($this->p1_score == 1 && $this->p2_score == 1) {
-            return 'Fifteen-All';
+        if ($this->isScoreEqual()) {
+            return $this->lookup[$p1_score] . '-All';
         }
 
         if ($this->p1_score == 1) {
@@ -27,8 +27,6 @@ class Game002
         if ($this->p2_score == 1) {
             return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
         }
-
-        return 'Love-All';
     }
 
     public function player1Tally()
@@ -39,5 +37,10 @@ class Game002
     public function player2Tally()
     {
         $this->p2_score++;
+    }
+
+    private function isScoreEqual()
+    {
+        return ($this->p1_score == $this->p2_score);
     }
 }
