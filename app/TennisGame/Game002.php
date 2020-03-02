@@ -38,12 +38,20 @@ class Game002
         $p2_score = $this->p2_score;
 
         if ($this->isScoreOverThree()) {
-            if ($p1_score == 4) {
+            $score_diff = $this->getScoreDiff();
+            if ($score_diff == 1) {
                 return 'player1 advantage';
             }
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function getScoreDiff()
+    {
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
+        return abs($p1_score - $p2_score);
     }
 
     private function getEqualScoreUnderTwo()

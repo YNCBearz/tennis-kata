@@ -66,6 +66,13 @@ class Game002Test extends TestCase
         $this->scoreShouldBe('player1 advantage');
     }
 
+    public function testGetScore_Give5vs4_ReturnPlayer1Advantage()
+    {
+        $this->setPlayer1Score(5);
+        $this->setPlayer2Score(4);
+        $this->scoreShouldBe('player1 advantage');
+    }
+
     private function setPlayer1Score($score)
     {
         for ($i = 0; $i < $score; $i++) {
