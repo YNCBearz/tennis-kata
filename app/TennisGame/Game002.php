@@ -36,6 +36,13 @@ class Game002
     {
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
+
+        if ($this->isScoreOverThree()) {
+            if ($p1_score == 4) {
+                return 'player1 advantage';
+            }
+        }
+
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 
