@@ -87,6 +87,13 @@ class Game002Test extends TestCase
         $this->scoreShouldBe('player1 wins');
     }
 
+    public function testGetScore_Give3vs5_ReturnPlayer2Win()
+    {
+        $this->setPlayer1Score(3);
+        $this->setPlayer2Score(5);
+        $this->scoreShouldBe('player2 wins');
+    }
+
     private function setPlayer1Score($score)
     {
         for ($i = 0; $i < $score; $i++) {

@@ -38,12 +38,13 @@ class Game002
         $p2_score = $this->p2_score;
 
         if ($this->isScoreOverFour()) {
+            $advantage_player = $this->getAdvantagePlayer();
+
             if ($this->isScoreDiffOne()) {
-                $advantage_player = $this->getAdvantagePlayer();
                 return $advantage_player .' advantage';
             }
 
-            return 'player1 wins';
+            return $advantage_player . ' wins';
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
