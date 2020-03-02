@@ -20,13 +20,7 @@ class Game002
             return $this->lookup[$p1_score] . '-All';
         }
 
-        if ($this->p1_score == 1) {
-            return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
-        }
-
-        if ($this->p2_score == 1) {
-            return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
-        }
+        return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 
     public function player1Tally()
