@@ -25,6 +25,12 @@ class Game002Test extends TestCase
         $this->scoreShouldBe('Fifteen-Love');
     }
 
+    public function testGetScore_Give0vs1_ReturnLoveFifteen()
+    {
+        $this->game->player2Tally();
+        $this->scoreShouldBe('Love-Fifteen');
+    }
+
     private function scoreShouldBe($expected)
     {
         $actual = $this->game->getScore();
