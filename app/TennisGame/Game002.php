@@ -34,13 +34,15 @@ class Game002
 
     private function getNormalScore()
     {
+        return $this->isScoreOverFour()
+            ? $this->getNormalScoreOverFour()
+            : $this->getNormalScoreUnderThree();
+    }
+
+    private function getNormalScoreUnderThree()
+    {
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
-
-        if ($this->isScoreOverFour()) {
-            return $this->getNormalScoreOverFour();
-        }
-
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 
