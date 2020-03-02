@@ -15,16 +15,13 @@ class Game002
 
     public function getScore()
     {
-        $p1_score = $this->p1_score;
-        $p2_score = $this->p2_score;
-
         if ($this->isScoreEqual()) {
 
             if ($this->isScoreOverThree()) {
                 return $this->getDeuceScore();
             }
 
-            return $this->getEqualScore();
+            return $this->getEqualScoreUnderTwo();
         }
 
         return $this->getNormalScore();
@@ -43,7 +40,7 @@ class Game002
 
     }
 
-    private function getEqualScore()
+    private function getEqualScoreUnderTwo()
     {
         $p1_score = $this->p1_score;
         return $this->lookup[$p1_score] . '-All';
