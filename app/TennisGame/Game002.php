@@ -37,7 +37,6 @@ class Game002
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
-
     }
 
     private function getEqualScoreUnderTwo()
@@ -48,7 +47,7 @@ class Game002
 
     private function isScoreOverThree()
     {
-        return ($this->p1_score >= 3);
+        return ($this->p1_score >= 3 || $this->p2_score >= 3);
     }
 
     public function player1Tally()
