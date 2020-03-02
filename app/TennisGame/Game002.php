@@ -24,10 +24,16 @@ class Game002
                 return 'Deuce';
             }
 
-            return $this->lookup[$p1_score] . '-All';
+            return $this->getEqualScore();
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function getEqualScore()
+    {
+        $p1_score = $this->p1_score;
+        return $this->lookup[$p1_score] . '-All';
     }
 
     private function isScoreOverThree()
