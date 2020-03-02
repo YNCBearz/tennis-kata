@@ -21,13 +21,18 @@ class Game002
         if ($this->isScoreEqual()) {
 
             if ($this->isScoreOverThree()) {
-                return 'Deuce';
+                return $this->getDeuceScore();
             }
 
             return $this->getEqualScore();
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getDeuceScore()
+    {
+        return 'Deuce';
     }
 
     private function getNormalScore()
