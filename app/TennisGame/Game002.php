@@ -3,21 +3,29 @@ namespace App\TennisGame;
 
 class Game002
 {
-    private $p1_score;
-    private $p2_score;
+    private $p1_score = 0;
+    private $p2_score = 0;
+
+    private $lookup = [
+        0 => 'Love',
+        1 => 'Fifteen'
+    ];
 
     public function getScore()
     {
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
+
         if ($this->p1_score == 1 && $this->p2_score == 1) {
             return 'Fifteen-All';
         }
 
         if ($this->p1_score == 1) {
-            return 'Fifteen-Love';
+            return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
         }
 
         if ($this->p2_score == 1) {
-            return 'Love-Fifteen';
+            return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
         }
 
         return 'Love-All';
