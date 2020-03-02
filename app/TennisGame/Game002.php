@@ -15,12 +15,9 @@ class Game002
 
     public function getScore()
     {
-        if ($this->isScoreEqual()) {
-
-            return $this->getEqualScore();
-        }
-
-        return $this->getNormalScore();
+        return $this->isScoreEqual()
+            ? $this->getEqualScore()
+            : $this->getNormalScore();
     }
 
     private function getEqualScore()
