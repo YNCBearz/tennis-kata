@@ -29,6 +29,11 @@ class Game003
 
         if ($this->isScoreOverFour()) {
             $advantage_player = $this->getAdvantagePlayer();
+
+            if (abs($this->p1_score - $this->p2_score) >= 2) {
+                return $advantage_player . ' wins';
+            }
+
             return 'advantage ' . $advantage_player;
         }
 

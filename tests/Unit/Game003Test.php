@@ -102,4 +102,14 @@ class Game003Test extends TestCase
         $this->game->setPlayer2Score(6);
         $this->scoreShouldBe('advantage Lin');
     }
+
+    /**
+     * @test
+     */
+    public function getScore_Give4vs2_ReturnBearWins()
+    {
+        $this->game->setPlayer1Score(4);
+        $this->game->setPlayer2Score(2);
+        $this->scoreShouldBe('Bear wins');
+    }
 }
