@@ -31,13 +31,19 @@ class Game003
             $advantage_player = $this->getAdvantagePlayer();
 
             if ($this->isScoreDiffOverTwo()) {
-                return $advantage_player . ' wins';
+                return $this->getWinScore();
             }
 
             return 'advantage ' . $advantage_player;
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getWinScore()
+    {
+        $advantage_player = $this->getAdvantagePlayer();
+        return $advantage_player . ' wins';
     }
 
     private function isScoreDiffOverTwo()
