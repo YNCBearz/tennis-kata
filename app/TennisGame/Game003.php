@@ -18,20 +18,18 @@ class Game003
         $p1_score = $this->p1_score;
         $p2_score = $this->p2_score;
 
-        if ($p1_score == 0 && $p2_score == 0) {
-            return 'Love-All';
-        }
-
-        if ($p1_score == 1 && $p2_score == 1) {
-            return 'Fifteen-All';
+        if ($this->isScoreEqual()) {
+            return $this->lookup[$p1_score] . '-All';
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 
-    public function player1Tally()
+    private function isScoreEqual()
     {
-        $this->p1_score++;
+        $p1_score = $this->p1_score;
+        $p2_score = $this->p2_score;
+        return ($p1_score == $p2_score);
     }
 
     public function setPlayer1Score($score)
