@@ -30,7 +30,7 @@ class Game003
         if ($this->isScoreOverFour()) {
             $advantage_player = $this->getAdvantagePlayer();
 
-            if (abs($this->p1_score - $this->p2_score) >= 2) {
+            if ($this->isScoreDiffOverTwo()) {
                 return $advantage_player . ' wins';
             }
 
@@ -38,6 +38,12 @@ class Game003
         }
 
         return $this->getNormalScore();
+    }
+
+    private function isScoreDiffOverTwo()
+    {
+        $score_diff = abs($this->p1_score - $this->p2_score);
+        return ($score_diff >= 2);
     }
 
     private function getAdvantagePlayer()
