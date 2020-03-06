@@ -28,15 +28,17 @@ class Game003
         }
 
         if ($this->isScoreOverFour()) {
-
-            if ($this->isScoreDiffOverTwo()) {
-                return $this->getWinScore();
-            }
-
-            return $this->getAdvantageScore();
+            return $this->getScoreOverFour();
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getScoreOverFour()
+    {
+        return $this->isScoreDiffOverTwo()
+            ? $this->getWinScore()
+            : $this->getAdvantageScore();
     }
 
     private function getAdvantageScore()
