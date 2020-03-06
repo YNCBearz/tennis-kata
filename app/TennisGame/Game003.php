@@ -34,10 +34,16 @@ class Game003
                 return $this->getWinScore();
             }
 
-            return 'advantage ' . $advantage_player;
+            return $this->getAdvantageScore();
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getAdvantageScore()
+    {
+        $advantage_player = $this->getAdvantagePlayer();
+        return 'advantage ' . $advantage_player;
     }
 
     private function getWinScore()
