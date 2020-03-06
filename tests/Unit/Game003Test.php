@@ -93,4 +93,13 @@ class Game003Test extends TestCase
         $this->scoreShouldBe('advantage Bear');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give5vs6_ReturnAdvantageLin()
+    {
+        $this->game->setPlayer1Score(5);
+        $this->game->setPlayer2Score(6);
+        $this->scoreShouldBe('advantage Lin');
+    }
 }

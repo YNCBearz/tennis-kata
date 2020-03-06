@@ -31,6 +31,10 @@ class Game003
             return 'advantage ' . $this->p1_name;
         }
 
+        if ($this->p1_score == 5 && $this->p2_score == 6) {
+            return 'advantage ' . $this->p2_name;
+        }
+
         return $this->getNormalScore();
     }
 
