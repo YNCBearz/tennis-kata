@@ -31,7 +31,7 @@ class Game003Test extends TestCase
      */
     public function getScore_Give1vs0_ReturnFifteenAll()
     {
-        $this->game->player1Tally();
+        $this->game->setPlayer1Score(1);
         $this->scoreShouldBe('Fifteen-Love');
     }
 
