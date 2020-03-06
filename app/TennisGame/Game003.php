@@ -3,6 +3,8 @@ namespace App\TennisGame;
 
 class Game003
 {
+    private $p1_name;
+    private $p2_name;
     private $p1_score = 0;
     private $p2_score = 0;
 
@@ -13,10 +15,20 @@ class Game003
         3 => 'Forty'
     ];
 
+    public function __construct($p1_name, $p2_name)
+    {
+        $this->p1_name = $p1_name;
+        $this->p2_name = $p2_name;
+    }
+
     public function getScore()
     {
         if ($this->isScoreEqual()) {
             return $this->getEqualScore();
+        }
+
+        if ($this->p1_score == 4 && $this->p2_score == 3) {
+            return 'advantage ' . $this->p1_name;
         }
 
         return $this->getNormalScore();
