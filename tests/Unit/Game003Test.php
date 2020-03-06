@@ -73,4 +73,13 @@ class Game003Test extends TestCase
         $this->scoreShouldBe('Deuce');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give4vs4_ReturnDeuce()
+    {
+        $this->game->setPlayer1Score(4);
+        $this->game->setPlayer2Score(4);
+        $this->scoreShouldBe('Deuce');
+    }
 }
