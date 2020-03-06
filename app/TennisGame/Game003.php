@@ -20,7 +20,7 @@ class Game003
 
         if ($this->isScoreEqual()) {
 
-            if ($p1_score >= 3) {
+            if ($this->isScoreOverThree()) {
                 return 'Deuce';
             }
 
@@ -28,6 +28,12 @@ class Game003
         }
 
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
+    }
+
+    private function isScoreOverThree()
+    {
+        $p1_score = $this->p1_score;
+        return ($p1_score >= 3);
     }
 
     private function isScoreEqual()
