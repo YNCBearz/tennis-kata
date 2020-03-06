@@ -28,7 +28,6 @@ class Game003
         }
 
         if ($this->isScoreOverFour()) {
-            $advantage_player = $this->getAdvantagePlayer();
 
             if ($this->isScoreDiffOverTwo()) {
                 return $this->getWinScore();
@@ -100,15 +99,12 @@ class Game003
 
     private function isScoreOverThree()
     {
-        $p1_score = $this->p1_score;
-        return ($p1_score >= 3);
+        return ($this->p1_score >= 3);
     }
 
     private function isScoreEqual()
     {
-        $p1_score = $this->p1_score;
-        $p2_score = $this->p2_score;
-        return ($p1_score == $p2_score);
+        return ($this->p1_score == $this->p2_score);
     }
 
     public function setPlayer1Score($score)
