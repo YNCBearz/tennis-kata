@@ -17,12 +17,7 @@ class Game003Test extends TestCase
      */
     public function getScore_Give0vs0_ReturnLoveAll()
     {
-        //Arrange
-        $expected = 'Love-All';
-        //Act
-        $actual = $this->game->getScore();
-        //Assert
-        $this->assertEquals($expected, $actual);
+        $this->scoreShouldBe('Love-All');
     }
 
     private function scoreShouldBe($expected)
