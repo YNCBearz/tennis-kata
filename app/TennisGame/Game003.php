@@ -27,15 +27,27 @@ class Game003
             return $this->getEqualScore();
         }
 
-        if ($this->p1_score == 4 && $this->p2_score == 3) {
-            return 'advantage ' . $this->p1_name;
-        }
-
-        if ($this->p1_score == 5 && $this->p2_score == 6) {
-            return 'advantage ' . $this->p2_name;
+        if ($this->isScoreOverFour()) {
+            $advantage_player = $this->getAdvantagePlayer();
+            return 'advantage ' . $advantage_player;
         }
 
         return $this->getNormalScore();
+    }
+
+    private function getAdvantagePlayer()
+    {
+        if ($this->p1_score > $this->p2_score) {
+            return $this->p1_name;
+        }
+
+        return $this->p2_name;
+    }
+
+
+    private function isScoreOverFour()
+    {
+        return ($this->p1_score >= 4 || $this->p2_score >= 4);
     }
 
     private function getEqualScore()
