@@ -22,6 +22,10 @@ class Game003
             return 'Love-All';
         }
 
+        if ($p1_score == 1 && $p2_score == 1) {
+            return 'Fifteen-All';
+        }
+
         return $this->lookup[$p1_score] . '-' . $this->lookup[$p2_score];
     }
 
@@ -33,5 +37,10 @@ class Game003
     public function setPlayer1Score($score)
     {
         $this->p1_score = $score;
+    }
+
+    public function setPlayer2Score($score)
+    {
+        $this->p2_score = $score;
     }
 }

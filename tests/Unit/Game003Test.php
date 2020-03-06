@@ -52,4 +52,14 @@ class Game003Test extends TestCase
         $this->game->setPlayer1Score(3);
         $this->scoreShouldBe('Forty-Love');
     }
+
+    /**
+     * @test
+     */
+    public function getScore_Give1vs1_ReturnFifteenAll()
+    {
+        $this->game->setPlayer1Score(1);
+        $this->game->setPlayer2Score(1);
+        $this->scoreShouldBe('Fifteen-All');
+    }
 }
