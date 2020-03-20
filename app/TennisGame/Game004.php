@@ -17,12 +17,7 @@ class Game004
     {
 
         if ($this->isEqualScore()) {
-
-            if ($this->p1_score >= 3) {
-                return $this->DeuceScore();
-            }
-
-            return $this->AllScore();
+            return $this->getEqualScore();
         }
 
         return $this->isAnyPlayerScoreOver4() ?
@@ -30,13 +25,23 @@ class Game004
                     $this->NormalScore();
     }
 
+    private function getEqualScore()
+    {
+        return $this->isPlayer1ScoreOver3() ?
+                $this->DeuceScore() :
+                $this->AllScore();
+    }
+
+    private function isPlayer1ScoreOver3()
+    {
+        return $this->p1_score >= 3;
+    }
+
     private function getScoreOver4()
     {
-        if ($this->isScoreDiffOver2()) {
-            return $this->WinScore();
-        }
-
-        return $this->AdvScore();
+        return $this->isScoreDiffOver2() ?
+                $this->WinScore() :
+                $this->AdvScore();
     }
 
     private function isScoreDiffOver2()
@@ -52,11 +57,9 @@ class Game004
 
     private function getAdvPlayer()
     {
-        if ($this->p1_score > $this->p2_score) {
-            return 'Player1';
-        }
-
-        return 'Player2';
+        return ($this->p1_score > $this->p2_score) ?
+                'Player1' :
+                'Player2';
     }
 
     private function NormalScore()
