@@ -27,18 +27,20 @@ class Game004
 
         if ($this->isAnyPlayerScoreOver4()) {
 
-            if ($this->p1_score - $this->p2_score >= 2) {
-                return 'Player1 Win';
+            if ($this->isScoreDiffOver2()) {
+                return $this->WinScore();
             }
 
-            if ($this->p2_score - $this->p1_score >= 2) {
-                return 'Player2 Win';
-            }
-
-            return $this->getAdvPlayer() . ' Adv';
+            return $this->AdvScore();
         }
 
         return $this->NormalScore();
+    }
+
+    private function isScoreDiffOver2()
+    {
+        $score_diff = abs($this->p1_score - $this->p2_score);
+        return ($score_diff >= 2);
     }
 
     private function isAnyPlayerScoreOver4()
@@ -94,5 +96,15 @@ class Game004
     public function setPlayer2Score($score)
     {
         $this->p2_score = $score;
+    }
+
+    private function AdvScore()
+    {
+        return $this->getAdvPlayer() . ' Adv';
+    }
+
+    private function WinScore()
+    {
+        return $this->getAdvPlayer() . ' Win';
     }
 }
