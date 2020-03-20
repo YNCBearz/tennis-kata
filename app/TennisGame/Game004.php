@@ -25,6 +25,10 @@ class Game004
             return $this->AllScore();
         }
 
+        if ($this->p1_score == 4) {
+            return 'Player1 Adv';
+        }
+
         return $this->NormalScore();
     }
 
