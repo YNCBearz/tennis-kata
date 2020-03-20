@@ -26,6 +26,11 @@ class Game004
         }
 
         if ($this->isAnyPlayerScoreOver4()) {
+
+            if ($this->p1_score - $this->p2_score >= 2) {
+                return 'Player1 Win';
+            }
+
             return $this->getAdvPlayer() . ' Adv';
         }
 
