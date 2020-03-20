@@ -17,6 +17,11 @@ class Game004
     {
 
         if ($this->isEqualScore()) {
+
+            if ($this->p1_score == 3) {
+                return 'Deuce';
+            }
+
             return $this->lookup[$this->p1_score] . '-All';
         }
 
@@ -39,5 +44,15 @@ class Game004
     public function player2Tally()
     {
         $this->p2_score++;
+    }
+
+    public function setPlayer1Score($score)
+    {
+        $this->p1_score = $score;
+    }
+
+    public function setPlayer2Score($score)
+    {
+        $this->p2_score = $score;
     }
 }
