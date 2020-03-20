@@ -19,16 +19,26 @@ class Game004
         if ($this->isEqualScore()) {
 
             if ($this->p1_score >= 3) {
-                return 'Deuce';
+                return $this->DeuceScore();
             }
 
-            return $this->lookup[$this->p1_score] . '-All';
+            return $this->AllScore();
         }
 
         if ($this->p1_score > 0) {
             return $this->lookup[$this->p1_score] . '-Love';
         }
 
+    }
+
+    private function AllScore()
+    {
+        return $this->lookup[$this->p1_score] . '-All';
+    }
+
+    private function DeuceScore()
+    {
+        return 'Deuce';
     }
 
     private function isEqualScore()
