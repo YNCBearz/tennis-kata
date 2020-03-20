@@ -11,6 +11,10 @@ class Game004
             return 'Fifteen-Love';
         }
 
+        if ($this->p1_score == 2) {
+            return 'Thirty-Love';
+        }
+
         return 'Love-All';
     }
 
