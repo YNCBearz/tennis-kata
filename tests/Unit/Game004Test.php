@@ -243,5 +243,23 @@ class Game004Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give1vs4_ReturnPlayer2Win()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(1);
+        $this->game->setPlayer2Score(4);
+
+        $expected = 'Player2 Win';
+
+        //Act
+        $actual = $this->game->getScore();
+
+        //Assert
+        $this->assertEquals($expected, $actual);
+    }
+
 
 }
