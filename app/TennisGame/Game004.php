@@ -25,11 +25,13 @@ class Game004
             return $this->AllScore();
         }
 
-        if ($this->p1_score > 0 && $this->p2_score == 0) {
-            return $this->lookup[$this->p1_score] . '-Love';
-        }
+        return $this->NormalScore();
+    }
 
+    private function NormalScore()
+    {
         return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
+
     }
 
     private function AllScore()
