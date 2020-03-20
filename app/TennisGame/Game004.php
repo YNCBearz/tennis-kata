@@ -25,16 +25,18 @@ class Game004
             return $this->AllScore();
         }
 
-        if ($this->isAnyPlayerScoreOver4()) {
+        return $this->isAnyPlayerScoreOver4() ?
+                    $this->getScoreOver4() :
+                    $this->NormalScore();
+    }
 
-            if ($this->isScoreDiffOver2()) {
-                return $this->WinScore();
-            }
-
-            return $this->AdvScore();
+    private function getScoreOver4()
+    {
+        if ($this->isScoreDiffOver2()) {
+            return $this->WinScore();
         }
 
-        return $this->NormalScore();
+        return $this->AdvScore();
     }
 
     private function isScoreDiffOver2()
