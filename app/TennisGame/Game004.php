@@ -5,18 +5,17 @@ class Game004
 {
     protected $p1_score = 0;
 
+    private $lookup = [
+        0 => 'Love',
+        1 => 'Fifteen',
+        2 => 'Thirty',
+        3 => 'Forty'
+    ];
+
     public function getScore()
     {
-        if ($this->p1_score == 1) {
-            return 'Fifteen-Love';
-        }
-
-        if ($this->p1_score == 2) {
-            return 'Thirty-Love';
-        }
-
-        if ($this->p1_score == 3) {
-            return 'Forty-Love';
+        if ($this->p1_score > 0) {
+            return $this->lookup[$this->p1_score] . '-Love';
         }
 
         return 'Love-All';
