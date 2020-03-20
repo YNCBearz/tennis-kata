@@ -25,15 +25,25 @@ class Game004
             return $this->AllScore();
         }
 
-        if ($this->p1_score >= 4) {
-            return 'Player1 Adv';
-        }
-
-        if ($this->p2_score >= 4) {
-            return 'Player2 Adv';
+        if ($this->isAnyPlayerScoreOver4()) {
+            return $this->getAdvPlayer() . ' Adv';
         }
 
         return $this->NormalScore();
+    }
+
+    private function isAnyPlayerScoreOver4()
+    {
+        return ($this->p1_score >= 4 || $this->p2_score >= 4);
+    }
+
+    private function getAdvPlayer()
+    {
+        if ($this->p1_score > $this->p2_score) {
+            return 'Player1';
+        }
+
+        return 'Player2';
     }
 
     private function NormalScore()
