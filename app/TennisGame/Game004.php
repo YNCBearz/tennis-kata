@@ -16,7 +16,7 @@ class Game004
     public function getScore()
     {
 
-        if ($this->p1_score == $this->p2_score) {
+        if ($this->isEqualScore()) {
             return $this->lookup[$this->p1_score] . '-All';
         }
 
@@ -24,6 +24,11 @@ class Game004
             return $this->lookup[$this->p1_score] . '-Love';
         }
 
+    }
+
+    private function isEqualScore()
+    {
+        return ($this->p1_score == $this->p2_score);
     }
 
     public function player1Tally()
