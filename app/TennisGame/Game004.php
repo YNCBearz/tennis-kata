@@ -18,7 +18,7 @@ class Game004
 
         if ($this->isEqualScore()) {
 
-            if ($this->p1_score == 3) {
+            if ($this->p1_score >= 3) {
                 return 'Deuce';
             }
 
