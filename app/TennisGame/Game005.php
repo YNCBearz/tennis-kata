@@ -30,6 +30,10 @@ class Game005
                 return $this->p1_name . ' Adv';
             }
 
+            if ($this->p2_score == 5) {
+                return $this->p2_name . ' Adv';
+            }
+
             return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
         }
 
