@@ -168,5 +168,17 @@ class Game005Test extends TestCase
         $this->scoreShouldBe('Bear Adv');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give4vs2_ReturnBearWin()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(4);
+        $this->game->setPlayer2Score(2);
+
+        $this->scoreShouldBe('Bear Win');
+    }
+
 
 }
