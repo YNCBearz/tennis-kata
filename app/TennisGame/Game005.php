@@ -3,8 +3,8 @@ namespace App\TennisGame;
 
 class Game005
 {
-    public $p1_score = 0;
-    public $p2_score = 0;
+    protected $p1_score = 0;
+    protected $p2_score = 0;
 
     private $lookup = [
         0 => 'Love',
@@ -25,6 +25,11 @@ class Game005
     public function player1Tally()
     {
         $this->p1_score++;
+    }
+
+    public function setPlayer1Score($score)
+    {
+        $this->p1_score = $score;
     }
 
     private function isScoreDiffent()

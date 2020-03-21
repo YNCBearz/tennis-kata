@@ -56,9 +56,7 @@ class Game005Test extends TestCase
     public function getScore_FortyLove()
     {
         //Arrange
-        $this->game->player1Tally();
-        $this->game->player1Tally();
-        $this->game->player1Tally();
+        $this->game->setPlayer1Score(3);
 
         $this->scoreShouldBe('Forty-Love');
     }
