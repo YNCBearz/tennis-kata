@@ -144,5 +144,17 @@ class Game005Test extends TestCase
         $this->scoreShouldBe('Lin Adv');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give5vs6_ReturnLinAdv()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(5);
+        $this->game->setPlayer2Score(6);
+
+        $this->scoreShouldBe('Lin Adv');
+    }
+
 
 }

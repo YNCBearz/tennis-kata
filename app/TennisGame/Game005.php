@@ -26,20 +26,27 @@ class Game005
     {
         if ($this->isScoreDiffent()) {
 
-            if ($this->p1_score == 5) {
-                return $this->p1_name . ' Adv';
-            }
-
-            if ($this->p2_score == 5) {
-                return $this->p2_name . ' Adv';
+            if ($this->isAnyPlayerScoreOver5()) {
+                $advantage_player = $this->getAdvantagePlayer();
+                return $advantage_player . ' Adv';
             }
 
             return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
         }
 
         return $this->getEqualScore();
+    }
 
+    private function isAnyPlayerScoreOver5()
+    {
+        return ($this->p1_score >= 5 || $this->p2_score >= 5);
+    }
 
+    private function getAdvantagePlayer()
+    {
+        return ($this->p1_score > $this->p2_score)
+            ? $this->p1_name
+            : $this->p2_name;
     }
 
     private function getDeuceScore()
