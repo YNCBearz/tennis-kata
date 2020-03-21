@@ -49,4 +49,19 @@ class Game005Test extends TestCase
 
         $this->scoreShouldBe('Thirty-Love');
     }
+
+    /**
+     * @test
+     */
+    public function getScore_FortyLove()
+    {
+        //Arrange
+        $this->game->player1Tally();
+        $this->game->player1Tally();
+        $this->game->player1Tally();
+
+        $this->scoreShouldBe('Forty-Love');
+    }
+
+
 }
