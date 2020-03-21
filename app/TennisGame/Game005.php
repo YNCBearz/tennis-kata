@@ -19,6 +19,10 @@ class Game005
             return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
         }
 
+        if ($this->p1_score == 1) {
+            return 'Fifteen-All';
+        }
+
         return 'Love-All';
     }
 

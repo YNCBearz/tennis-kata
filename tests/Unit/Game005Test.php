@@ -72,5 +72,17 @@ class Game005Test extends TestCase
         $this->scoreShouldBe('Love-Fifteen');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_FifteenAll()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(1);
+        $this->game->setPlayer2Score(1);
+
+        $this->scoreShouldBe('Fifteen-All');
+    }
+
 
 }
