@@ -24,25 +24,36 @@ class Game005
 
     public function getScore()
     {
-        if ($this->isScoreDiffent()) {
+        return ($this->isScoreDiffent())
+            ? $this->getDiffScore()
+            : $this->getEqualScore();
+    }
 
-            return ($this->isAnyPlayerScoreOver4())
-                ? $this->getAdvScore()
-                : $this->getNormalScore();
-        }
+    private function getDiffScore()
+    {
+        return ($this->isAnyPlayerScoreOver4())
+            ? $this->getScoreOver4()
+            : $this->getNormalScore();
+    }
 
-        return $this->getEqualScore();
+    private function getScoreOver4()
+    {
+        $score_diff = $this->getScoreDiff();
+
+        return ($score_diff == 1)
+            ? $this->getAdvScore()
+            : $this->getWinScore();
     }
 
     private function getAdvScore()
     {
         $advantage_player = $this->getAdvantagePlayer();
-        $score_diff = $this->getScoreDiff();
+        return $advantage_player . ' Adv';
+    }
 
-        if ($score_diff == 1) {
-            return $advantage_player . ' Adv';
-        }
-
+    private function getWinScore()
+    {
+        $advantage_player = $this->getAdvantagePlayer();
         return $advantage_player . ' Win';
     }
 
