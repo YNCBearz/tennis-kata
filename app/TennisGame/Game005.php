@@ -19,25 +19,27 @@ class Game005
             return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
         }
 
-        if ($this->p1_score >= 4) {
-            return 'Deuce';
-        }
+        return $this->getEqualScore();
 
-        return $this->getAllScore();
+
+    }
+
+    private function getDeuceScore()
+    {
+        return 'Deuce';
+    }
+
+    private function getEqualScore()
+    {
+        return ($this->p1_score >= 4)
+            ? $this->getDeuceScore()
+            : $this->getAllScore();
+
     }
 
     private function getAllScore()
     {
-
-        if ($this->p1_score == 1) {
-            return 'Fifteen-All';
-        }
-
-        if ($this->p1_score == 2) {
-            return 'Thirty-All';
-        }
-
-        return 'Love-All';
+        return $this->lookup[$this->p1_score] . '-All';
     }
 
     public function player1Tally()
