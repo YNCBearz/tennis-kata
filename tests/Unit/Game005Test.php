@@ -8,7 +8,7 @@ class Game005Test extends TestCase
 {
     protected function setUp(): void
     {
-        $this->game = new Game005();
+        $this->game = new Game005('Bear', 'Lin');
     }
 
     /**
@@ -118,6 +118,18 @@ class Game005Test extends TestCase
         $this->game->setPlayer2Score(5);
 
         $this->scoreShouldBe('Deuce');
+    }
+
+    /**
+     * @test
+     */
+    public function getScore_Give5vs4_ReturnBearAdv()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(5);
+        $this->game->setPlayer2Score(4);
+
+        $this->scoreShouldBe('Bear Adv');
     }
 
 

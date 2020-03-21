@@ -6,6 +6,15 @@ class Game005
     protected $p1_score = 0;
     protected $p2_score = 0;
 
+    protected $p1_name;
+    protected $p2_name;
+
+    public function __construct($p1_name, $p2_name)
+    {
+        $this->p1_name = $p1_name;
+        $this->p2_name = $p2_name;
+    }
+
     private $lookup = [
         0 => 'Love',
         1 => 'Fifteen',
@@ -16,6 +25,11 @@ class Game005
     public function getScore()
     {
         if ($this->isScoreDiffent()) {
+
+            if ($this->p1_score == 5) {
+                return $this->p1_name . ' Adv';
+            }
+
             return $this->lookup[$this->p1_score] . '-' . $this->lookup[$this->p2_score];
         }
 
