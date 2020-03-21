@@ -96,5 +96,29 @@ class Game005Test extends TestCase
         $this->scoreShouldBe('Thirty-All');
     }
 
+    /**
+     * @test
+     */
+    public function getScore_Give4vs4_ReturnDeuce()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(4);
+        $this->game->setPlayer2Score(4);
+
+        $this->scoreShouldBe('Deuce');
+    }
+
+    /**
+     * @test
+     */
+    public function getScore_Give5vs5_ReturnDeuce()
+    {
+        //Arrange
+        $this->game->setPlayer1Score(5);
+        $this->game->setPlayer2Score(5);
+
+        $this->scoreShouldBe('Deuce');
+    }
+
 
 }
