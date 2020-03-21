@@ -32,6 +32,11 @@ class Game005
         $this->p1_score = $score;
     }
 
+    public function setPlayer2Score($score)
+    {
+        $this->p2_score = $score;
+    }
+
     private function isScoreDiffent()
     {
         return ($this->p1_score !== $this->p2_score);
