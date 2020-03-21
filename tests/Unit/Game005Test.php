@@ -37,4 +37,16 @@ class Game005Test extends TestCase
         //Assert
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function getScore_ThirtyLove()
+    {
+        //Arrange
+        $this->game->player1Tally();
+        $this->game->player1Tally();
+
+        $this->scoreShouldBe('Thirty-Love');
+    }
 }
