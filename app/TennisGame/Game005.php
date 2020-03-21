@@ -26,7 +26,7 @@ class Game005
     {
         if ($this->isScoreDiffent()) {
 
-            if ($this->isAnyPlayerScoreOver5()) {
+            if ($this->isAnyPlayerScoreOver4()) {
                 $advantage_player = $this->getAdvantagePlayer();
                 return $advantage_player . ' Adv';
             }
@@ -37,9 +37,9 @@ class Game005
         return $this->getEqualScore();
     }
 
-    private function isAnyPlayerScoreOver5()
+    private function isAnyPlayerScoreOver4()
     {
-        return ($this->p1_score >= 5 || $this->p2_score >= 5);
+        return ($this->p1_score >= 4 || $this->p2_score >= 4);
     }
 
     private function getAdvantagePlayer()
