@@ -23,6 +23,10 @@ class Game005
             return 'Fifteen-All';
         }
 
+        if ($this->p1_score == 2) {
+            return 'Thirty-All';
+        }
+
         return 'Love-All';
     }
 
