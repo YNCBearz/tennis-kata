@@ -31,6 +31,10 @@ class Game006
             return 'Player1 Adv';
         }
 
+        if ($this->player2Point == 4) {
+            return 'Player2 Adv';
+        }
+
         if ($this->player1Point > 0 || $this->player2Point > 0) {
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
