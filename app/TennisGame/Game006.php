@@ -28,6 +28,11 @@ class Game006
         }
 
         if ($this->player1Point == 4) {
+
+            if ($this->player1Point - $this->player2Point >= 2) {
+                return 'Player1 Win';
+            }
+
             return 'Player1 Adv';
         }
 
@@ -38,7 +43,6 @@ class Game006
         if ($this->player1Point > 0 || $this->player2Point > 0) {
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
-
     }
 
     private function isSameScore()
