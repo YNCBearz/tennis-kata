@@ -15,10 +15,12 @@ class Game006Test extends TestCase
 
     public function testLoveAll()
     {
-        $expected = 'Love-All';
+        $this->scoreShouldBe('Love-All');
+    }
 
+    private function scoreShouldBe($expected)
+    {
         $actual = $this->game->score();
-
         $this->assertEquals($expected, $actual);
     }
 
