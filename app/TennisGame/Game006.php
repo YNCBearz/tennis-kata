@@ -28,21 +28,34 @@ class Game006
         }
 
         if ($this->isOver4Point()) {
-
-            $advantagePlayer = $this->getAdvantagePlayer();
-
-            if ($this->player1Point - $this->player2Point >= 2) {
-                return $advantagePlayer . ' Win';
-            } elseif ($this->player2Point - $this->player1Point >= 2) {
-                return $advantagePlayer . ' Win';
-            }
-
-            return $advantagePlayer . ' Adv';
+            return ($this->isGameSet())
+                ? $this->winScore()
+                : $this->advScore();
         }
 
-        if ($this->player1Point > 0 || $this->player2Point > 0) {
-            return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
-        }
+        return $this->normalScore();
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
+    }
+
+    private function isGameSet()
+    {
+        return (abs($this->player1Point - $this->player2Point) >= 2);
+    }
+
+    private function winScore()
+    {
+        $advantagePlayer = $this->getAdvantagePlayer();
+        return $advantagePlayer . ' Win';
+    }
+
+    private function advScore()
+    {
+        $advantagePlayer = $this->getAdvantagePlayer();
+        return $advantagePlayer . ' Adv';
     }
 
     private function isOver4Point()
