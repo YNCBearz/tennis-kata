@@ -33,6 +33,8 @@ class Game006
 
             if ($this->player1Point - $this->player2Point >= 2) {
                 return $advantagePlayer . ' Win';
+            } elseif ($this->player2Point - $this->player1Point >= 2) {
+                return $advantagePlayer . ' Win';
             }
 
             return $advantagePlayer . ' Adv';
@@ -45,7 +47,7 @@ class Game006
 
     private function isOver4Point()
     {
-        return ($this->player1Point == 4 || $this->player2Point == 4);
+        return ($this->player1Point >= 4 || $this->player2Point >= 4);
     }
 
     private function getAdvantagePlayer()
