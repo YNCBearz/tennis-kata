@@ -40,10 +40,18 @@ class Game006
 
     private function sameScore()
     {
-        if ($this->player1Point >= 3) {
-            return 'Deuce';
-        }
+        return ($this->player1Point >= 3)
+            ? $this->deuceScore()
+            : $this->sameScoreUnder3Point();
+    }
 
+    private function deuceScore()
+    {
+        return 'Deuce';
+    }
+
+    private function sameScoreUnder3Point()
+    {
         return $this->lookup[$this->player1Point] . '-All';
     }
 
