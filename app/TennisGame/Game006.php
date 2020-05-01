@@ -27,22 +27,32 @@ class Game006
             return $this->sameScore();
         }
 
-        if ($this->player1Point == 4) {
+        if ($this->isOver4Point()) {
+
+            $advantagePlayer = $this->getAdvantagePlayer();
 
             if ($this->player1Point - $this->player2Point >= 2) {
-                return 'Player1 Win';
+                return $advantagePlayer . ' Win';
             }
 
-            return 'Player1 Adv';
-        }
-
-        if ($this->player2Point == 4) {
-            return 'Player2 Adv';
+            return $advantagePlayer . ' Adv';
         }
 
         if ($this->player1Point > 0 || $this->player2Point > 0) {
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
+    }
+
+    private function isOver4Point()
+    {
+        return ($this->player1Point == 4 || $this->player2Point == 4);
+    }
+
+    private function getAdvantagePlayer()
+    {
+        return ($this->player1Point > $this->player2Point)
+            ? 'Player1'
+            : 'Player2';
     }
 
     private function isSameScore()
