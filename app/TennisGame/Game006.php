@@ -8,14 +8,17 @@ class Game006
      */
     protected $player1Point = 0;
 
+
+    protected $lookup = [
+        0 => 'Love',
+        1 => 'Fifteen',
+        2 => 'Thirty'
+    ];
+
     public function score()
     {
-        if ($this->player1Point == 2) {
-            return 'Thirty-Love';
-        }
-
-        if ($this->player1Point == 1) {
-            return 'Fifteen-Love';
+        if ($this->player1Point > 0) {
+            return $this->lookup[$this->player1Point] . '-Love';
         }
 
         return 'Love-All';
