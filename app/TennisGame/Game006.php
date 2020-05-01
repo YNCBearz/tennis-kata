@@ -23,8 +23,8 @@ class Game006
 
     public function score()
     {
-        if ($this->player1Point == $this->player2Point) {
-            return $this->lookup[$this->player1Point] . '-All';
+        if ($this->isSameScore()) {
+            return $this->sameScore();
         }
 
 
@@ -32,6 +32,16 @@ class Game006
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
 
+    }
+
+    private function isSameScore()
+    {
+        return ($this->player1Point == $this->player2Point);
+    }
+
+    private function sameScore()
+    {
+        return $this->lookup[$this->player1Point] . '-All';
     }
 
     /**
