@@ -10,6 +10,10 @@ class Game006
 
     public function score()
     {
+        if ($this->player1Point == 2) {
+            return 'Thirty-Love';
+        }
+
         if ($this->player1Point == 1) {
             return 'Fifteen-Love';
         }
@@ -17,8 +21,13 @@ class Game006
         return 'Love-All';
     }
 
-    public function player1WinPoint()
+    /**
+     * @param int $point
+     */
+    public function player1WinPoint($point = 1)
     {
-        $this->player1Point++;
+        for ($i = 1; $i <= $point; $i++) {
+            $this->player1Point++;
+        }
     }
 }
