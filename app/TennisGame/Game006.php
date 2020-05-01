@@ -12,7 +12,8 @@ class Game006
     protected $lookup = [
         0 => 'Love',
         1 => 'Fifteen',
-        2 => 'Thirty'
+        2 => 'Thirty',
+        3 => 'Forty'
     ];
 
     public function score()
