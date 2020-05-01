@@ -40,7 +40,7 @@ class Game006
 
     private function sameScore()
     {
-        if ($this->player1Point == 3) {
+        if ($this->player1Point >= 3) {
             return 'Deuce';
         }
 
