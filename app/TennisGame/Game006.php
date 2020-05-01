@@ -23,11 +23,15 @@ class Game006
 
     public function score()
     {
+        if ($this->player1Point == $this->player2Point) {
+            return $this->lookup[$this->player1Point] . '-All';
+        }
+
+
         if ($this->player1Point > 0 || $this->player2Point > 0) {
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
 
-        return 'Love-All';
     }
 
     /**
