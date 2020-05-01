@@ -27,7 +27,6 @@ class Game006
             return $this->sameScore();
         }
 
-
         if ($this->player1Point > 0 || $this->player2Point > 0) {
             return $this->lookup[$this->player1Point] . '-' . $this->lookup[$this->player2Point];
         }
@@ -41,6 +40,10 @@ class Game006
 
     private function sameScore()
     {
+        if ($this->player1Point == 3) {
+            return 'Deuce';
+        }
+
         return $this->lookup[$this->player1Point] . '-All';
     }
 
