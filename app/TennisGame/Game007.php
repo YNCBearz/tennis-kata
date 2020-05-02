@@ -20,6 +20,9 @@ class Game007
             return $this->samePointScore();
         }
 
+        if ($this->secondPlayerPoint > 3 && $this->secondPlayerPoint > $this->firstPlayerPoint) {
+            return 'SecondPlayer Adv';
+        }
         if ($this->firstPlayerPoint > 3 && $this->firstPlayerPoint > $this->secondPlayerPoint) {
             return 'FirstPlayer Adv';
         }
