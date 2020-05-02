@@ -31,6 +31,8 @@ class Game007
 
     public function secondPlayerWinPoints($point = 1)
     {
-        $this->secondPlayerPoint++;
+        for ($i = 1 ; $i <= $point ; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 }
