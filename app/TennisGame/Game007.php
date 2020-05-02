@@ -16,13 +16,28 @@ class Game007
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
-            return $this->lookup[$this->firstPlayerPoint] . '-All';
+        if ($this->isSamePoint()) {
+            return $this->samePointScore();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+            return $this->normalScore();
         }
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+    }
+
+    private function isSamePoint()
+    {
+        return ($this->firstPlayerPoint == $this->secondPlayerPoint);
+    }
+
+    private function samePointScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
     public function firstPlayerWinPoints($point = 1)
