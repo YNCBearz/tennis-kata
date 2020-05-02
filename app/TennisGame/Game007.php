@@ -20,14 +20,23 @@ class Game007
             return $this->samePointScore();
         }
 
-        if ($this->secondPlayerPoint > 3 && $this->secondPlayerPoint > $this->firstPlayerPoint) {
-            return 'SecondPlayer Adv';
-        }
-        if ($this->firstPlayerPoint > 3 && $this->firstPlayerPoint > $this->secondPlayerPoint) {
-            return 'FirstPlayer Adv';
+        if ($this->isOver3Point()) {
+            return $this->advPlayer() . ' Adv';
         }
 
         return $this->normalScore();
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? 'FirstPlayer'
+            : 'SecondPlayer';
+    }
+
+    private function isOver3Point()
+    {
+        return ($this->firstPlayerPoint > 3 || $this->secondPlayerPoint > 3);
     }
 
     private function normalScore()
