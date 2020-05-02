@@ -22,7 +22,7 @@ class Game007
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
-        }
+        };
     }
 
     private function normalScore()
@@ -37,6 +37,10 @@ class Game007
 
     private function samePointScore()
     {
+        if ($this->firstPlayerPoint == 3) {
+            return 'Deuce';
+        }
+
         return $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
