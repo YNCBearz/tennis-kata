@@ -22,6 +22,15 @@ class Game007Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testFifteenLove()
+    {
+        $expected = 'Fifteen-Love';
+
+        $this->game->firstPlayerWinPoints();
+        $actual = $this->game->score();
+
+        $this->assertEquals($expected, $actual);
+    }
 
 
 }
