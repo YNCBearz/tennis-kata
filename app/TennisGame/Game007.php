@@ -21,16 +21,22 @@ class Game007
         }
 
         if ($this->isOver3Point()) {
-            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2) {
-                return 'FirstPlayer Win';
-            }
-            if ($this->secondPlayerPoint - $this->firstPlayerPoint >= 2) {
-                return 'SecondPlayer Win';
-            }
-            return $this->advPlayer() . ' Adv';
+            return $this->advScore();
         }
 
         return $this->normalScore();
+    }
+
+    private function isGameSet()
+    {
+        return abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2;
+    }
+
+    private function advScore()
+    {
+        return ($this->isGameSet())
+            ? $this->advPlayer() . ' Win'
+            : $this->advPlayer() . ' Adv';
     }
 
     private function advPlayer()
