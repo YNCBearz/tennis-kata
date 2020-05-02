@@ -9,6 +9,7 @@ class Game007
         0 => 'Love',
         1 => 'Fifteen',
         2 => 'Thirty',
+        3 => 'Forty'
     ];
 
     public function score()
@@ -16,7 +17,6 @@ class Game007
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
-
 
         return 'Love-All';
     }
