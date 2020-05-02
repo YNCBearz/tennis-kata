@@ -21,6 +21,9 @@ class Game007
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
+            if ($this->firstPlayerPoint > 3 && $this->firstPlayerPoint > $this->secondPlayerPoint) {
+                return 'FirstPlayer Adv';
+            }
             return $this->normalScore();
         };
     }
