@@ -38,10 +38,15 @@ class Game007
     private function samePointScore()
     {
         if ($this->firstPlayerPoint >= 3) {
-            return 'Deuce';
+            return $this->deuceScore();
         }
 
         return $this->lookup[$this->firstPlayerPoint] . '-All';
+    }
+
+    private function deuceScore()
+    {
+        return 'Deuce';
     }
 
     public function firstPlayerWinPoints($point = 1)
