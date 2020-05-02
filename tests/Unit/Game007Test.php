@@ -36,4 +36,6 @@ class Game007Test extends TestCase
         $this->game->firstPlayerWinPoints(2);
         $this->scoreShouldBe('Thirty-Love');
     }
+
+
 }

@@ -5,15 +5,19 @@ class Game007
 {
     private $firstPlayerPoint = 0;
 
+    private $lookup = [
+        0 => 'Love',
+        1 => 'Fifteen',
+        2 => 'Thirty',
+    ];
+
     public function score()
     {
-        if ($this->firstPlayerPoint == 2) {
-            return 'Thirty-Love';
+        if ($this->firstPlayerPoint > 0) {
+            return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
 
-        if ($this->firstPlayerPoint == 1) {
-            return 'Fifteen-Love';
-        }
+
         return 'Love-All';
     }
 
