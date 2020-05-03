@@ -20,7 +20,7 @@
 ### Ctrl + ] : go to definition
 --------------------------------
 ### ctrl + o : 回到上一頁
-### ctrl + i : 回到下一頁
+### ctrl + i : **回到下一頁**
 --------------------------------
 ### i : insert before the cursor
 ### a : insert after the cursor
