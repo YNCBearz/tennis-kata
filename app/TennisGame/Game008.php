@@ -23,6 +23,8 @@ class Game008
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             if ($this->isOver4Point() && abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
                 return $this->advPlayer() . ' Adv';
+            } else if ($this->isOver4Point()) {
+                return $this->advPlayer() . ' Win';
             }
 
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
