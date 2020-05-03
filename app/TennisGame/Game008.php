@@ -20,16 +20,23 @@ class Game008
             return $this->sameScore();
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            if ($this->isOver4Point() && abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
-                return $this->advPlayer() . ' Adv';
-            } else if ($this->isOver4Point()) {
-                return $this->advPlayer() . ' Win';
-            }
-
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+        if ($this->isOver4Point()) {
+            return $this->advScore();
         }
 
+        return $this->normalScore();
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+    }
+
+    private function advScore()
+    {
+        return (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1)
+            ? $this->advPlayer() . ' Adv'
+            : $this->advPlayer() . ' Win';
     }
 
     private function isOver4Point()
