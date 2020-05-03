@@ -19,12 +19,13 @@
 --------------------------------
 ### Ctrl + ] : go to definition
 --------------------------------
-### ctrl + o : 回到上一個檔案
-### ctrl + i : 回到下一個檔案
+### ctrl + o : 回到上一頁
+### ctrl + i : 回到下一頁
 --------------------------------
 ### i : insert before the cursor
 ### a : insert after the cursor
-### o : insert a new line after the current one
+### o : insert a new line after the cursor
+### O : insert a new line above the cursor
 --------------------------------
 ### gt: 下一個分頁
 ### gT: 上一個分頁
