@@ -87,4 +87,11 @@ class Game008Test extends TestCase
         $this->game->secondPlayerWinPoint(4);
         $this->scoreShouldBe('SecondPlayer Adv');
     }
+
+    public function testSecondPlayerAdvWhen5v6()
+    {
+        $this->game->firstPlayerWinPoint(5);
+        $this->game->secondPlayerWinPoint(6);
+        $this->scoreShouldBe('SecondPlayer Adv');
+    }
 }

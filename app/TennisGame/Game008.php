@@ -32,7 +32,7 @@ class Game008
 
     private function is4Point()
     {
-        return ($this->firstPlayerPoint == 4 || $this->secondPlayerPoint == 4);
+        return ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4);
     }
 
     private function advPlayer()
