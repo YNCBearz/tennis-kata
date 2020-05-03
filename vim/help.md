@@ -20,7 +20,7 @@
 ### Ctrl + ] : go to definition
 --------------------------------
 ### ctrl + o : 回到上一頁
-### ctrl + i : **回到下一頁**
+### ctrl + i : 回到下一頁
 --------------------------------
 ### i : insert before the cursor
 ### a : insert after the cursor
@@ -36,6 +36,8 @@
 ### dd : 刪除行
 ### D : 刪除至行尾
 ### d (+3) w : 刪除 (+3) 字
+### dab : delete a block surrounded by (
+### daB : delete a block surrounded by {
 --------------------------------
 ### u : undo
 ### ctrl + r : redo
@@ -51,6 +53,7 @@
 --------------------------------
 ### ciw : 刪除當前字並新增
 ### cw : 刪除當前字至字尾並新增
+### ci" : change something inside double quotes
 --------------------------------
 
 ## **[Insert Mode]**
@@ -58,6 +61,10 @@
 ### ctrl + n : autocomplete next
 ### ctrl + p : autocomplete previous
 
+--------------------------------
+### ctrl + h : delete the last character you typed
+### ctrl + w : delete the last word you typed
+### ctrl + u : delete the last line you typed
 --------------------------------
 ## **[Visual Mode]**
 
