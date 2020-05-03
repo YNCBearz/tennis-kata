@@ -21,17 +21,25 @@ class Game008
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            if ($this->firstPlayerPoint == 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
-                return 'FirstPlayer Adv';
-            }
-
-            if ($this->secondPlayerPoint == 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 1) {
-                return 'SecondPlayer Adv';
+            if ($this->is4Point() && abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
+                return $this->advPlayer() . ' Adv';
             }
 
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
+    }
+
+    private function is4Point()
+    {
+        return ($this->firstPlayerPoint == 4 || $this->secondPlayerPoint == 4);
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? 'FirstPlayer'
+            : 'SecondPlayer';
     }
 
     private function sameScore()
