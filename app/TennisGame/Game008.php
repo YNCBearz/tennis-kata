@@ -21,6 +21,10 @@ class Game008
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
+            if ($this->firstPlayerPoint == 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
+                return 'FirstPlayer Adv';
+            }
+
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
@@ -28,7 +32,7 @@ class Game008
 
     private function sameScore()
     {
-        return ($this->firstPlayerPoint == 3)
+        return ($this->firstPlayerPoint >= 3)
             ? 'Deuce'
             : $this->lookup[$this->firstPlayerPoint] . '-All';
     }
