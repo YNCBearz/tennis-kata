@@ -54,6 +54,7 @@
 ### ciw : 刪除當前字並新增
 ### cw : 刪除當前字至字尾並新增
 ### ci" : change something inside double quotes
+### cc : change entire line
 --------------------------------
 
 ## **[Insert Mode]**
