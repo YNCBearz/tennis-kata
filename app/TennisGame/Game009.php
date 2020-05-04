@@ -20,16 +20,30 @@ class Game009
             return $this->sameScore();
         }
 
-
-        if ($this->isGameSet() && abs($this->p1Point - $this->p2Point) == 1) {
-            return $this->advPlayer() . ' Adv';
-        } else if ($this->isGameSet()) {
-            return $this->advPlayer() . ' Win';
+        if ($this->isGameSet()) {
+            return $this->advScore();
         }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
-            return $this->lookUp[$this->p1Point] . '-' . $this->lookUp[$this->p2Point];
+            return $this->normalScore();
         }
+    }
 
+    private function normalScore()
+    {
+        return $this->lookUp[$this->p1Point] . '-' . $this->lookUp[$this->p2Point];
+    }
+
+    private function advScore()
+    {
+        return ($this->pointDiff() == 1)
+            ? $this->advPlayer() . ' Adv'
+            : $this->advPlayer() . ' Win';
+    }
+
+    private function pointDiff()
+    {
+        return abs($this->p1Point - $this->p2Point);
     }
 
     private function advPlayer()
