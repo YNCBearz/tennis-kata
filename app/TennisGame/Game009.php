@@ -17,13 +17,25 @@ class Game009
     public function score()
     {
         if ($this->isSamePoint()) {
+            if ($this->isOver3Point()) {
+                return 'Deuce';
+            }
             return $this->sameScore();
+        }
+
+        if ($this->p1Point >= 4 && $this->p1Point - $this->p2Point == 1) {
+            return 'Player1 Adv';
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->lookUp[$this->p1Point] . '-' . $this->lookUp[$this->p2Point];
         }
 
+    }
+
+    private function isOver3Point()
+    {
+        return ($this->p1Point >= 3 || $this->p2Point >= 3);
     }
 
     private function isSamePoint()
@@ -45,6 +57,8 @@ class Game009
 
     public function secondPlayerWinPoint($point = 1)
     {
-        $this->p2Point++;
+        for ($i = 1 ; $i <= $point ; $i++) {
+            $this->p2Point++;
+        }
     }
 }
