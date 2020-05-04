@@ -16,10 +16,14 @@ class Game009
 
     public function score()
     {
+        if ($this->p1Point == $this->p2Point) {
+            return $this->lookUp[$this->p1Point] . '-All';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->lookUp[$this->p1Point] . '-' . $this->lookUp[$this->p2Point];
         }
-        return 'Love-All';
+
     }
 
     public function firstPlayerWinPoint($point = 1)
