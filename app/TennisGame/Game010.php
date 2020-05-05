@@ -7,19 +7,27 @@ class Game010
 
     private $lookup = [
         0 => 'Love',
-        1 => 'Fifteen'
+        1 => 'Fifteen',
+        2 => 'Thirty'
+
     ];
 
     public function score()
     {
+        if ($this->p1Point == 2) {
+            return $this->lookup[$this->p1Point] . '-Love';
+        }
+
         if ($this->p1Point == 1) {
             return $this->lookup[$this->p1Point] . '-Love';
         }
         return 'Love-All';
     }
 
-    public function player1WinPoint()
+    public function player1WinPoint($point = 1)
     {
-        $this->p1Point++;
+        for ($i = 1 ; $i <= $point ; $i++) {
+            $this->p1Point++;
+        }
     }
 }
