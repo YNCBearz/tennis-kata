@@ -20,17 +20,33 @@ class Game010
             return $this->sameScore();
         }
 
-        if ($this->p1Point >= 4 && ($this->p1Point > $this->p2Point)) {
-            return 'Player1 Adv';
-        }
-
-        if ($this->p2Point >= 4 && ($this->p2Point > $this->p1Point)) {
-            return 'Player2 Adv';
+        if ($this->isOver4Point()) {
+            return $this->advScore();
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->normalScore();
         }
+    }
+
+    private function advScore()
+    {
+        if (($this->p1Point - $this->p2Point) >= 2) {
+            return $this->advPlayer() . ' Win';
+        }
+        return $this->advPlayer() . ' Adv';
+    }
+
+    private function advPlayer()
+    {
+        return ($this->p1Point > $this->p2Point)
+            ? 'Player1'
+            : 'Player2';
+    }
+
+    private function isOver4Point()
+    {
+        return ($this->p1Point >= 4 || $this->p2Point >= 4);
     }
 
     private function sameScore()
