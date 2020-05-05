@@ -14,17 +14,10 @@ class Game010
 
     public function score()
     {
-        if ($this->p1Point == 3) {
+        if ($this->p1Point > 0) {
             return $this->lookup[$this->p1Point] . '-Love';
         }
 
-        if ($this->p1Point == 2) {
-            return $this->lookup[$this->p1Point] . '-Love';
-        }
-
-        if ($this->p1Point == 1) {
-            return $this->lookup[$this->p1Point] . '-Love';
-        }
         return 'Love-All';
     }
 
