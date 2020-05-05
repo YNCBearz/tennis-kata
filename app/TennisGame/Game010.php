@@ -20,6 +20,10 @@ class Game010
             return $this->sameScore();
         }
 
+        if ($this->p1Point >= 4 && ($this->p1Point > $this->p2Point)) {
+            return 'Player1 Adv';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->normalScore();
         }
