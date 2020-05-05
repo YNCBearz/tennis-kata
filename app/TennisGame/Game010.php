@@ -17,12 +17,17 @@ class Game010
     public function score()
     {
         if ($this->isSameScore()) {
-            return $this->lookup[$this->p1Point] . '-All';
+            return $this->sameScore();
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->normalScore();
         }
+    }
+
+    private function sameScore()
+    {
+        return $this->translatePlayer1Point() . '-All';
     }
 
     private function normalScore()
