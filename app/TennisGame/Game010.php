@@ -16,6 +16,10 @@ class Game010
 
     public function score()
     {
+        if ($this->p1Point == $this->p2Point) {
+            return $this->lookup[$this->p1Point] . '-All';
+        }
+
         if ($this->p1Point > 0) {
             return $this->lookup[$this->p1Point] . '-Love';
         }
@@ -24,7 +28,6 @@ class Game010
             return 'Love-' . $this->lookup[$this->p2Point];
         }
 
-        return 'Love-All';
     }
 
     public function player1WinPoint($point = 1)
