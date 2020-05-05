@@ -57,4 +57,11 @@ class Game010Test extends TestCase
         $this->scoreShouldBe('Fifteen-All');
     }
 
+    public function test3v3Deuce()
+    {
+        $this->game->player1WinPoint(3);
+        $this->game->player2WinPoint(3);
+        $this->scoreShouldBe('Deuce');
+    }
+
 }
