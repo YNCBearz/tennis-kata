@@ -30,20 +30,20 @@ class Game010
         if ($this->p1Point == 3) {
             return 'Deuce';
         }
-        return $this->translatePlayer1Point() . '-All';
+        return $this->player1Score() . '-All';
     }
 
     private function normalScore()
     {
-        return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
+        return $this->player1Score() . '-' . $this->player2Score();
     }
 
-    private function translatePlayer1Point()
+    private function player1Score()
     {
         return $this->lookup[$this->p1Point];
     }
 
-    private function translatePlayer2Point()
+    private function player2Score()
     {
         return $this->lookup[$this->p2Point];
     }
