@@ -14,4 +14,13 @@ class Game010Test extends TestCase
         $this->game = new Game010();
     }
 
+
+    public function testLoveAll()
+    {
+        $expected = 'Love-All';
+        $actual = $this->game->score();
+        $this->assertEquals($expected, $actual);
+    }
+
+
 }

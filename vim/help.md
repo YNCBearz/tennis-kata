@@ -17,8 +17,7 @@
 --------------------------------
 ### Esc / Ctrl + [ : enter Normal Mode
 --------------------------------
-### Ctrl + ] : go to definition
---------------------------------
+### ctrl + ] / gd : go to definition
 ### ctrl + o : 回到上一頁
 ### ctrl + i : 回到下一頁
 --------------------------------
@@ -46,10 +45,10 @@
 ### zb : 拖曳當前位置到最下方
 ### zz : 拖曳當前位置到中間
 --------------------------------
-### Ctrl-u : Moves cursor & screen up ½ page
-### Ctrl-d : Moves cursor & screen down ½ page
-### Ctrl-b : Moves screen up one page, cursor to last line
-### Ctrl-f : Moves screen down one page, cursor to first line
+### ctrl-u : Moves cursor & screen up ½ page
+### ctrl-d : Moves cursor & screen down ½ page
+### ctrl-b : Moves screen up one page, cursor to last line
+### ctrl-f : Moves screen down one page, cursor to first line
 --------------------------------
 ### ciw : 刪除當前字並新增
 ### cw : 刪除當前字至字尾並新增
@@ -73,8 +72,9 @@
 ### V : select the line
 ### (+"a) y : 將選取部分存至暫存器 (+a)
 ### (+"a) p : 將暫存器 (+a)的內容貼上
-### d: cut
-### yy 複製當前行
+### d : cut
+### yy : 複製當前行
+### yap : 複製段落 (method)
 --------------------------------
 ## **[easy motion]**
 
