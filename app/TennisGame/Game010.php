@@ -8,12 +8,16 @@ class Game010
     private $lookup = [
         0 => 'Love',
         1 => 'Fifteen',
-        2 => 'Thirty'
-
+        2 => 'Thirty',
+        3 => 'Forty'
     ];
 
     public function score()
     {
+        if ($this->p1Point == 3) {
+            return $this->lookup[$this->p1Point] . '-Love';
+        }
+
         if ($this->p1Point == 2) {
             return $this->lookup[$this->p1Point] . '-Love';
         }
