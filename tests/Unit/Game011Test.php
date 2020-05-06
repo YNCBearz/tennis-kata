@@ -77,6 +77,20 @@ class Game011Test extends TestCase
         $this->scoreShouldBe('Deuce');
     }
 
+    public function testPlayer1Adv()
+    {
+        $this->game->player1WinPoint(4);
+        $this->game->player2WinPoint(3);
+        $this->scoreShouldBe('Player1 Adv');
+    }
+
+    public function testPlayer2Adv()
+    {
+        $this->game->player1WinPoint(3);
+        $this->game->player2WinPoint(4);
+        $this->scoreShouldBe('Player2 Adv');
+    }
+
 
 
 }
