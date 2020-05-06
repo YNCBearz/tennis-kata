@@ -21,7 +21,7 @@ class Game011
             return $this->player1Score() . '-All';
         }
 
-        if ($this->isSamePoint() && $this->p2Point == 3) {
+        if ($this->isSamePoint() && $this->p2Point >= 3) {
             return 'Deuce';
         }
 
