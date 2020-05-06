@@ -17,27 +17,41 @@ class Game011
     public function score()
     {
 
-        if ($this->isSamePoint() && $this->p1Point < 3) {
-            return $this->player1Score() . '-All';
+        if ($this->isSamePoint()) {
+            return $this->samePointScore();
         }
 
-        if ($this->isSamePoint() && $this->p2Point >= 3) {
-            return 'Deuce';
-        }
-
-        if ($this->p1Point == 4 && $this->p1Point > $this->p2Point) {
-            return 'Player1 Adv';
-        }
-
-        if ($this->p2Point == 4 && $this->p2Point > $this->p1Point) {
-            return 'Player2 Adv';
+        if ($this->hasPlayerWin4Point()) {
+            return $this->advPlayer() . ' Adv';
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->player1Score() . '-' . $this->player2Score();
         }
 
+    }
 
+    private function advPlayer()
+    {
+        return ($this->p1Point > $this->p2Point)
+            ? 'Player1'
+            : 'Player2';
+    }
+
+    private function hasPlayerWin4Point()
+    {
+        return ($this->p1Point == 4 || $this->p2Point == 4);
+    }
+
+    private function samePointScore()
+    {
+        if ($this->p1Point < 3) {
+            return $this->player1Score() . '-All';
+        }
+
+        if ($this->p2Point >= 3) {
+            return 'Deuce';
+        }
     }
 
     private function isSamePoint()
