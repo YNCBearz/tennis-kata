@@ -16,6 +16,11 @@ class Game011
 
     public function score()
     {
+
+        if ($this->p1Point == 3 && $this->p2Point == 3) {
+            return 'Deuce';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->player1Score() . '-' . $this->player2Score();
         }
@@ -40,9 +45,11 @@ class Game011
         }
     }
 
-    public function player2WinPoint()
+    public function player2WinPoint($point = 1)
     {
-        $this->p2Point++;
+        for ($i = 1; $i <= $point; $i++) {
+            $this->p2Point++;
+        }
     }
 
 }
