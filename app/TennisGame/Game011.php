@@ -17,13 +17,8 @@ class Game011
     public function score()
     {
 
-        if ($this->isSamePoint() && $this->p1Point == 1) {
-            return 'Fifteen-All';
-        }
-
-
-        if ($this->isSamePoint() && $this->p2Point == 2) {
-            return 'Thirty-All';
+        if ($this->isSamePoint() && $this->p1Point < 3) {
+            return $this->player1Score() . '-All';
         }
 
         if ($this->isSamePoint() && $this->p2Point == 3) {
@@ -34,7 +29,7 @@ class Game011
             return $this->player1Score() . '-' . $this->player2Score();
         }
 
-        return 'Love-All';
+
     }
 
     private function isSamePoint()
