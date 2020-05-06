@@ -36,12 +36,14 @@ class Game011
 
     private function advScore()
     {
-        if ($this->p1Point - $this->p2Point > 1) {
-            return 'Player1 Win';
-        } else if ($this->p2Point - $this->p1Point > 1) {
-            return 'Player2 Win';
-        }
-        return $this->advPlayer() . ' Adv';
+        return ($this->pointDiff() > 1)
+            ? $this->advPlayer() . ' Win'
+            : $this->advPlayer() . ' Adv';
+    }
+
+    private function pointDiff()
+    {
+        return abs($this->p1Point - $this->p2Point);
     }
 
     private function advPlayer()
