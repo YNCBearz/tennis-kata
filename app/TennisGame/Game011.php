@@ -16,10 +16,20 @@ class Game011
     public function score()
     {
         if ($this->p1Point > 0 || $this->p2Point > 0) {
-            return $this->lookup[$this->p1Point] . '-' . $this->lookup[$this->p2Point];
+            return $this->player1Score() . '-' . $this->player2Score();
         }
 
         return 'Love-All';
+    }
+
+    private function player1Score()
+    {
+        return $this->lookup[$this->p1Point];
+    }
+
+    private function player2Score()
+    {
+        return $this->lookup[$this->p2Point];
     }
 
     public function player1WinPoint($point = 1)
