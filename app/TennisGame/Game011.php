@@ -17,6 +17,10 @@ class Game011
     public function score()
     {
 
+        if ($this->p1Point == 1 && $this->p2Point == 1) {
+            return 'Fifteen-All';
+        }
+
         if ($this->p1Point == 3 && $this->p2Point == 3) {
             return 'Deuce';
         }
