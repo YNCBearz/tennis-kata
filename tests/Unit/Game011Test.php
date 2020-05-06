@@ -31,4 +31,10 @@ class Game011Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testThirtyLove()
+    {
+        $this->game->player1WinPoint(2);
+        $this->scoreShouldBe('Thirty-Love');
+    }
+
 }
