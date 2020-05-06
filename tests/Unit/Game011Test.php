@@ -43,6 +43,12 @@ class Game011Test extends TestCase
         $this->scoreShouldBe('Love-Fifteen');
     }
 
+    public function testFortyLove()
+    {
+        $this->game->player1WinPoint(3);
+        $this->scoreShouldBe('Forty-Love');
+    }
+
 
 
 }
