@@ -21,6 +21,11 @@ class Game011
             return 'Fifteen-All';
         }
 
+
+        if ($this->isSamePoint() && $this->p2Point == 2) {
+            return 'Thirty-All';
+        }
+
         if ($this->isSamePoint() && $this->p2Point == 3) {
             return 'Deuce';
         }
