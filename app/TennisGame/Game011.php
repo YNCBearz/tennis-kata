@@ -22,16 +22,26 @@ class Game011
         }
 
         if ($this->hasPlayerWin4Point()) {
-            if ($this->p1Point - $this->p2Point > 1) {
-                return 'Player1 Win';
-            }
-            return $this->advPlayer() . ' Adv';
+            return $this->advScore();
         }
 
-        if ($this->p1Point > 0 || $this->p2Point > 0) {
-            return $this->player1Score() . '-' . $this->player2Score();
-        }
+        return $this->normalScore();
 
+    }
+
+    private function normalScore()
+    {
+        return $this->player1Score() . '-' . $this->player2Score();
+    }
+
+    private function advScore()
+    {
+        if ($this->p1Point - $this->p2Point > 1) {
+            return 'Player1 Win';
+        } else if ($this->p2Point - $this->p1Point > 1) {
+            return 'Player2 Win';
+        }
+        return $this->advPlayer() . ' Adv';
     }
 
     private function advPlayer()
