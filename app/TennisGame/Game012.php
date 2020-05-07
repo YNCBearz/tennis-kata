@@ -20,8 +20,12 @@ class Game012
             return $this->translatePlayer1Point() . '-All';
         }
 
-        if ($this->isOver4Point() && abs($this->p1Point - $this->p2Point) == 1) {
-            return $this->advPlayer() . ' Adv';
+        if ($this->isOver4Point()) {
+            if (abs($this->p1Point - $this->p2Point) == 1) {
+                return $this->advPlayer() . ' Adv';
+            }
+
+            return $this->advPlayer() . ' Win';
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
