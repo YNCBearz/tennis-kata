@@ -16,17 +16,17 @@ class Game012
 
     public function score()
     {
-        if ($this->p1Point > 0) {
-            return $this->translatePlayer1Point() . '-Love';
-        }
-
-        if ($this->p2Point > 0) {
-            return 'Love-' . $this->translatePlayer2Point();
+        if ($this->p1Point > 0 || $this->p2Point > 0) {
+            return $this->normalScore();
         }
 
         return 'Love-All';
     }
 
+    private function normalScore()
+    {
+        return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
+    }
     private function translatePlayer1Point()
     {
         return $this->lookup[$this->p1Point];
