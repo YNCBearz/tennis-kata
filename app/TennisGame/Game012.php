@@ -21,11 +21,7 @@ class Game012
         }
 
         if ($this->isOver4Point()) {
-            if (abs($this->p1Point - $this->p2Point) == 1) {
-                return $this->advPlayer() . ' Adv';
-            }
-
-            return $this->advPlayer() . ' Win';
+            return $this->advScore();
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
@@ -33,6 +29,14 @@ class Game012
         }
     }
 
+    private function advScore()
+    {
+        if (abs($this->p1Point - $this->p2Point) == 1) {
+            return $this->advPlayer() . ' Adv';
+        }
+
+        return $this->advPlayer() . ' Win';
+    }
 
     private function isOver4Point()
     {
