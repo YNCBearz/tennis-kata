@@ -24,6 +24,10 @@ class Game012
             return 'Player1 Adv';
         }
 
+        if ($this->p2Point == 5 && $this->p2Point - $this->p1Point == 1) {
+            return 'Player2 Adv';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->normalScore();
         }
