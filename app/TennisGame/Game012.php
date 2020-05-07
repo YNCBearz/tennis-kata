@@ -20,17 +20,26 @@ class Game012
             return $this->translatePlayer1Point() . '-All';
         }
 
-        if ($this->p1Point == 4 && $this->p1Point - $this->p2Point == 1) {
-            return 'Player1 Adv';
-        }
-
-        if ($this->p2Point == 5 && $this->p2Point - $this->p1Point == 1) {
-            return 'Player2 Adv';
+        if ($this->isOver4Point() && abs($this->p1Point - $this->p2Point) == 1) {
+            return $this->advPlayer() . ' Adv';
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->normalScore();
         }
+    }
+
+
+    private function isOver4Point()
+    {
+        return ($this->p1Point >= 4 || $this->p2Point >= 4);
+    }
+
+    private function advPlayer()
+    {
+        return ($this->p1Point > $this->p2Point)
+            ? 'Player1'
+            : 'Player2';
     }
 
     private function isSamePoint()
