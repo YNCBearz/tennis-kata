@@ -46,7 +46,10 @@ class Game012
 
     public function player2WinPoint($point = 1)
     {
-        $this->p2Point++;
+        for ($i = 0; $i < $point; $i++) {
+            $this->p2Point++;
+        }
+
     }
 
 }
