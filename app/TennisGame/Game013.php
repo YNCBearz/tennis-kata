@@ -24,6 +24,10 @@ class Game013
             return 'Player1 Adv';
         }
 
+        if ($this->p2Point == 4) {
+            return 'Player2 Adv';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
         }
