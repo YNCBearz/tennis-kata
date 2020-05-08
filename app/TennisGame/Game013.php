@@ -16,14 +16,24 @@ class Game013
 
     public function score()
     {
-        if ($this->p1Point == $this->p2Point) {
-            return $this->translatePlayer1Point() . '-All';
+        if ($this->isSamePoint()) {
+            return $this->samePointScore();
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
         }
 
+    }
+
+    private function samePointScore()
+    {
+        return $this->translatePlayer1Point() . '-All';
+    }
+
+    private function isSamePoint()
+    {
+        return ($this->p1Point == $this->p2Point);
     }
 
     private function translatePlayer1Point()
