@@ -16,15 +16,17 @@ class Game013Test extends TestCase
 
     public function testLoveAll()
     {
-        $expected = 'Love-All';
-        $actual = $this->game->score();
-        $this->assertEquals($expected, $actual);
+        $this->scoreShouldBe('Love-All');
     }
 
     public function testFifteenLove()
     {
-        $expected = 'Fifteen-Love';
         $this->game->player1WinPoint();
+        $this->scoreShouldBe('Fifteen-Love');
+    }
+
+    private function scoreShouldBe($expected)
+    {
         $actual = $this->game->score();
         $this->assertEquals($expected, $actual);
     }
