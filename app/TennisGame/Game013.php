@@ -28,10 +28,14 @@ class Game013
 
     private function samePointScore()
     {
-        if ($this->p1Point == 3) {
-            return 'Deuce';
-        }
-        return $this->translatePlayer1Point() . '-All';
+        return ($this->p1Point == 3)
+            ? $this->deuceScore()
+            : $this->translatePlayer1Point() . '-All';
+    }
+
+    private function deuceScore()
+    {
+        return 'Deuce';
     }
 
     private function isSamePoint()
