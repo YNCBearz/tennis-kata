@@ -16,23 +16,21 @@ class Game013
 
     public function score()
     {
-        if ($this->p1Point > 0) {
-            return $this->lookup[$this->p1Point] . '-Love';
-        }
-
-        if ($this->p2Point == 1) {
-            return 'Love-Fifteen';
-        }
-
-        if ($this->p2Point == 2) {
-            return 'Love-Thirty';
-        }
-
-        if ($this->p2Point == 3) {
-            return 'Love-Forty';
+        if ($this->p1Point > 0 || $this->p2Point > 0) {
+            return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
         }
 
         return 'Love-All';
+    }
+
+    private function translatePlayer1Point()
+    {
+        return $this->lookup[$this->p1Point];
+    }
+
+    private function translatePlayer2Point()
+    {
+        return $this->lookup[$this->p2Point];
     }
 
     public function player1WinPoint($point = 1)
