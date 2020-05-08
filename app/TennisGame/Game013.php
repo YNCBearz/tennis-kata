@@ -24,6 +24,10 @@ class Game013
             return 'Love-Fifteen';
         }
 
+        if ($this->p2Point == 2) {
+            return 'Love-Thirty';
+        }
+
         return 'Love-All';
     }
 
@@ -34,9 +38,11 @@ class Game013
         }
     }
 
-    public function player2WinPoint()
+    public function player2WinPoint($point = 1)
     {
-        $this->p2Point++;
+        for ($i = 0; $i < $point; $i++) {
+            $this->p2Point++;
+        }
     }
 
 }
