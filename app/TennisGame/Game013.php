@@ -32,8 +32,8 @@ class Game013
 
     private function advScore()
     {
-        return ($this->p1Point - $this->p2Point > 1)
-            ? 'Player1 Win'
+        return (abs($this->p1Point - $this->p2Point) > 1)
+            ? $this->advPlayer() . ' Win'
             : $this->advPlayer() . ' Adv';
     }
 

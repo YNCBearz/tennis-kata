@@ -103,5 +103,11 @@ class Game013Test extends TestCase
         $this->scoreShouldBe('Player1 Win');
     }
 
+    public function testPlayer2Win()
+    {
+        $this->game->player1WinPoint(2);
+        $this->game->player2WinPoint(4);
+        $this->scoreShouldBe('Player2 Win');
+    }
 
 }
