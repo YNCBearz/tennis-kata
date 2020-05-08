@@ -20,18 +20,26 @@ class Game013
             return $this->samePointScore();
         }
 
-        if ($this->p1Point == 4 || $this->p2Point == 4) {
-            if ($this->p1Point - $this->p2Point > 1) {
-                return 'Player1 Win';
-            }
-
-            return $this->advPlayer() . ' Adv';
+        if ($this->isAdvScore()) {
+            return $this->advScore();
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
         }
 
+    }
+
+    private function advScore()
+    {
+        return ($this->p1Point - $this->p2Point > 1)
+            ? 'Player1 Win'
+            : $this->advPlayer() . ' Adv';
+    }
+
+    private function isAdvScore()
+    {
+        return $this->p1Point == 4 || $this->p2Point == 4;
     }
 
     private function advPlayer()
