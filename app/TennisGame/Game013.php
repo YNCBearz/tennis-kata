@@ -28,6 +28,9 @@ class Game013
 
     private function samePointScore()
     {
+        if ($this->p1Point == 3) {
+            return 'Deuce';
+        }
         return $this->translatePlayer1Point() . '-All';
     }
 
