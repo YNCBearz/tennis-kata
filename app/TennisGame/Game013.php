@@ -28,7 +28,7 @@ class Game013
 
     private function samePointScore()
     {
-        return ($this->p1Point == 3)
+        return ($this->p1Point >= 3)
             ? $this->deuceScore()
             : $this->translatePlayer1Point() . '-All';
     }
