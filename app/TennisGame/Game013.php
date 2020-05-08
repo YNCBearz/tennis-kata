@@ -25,9 +25,14 @@ class Game013
         }
 
         if ($this->p1Point > 0 || $this->p2Point > 0) {
-            return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
+            return $this->normalScore();
         }
 
+    }
+
+    private function normalScore()
+    {
+        return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
     }
 
     private function advScore()
