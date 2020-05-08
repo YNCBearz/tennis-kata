@@ -20,6 +20,10 @@ class Game013
             return $this->samePointScore();
         }
 
+        if ($this->p1Point == 4) {
+            return 'Player1 Adv';
+        }
+
         if ($this->p1Point > 0 || $this->p2Point > 0) {
             return $this->translatePlayer1Point() . '-' . $this->translatePlayer2Point();
         }
