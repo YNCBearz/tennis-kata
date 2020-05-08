@@ -21,6 +21,10 @@ class Game013
         }
 
         if ($this->p1Point == 4 || $this->p2Point == 4) {
+            if ($this->p1Point - $this->p2Point > 1) {
+                return 'Player1 Win';
+            }
+
             return $this->advPlayer() . ' Adv';
         }
 
