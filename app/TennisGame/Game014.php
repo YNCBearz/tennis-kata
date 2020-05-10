@@ -21,17 +21,26 @@ class Game014
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint == 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
-            return 'FirstPlayer Adv';
-        }
-
-        if ($this->secondPlayerPoint == 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 1) {
-            return 'SecondPlayer Adv';
+        if ($this->isAdvPoint()) {
+            return $this->advPlayer() . ' Adv';
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
+    }
+
+    private function isAdvPoint()
+    {
+        return ($this->firstPlayerPoint == 4 || $this->secondPlayerPoint == 4)
+            && (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1);
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? 'FirstPlayer'
+            : 'SecondPlayer';
     }
 
     private function samePointScore()
