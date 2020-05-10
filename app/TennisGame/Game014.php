@@ -17,14 +17,23 @@ class Game014
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint == 1) {
-            return 'Fifteen-All';
+        if ($this->isSamePoint()) {
+            return $this->samePointScore();
         }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
+    }
 
-        return 'Love-All';
+    private function samePointScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-All';
+    }
+
+    private function isSamePoint()
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
     }
 
     private function normalScore()
