@@ -17,15 +17,16 @@ class Game014
 
     public function score()
     {
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-Love';
-        }
-
-        if ($this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
+            return $this->normalScore();
         }
 
         return 'Love-All';
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 
     public function firstPlayerWinPoint($point = 1)
