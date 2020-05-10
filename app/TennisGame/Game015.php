@@ -18,15 +18,18 @@ class Game015
     public function score()
     {
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint == 4) {
-                return 'Deuce';
-            }
-            return $this->lookup[$this->firstPlayerPoint] . '-All';
+            return $this->samePointScore();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
+    }
+    private function samePointScore()
+    {
+        return ($this->firstPlayerPoint == 4)
+            ? 'Deuce'
+            : $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
     private function isSamePoint()
