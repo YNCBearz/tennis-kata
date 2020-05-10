@@ -40,6 +40,13 @@ class Game015Test extends TestCase
         $this->scoreShouldBe('Fifteen-Love');
     }
 
+    public function test5v5Deuce()
+    {
+        $this->game->firstPlayerWinPoint(5);
+        $this->game->secondPlayerWinPoint(5);
+        $this->scoreShouldBe('Deuce');
+    }
+
     public function testDeuce()
     {
         $this->game->firstPlayerWinPoint(4);
