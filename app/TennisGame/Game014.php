@@ -28,6 +28,11 @@ class Game014
         if ($this->firstPlayerPoint >= 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 2) {
             return 'FirstPlayer Win';
         }
+
+        if ($this->secondPlayerPoint >= 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 2) {
+            return 'SecondPlayer Win';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
