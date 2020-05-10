@@ -21,13 +21,10 @@ class Game014
             return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
 
-        if ($this->secondPlayerPoint == 1) {
-            return 'Love-Fifteen';
+        if ($this->secondPlayerPoint > 0) {
+            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
-        if ($this->secondPlayerPoint == 2) {
-            return 'Love-Thirty';
-        }
         return 'Love-All';
     }
 
