@@ -25,9 +25,14 @@ class Game015
             return $this->advPlayer() . ' Adv';
         }
 
+        if ($this->firstPlayerPoint == 5 && $this->firstPlayerPoint - $this->secondPlayerPoint > 1) {
+            return 'FirstPlayer Win';
+        }
+
         if ($this->secondPlayerPoint == 5 && $this->secondPlayerPoint - $this->firstPlayerPoint > 1) {
             return 'SecondPlayer Win';
         }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
