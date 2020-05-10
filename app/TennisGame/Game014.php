@@ -21,6 +21,10 @@ class Game014
             return $this->samePointScore();
         }
 
+        if ($this->firstPlayerPoint == 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
+            return 'FirstPlayer Adv';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
