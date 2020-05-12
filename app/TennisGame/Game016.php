@@ -28,17 +28,20 @@ class Game016
     public function score()
     {
 
-        if ($this->isAdvPoint()) {
-            return $this->advScore();
-        }
-
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+        if ($this->isGameSet()) {
+            return $this->advScore();
         }
+
+        return $this->normalScore();
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 
     private function advScore()
@@ -60,13 +63,7 @@ class Game016
             : $this->secondPlayer;
     }
 
-    private function isAdvPoint()
-    {
-        return ($this->isOver4Point())
-            && (!$this->isSamePoint());
-    }
-
-    private function isOver4Point()
+    private function isGameSet()
     {
         return $this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4;
     }
