@@ -4,6 +4,10 @@ namespace App\TennisGame;
 
 class Game016
 {
+    private $firstPlayer;
+
+    private $secondPlayer;
+
     private $firstPlayerPoint = 0;
 
     private $secondPlayerPoint = 0;
@@ -15,8 +19,18 @@ class Game016
         3 => 'Forty'
     ];
 
+    public function __construct($firstPlayer, $secondPlayer)
+    {
+        $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
+    }
+
     public function score()
     {
+
+        if ($this->firstPlayerPoint >= 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
+            return $this->firstPlayer . ' Adv';
+        }
 
         if ($this->isSamePoint()) {
             return $this->samePointScore();

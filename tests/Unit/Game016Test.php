@@ -12,7 +12,7 @@ class Game016Test extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->game = new Game016();
+        $this->game = new Game016('Bear', 'Lin');
     }
 
     public function test4v4Deuce()
@@ -20,6 +20,13 @@ class Game016Test extends TestCase
         $this->game->firstPlayerWinPoint(4);
         $this->game->secondPlayerWinPoint(4);
         $this->scoreShouldBe('Deuce');
+    }
+
+    public function testBearAdv()
+    {
+        $this->game->firstPlayerWinPoint(4);
+        $this->game->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Adv');
     }
 
     public function test3v3Deuce()
