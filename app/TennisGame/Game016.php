@@ -17,6 +17,11 @@ class Game016
 
     public function score()
     {
+
+        if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint == 2) {
+            return 'Thirty-All';
+        }
+
         if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint == 1) {
             return 'Fifteen-All';
         }
