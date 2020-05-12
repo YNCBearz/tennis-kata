@@ -15,6 +15,13 @@ class Game016Test extends TestCase
         $this->game = new Game016();
     }
 
+    public function test4v4Deuce()
+    {
+        $this->game->firstPlayerWinPoint(4);
+        $this->game->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Deuce');
+    }
+
     public function test3v3Deuce()
     {
         $this->game->firstPlayerWinPoint(3);
