@@ -19,15 +19,19 @@ class Game016
     {
 
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint == 3) {
-                return 'Deuce';
-            }
-            return $this->lookup[$this->firstPlayerPoint] . '-All';
+            return $this->samePointScore();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
+    }
+
+    private function samePointScore()
+    {
+        return ($this->firstPlayerPoint == 3)
+            ? 'Deuce'
+            : $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
     private function isSamePoint()
