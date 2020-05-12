@@ -29,6 +29,9 @@ class Game016
     {
 
         if ($this->isAdvPoint()) {
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) > 1) {
+                return $this->secondPlayer . ' Win';
+            }
             return $this->advPlayer() . ' Adv';
         }
 
@@ -51,7 +54,7 @@ class Game016
     private function isAdvPoint()
     {
         return ($this->isOver4Point())
-            && abs($this->secondPlayerPoint - $this->firstPlayerPoint) == 1;
+            && (!$this->isSamePoint());
     }
 
     private function isOver4Point()
