@@ -29,10 +29,7 @@ class Game016
     {
 
         if ($this->isAdvPoint()) {
-            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) > 1) {
-                return $this->secondPlayer . ' Win';
-            }
-            return $this->advPlayer() . ' Adv';
+            return $this->advScore();
         }
 
         if ($this->isSamePoint()) {
@@ -42,6 +39,18 @@ class Game016
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
+    }
+
+    private function advScore()
+    {
+        return ($this->pointDiff() > 1)
+            ? $this->secondPlayer . ' Win'
+            : $this->advPlayer() . ' Adv';
+    }
+
+    private function pointDiff()
+    {
+        return abs($this->firstPlayerPoint - $this->secondPlayerPoint);
     }
 
     private function advPlayer()
