@@ -22,6 +22,13 @@ class Game016Test extends TestCase
         $this->scoreShouldBe('Deuce');
     }
 
+    public function testBearWin()
+    {
+        $this->game->firstPlayerWinPoint(7);
+        $this->game->secondPlayerWinPoint(5);
+        $this->scoreShouldBe('Bear Win');
+    }
+
     public function testLinWin()
     {
         $this->game->firstPlayerWinPoint(3);

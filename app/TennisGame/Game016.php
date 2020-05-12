@@ -44,7 +44,7 @@ class Game016
     private function advScore()
     {
         return ($this->pointDiff() > 1)
-            ? $this->secondPlayer . ' Win'
+            ? $this->advPlayer() . ' Win'
             : $this->advPlayer() . ' Adv';
     }
 
