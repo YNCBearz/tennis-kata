@@ -14,15 +14,4 @@ class Game016Test extends TestCase
         parent::setUp();
         $this->game = new Game016();
     }
-
-    public function testLoveAll()
-    {
-        $this->scoreShouldBe('Love-All');
-    }
-
-    private function scoreShouldBe($expected)
-    {
-        $actual = $this->game->score();
-        $this->assertEquals($expected, $actual);
-    }
 }
