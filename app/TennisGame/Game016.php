@@ -16,9 +16,14 @@ class Game016
 
     public function score()
     {
+        if ($this->secondPlayerPoint == 2) {
+            return 'Love-Thirty';
+        }
+
         if ($this->secondPlayerPoint == 1) {
             return 'Love-Fifteen';
         }
+
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
@@ -26,9 +31,11 @@ class Game016
         return 'Love-All';
     }
 
-    public function secondPlayerWinPoint()
+    public function secondPlayerWinPoint($point = 1)
     {
-        $this->secondPlayerPoint++;
+        for ($i = 0; $i < $point; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 
     public function firstPlayerWinPoint($point = 1)
