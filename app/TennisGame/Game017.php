@@ -8,6 +8,9 @@ class Game017
 
     public function score()
     {
+        if ($this->firstPlayerPoint == 2) {
+            return 'Thirty-Love';
+        }
         if ($this->firstPlayerPoint == 1) {
             return 'Fifteen-Love';
         }
@@ -15,8 +18,10 @@ class Game017
         return 'Love-All';
     }
 
-    public function firstPlayerWinPoint()
+    public function firstPlayerWinPoint($point = 1)
     {
-        $this->firstPlayerPoint++;
+        for ($i = 0; $i < $point; $i++) {
+            $this->firstPlayerPoint++;
+        }
     }
 }
