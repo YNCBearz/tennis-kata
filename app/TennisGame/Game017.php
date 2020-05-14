@@ -16,19 +16,26 @@ class Game017
     ];
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint >= 3) {
-            return 'Deuce';
-        }
 
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
-            return $this->lookup[$this->firstPlayerPoint] . '-All';
+        if ($this->isSamePoint()) {
+            return $this->samePointScore();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
+    }
 
-        return 'Love-All';
+    private function samePointScore()
+    {
+        return ($this->firstPlayerPoint >= 3)
+            ? 'Deuce'
+            : $this->lookup[$this->firstPlayerPoint] . '-All';
+    }
+
+    private function isSamePoint()
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
     }
 
     public function secondPlayerWinPoint($point = 1)
