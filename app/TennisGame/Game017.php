@@ -16,7 +16,7 @@ class Game017
     ];
     public function score()
     {
-        if ($this->secondPlayerPoint == 1) {
+        if ($this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
@@ -29,9 +29,9 @@ class Game017
 
     public function secondPlayerWinPoint($point = 1)
     {
-        // for ($i = 0; $i < $point; $i++) {
-        $this->secondPlayerPoint++;
-        // }
+        for ($i = 0; $i < $point; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 
     public function firstPlayerWinPoint($point = 1)
