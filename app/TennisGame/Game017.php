@@ -19,12 +19,8 @@ class Game017
         if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint >= 3) {
             return 'Deuce';
         }
-        if ($this->secondPlayerPoint > 0) {
+        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
 
         return 'Love-All';
