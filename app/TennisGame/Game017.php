@@ -21,17 +21,20 @@ class Game017
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4) {
-            return 'FirstPlayer Adv';
-        }
-
-        if ($this->secondPlayerPoint >= 4) {
-            return 'SecondPlayer Adv';
+        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
+            return $this->advPlayer() . ' Adv';
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? 'FirstPlayer'
+            : 'SecondPlayer';
     }
 
     private function samePointScore()
