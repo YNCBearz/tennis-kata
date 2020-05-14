@@ -25,6 +25,10 @@ class Game017
             return 'FirstPlayer Adv';
         }
 
+        if ($this->secondPlayerPoint >= 4) {
+            return 'SecondPlayer Adv';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
