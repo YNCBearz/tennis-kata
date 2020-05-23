@@ -21,21 +21,33 @@ class Game017
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
-            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2) {
-                return 'FirstPlayer Win';
-            }
-
-            if ($this->secondPlayerPoint - $this->firstPlayerPoint >= 2) {
-                return 'SecondPlayer Win';
-            }
-
-            return $this->advPlayer() . ' Adv';
+        if ($this->isAdvState()) {
+            return $this->advScore();
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
+        return $this->normalScore();
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+    }
+
+    private function advScore()
+    {
+        return ($this->isGameSet())
+            ? $this->advPlayer() . ' Win'
+            : $this->advPlayer() . ' Adv';
+    }
+
+    private function isAdvState()
+    {
+        return ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4);
+    }
+
+    private function isGameSet()
+    {
+        return abs($this->secondPlayerPoint - $this->firstPlayerPoint) >= 2;
     }
 
     private function advPlayer()
