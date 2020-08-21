@@ -17,6 +17,14 @@ class Game019
     protected $secondPlayer;
 
     /**
+     * @var array
+     */
+    protected $lookup = [
+        1 => 'Fifteen',
+        2 => 'Thirty'
+    ];
+
+    /**
      * @param Player $firstPlayer
      * @param Player $secondPlayer
      */
@@ -26,17 +34,24 @@ class Game019
         $this->secondPlayer = $secondPlayer;
     }
 
+    /**
+     * @return string
+     */
     public function score()
     {
-        if ($this->getFirstPlayerPoint() == 1) {
-            return 'FifteenLove';
-        }
-
-        if ($this->getFirstPlayerPoint() == 2) {
-            return 'ThirtyLove';
+        if ($this->getFirstPlayerPoint() > 0) {
+            return $this->normalScore();
         }
 
         return 'LoveAll';
+    }
+
+    /**
+     * @return string
+     */
+    private function normalScore()
+    {
+        return $this->lookup[$this->getFirstPlayerPoint()] . 'Love';
     }
 
     private function getFirstPlayerPoint()
