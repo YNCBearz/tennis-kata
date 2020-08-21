@@ -21,4 +21,12 @@ class Game019Test extends TestCase
         $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testFifteenLove()
+    {
+        $expected = 'FifteenLove';
+        $this->sut->firstPlayerWinPoint();
+        $actual = $this->sut->score();
+        $this->assertEquals($expected, $actual);
+    }
 }
