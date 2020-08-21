@@ -41,11 +41,7 @@ class Game019
      */
     public function score()
     {
-        if ($this->getFirstPlayerPoint() > 0) {
-            return $this->normalScore();
-        }
-
-        if ($this->getSecondPlayerPoint() > 0) {
+        if ($this->getFirstPlayerPoint() > 0 || $this->getSecondPlayerPoint() > 0) {
             return $this->normalScore();
         }
 
