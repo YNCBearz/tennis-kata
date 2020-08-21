@@ -58,7 +58,7 @@ class Game019
      */
     private function samePointScore()
     {
-        return ($this->getFirstPlayerPoint() == 3)
+        return ($this->getFirstPlayerPoint() >= 3)
             ? $this->deuceScore()
             : $this->lookup[$this->getFirstPlayerPoint()] . 'All';
     }
