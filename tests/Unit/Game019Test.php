@@ -36,10 +36,16 @@ class Game019Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testLoveThrity()
+    {
+        $this->sut->secondPlayerWinPoint(2);
+        $this->scoreShouldBe('LoveThirty');
+    }
+
     public function testLoveFifteen()
     {
         $this->sut->secondPlayerWinPoint(1);
-        $this->scoreShouldBe('LoveFifteeen');
+        $this->scoreShouldBe('LoveFifteen');
     }
 
     public function testThirtyLove()
