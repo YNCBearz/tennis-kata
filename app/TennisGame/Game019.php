@@ -41,11 +41,23 @@ class Game019
      */
     public function score()
     {
+        if ($this->getFirstPlayerPoint() == $this->getSecondPlayerPoint()) {
+            return $this->samePointScore();
+        }
+
         if ($this->getFirstPlayerPoint() > 0 || $this->getSecondPlayerPoint() > 0) {
             return $this->normalScore();
         }
 
         return 'LoveAll';
+    }
+
+    /**
+     * @return string
+     */
+    private function samePointScore()
+    {
+        return $this->lookup[$this->getFirstPlayerPoint()] . 'All';
     }
 
     /**
