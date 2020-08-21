@@ -45,11 +45,7 @@ class Game019
             return $this->samePointScore();
         }
 
-        if ($this->getFirstPlayerPoint() > 0 || $this->getSecondPlayerPoint() > 0) {
-            return $this->normalScore();
-        }
-
-        return 'LoveAll';
+        return $this->normalScore();
     }
 
     /**
