@@ -45,14 +45,30 @@ class Game019
             return $this->samePointScore();
         }
 
-        if ($this->getFirstPlayerPoint() >= 4 || $this->getSecondPlayerPoint() >= 4) {
-            if ($this->getFirstPlayerPoint() - $this->getSecondPlayerPoint() >= 2) {
-                return $this->advPlayer() . ' Win';
-            }
-            return $this->advPlayer() . ' Adv';
+        if ($this->isGameSet()) {
+            return $this->advScore();
         }
 
         return $this->normalScore();
+    }
+
+    private function isGameSet()
+    {
+        return ($this->getFirstPlayerPoint() >= 4 || $this->getSecondPlayerPoint() >= 4);
+    }
+
+    private function advScore()
+    {
+        if ($this->getFirstPlayerPoint() - $this->getSecondPlayerPoint() >= 2) {
+            return $this->winScore();
+        }
+
+        return $this->advPlayer() . ' Adv';
+    }
+
+    private function winScore()
+    {
+        return $this->advPlayer() . ' Win';
     }
 
     private function advPlayer()
