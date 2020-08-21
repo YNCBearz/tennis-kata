@@ -31,6 +31,11 @@ class Game019
         if ($this->getFirstPlayerPoint() == 1) {
             return 'FifteenLove';
         }
+
+        if ($this->getFirstPlayerPoint() == 2) {
+            return 'ThirtyLove';
+        }
+
         return 'LoveAll';
     }
 
@@ -39,8 +44,13 @@ class Game019
         return $this->firstPlayer->getPoint();
     }
 
-    public function firstPlayerWinPoint()
+    /**
+     * @param int $point
+     */
+    public function firstPlayerWinPoint(int $point = 1)
     {
-        $this->firstPlayer->winPoint();
+        for ($i = 0; $i < $point; $i++) {
+            $this->firstPlayer->winPoint();
+        }
     }
 }
