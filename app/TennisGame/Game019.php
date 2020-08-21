@@ -46,6 +46,9 @@ class Game019
         }
 
         if ($this->getFirstPlayerPoint() >= 4 || $this->getSecondPlayerPoint() >= 4) {
+            if ($this->getFirstPlayerPoint() - $this->getSecondPlayerPoint() >= 2) {
+                return $this->advPlayer() . ' Win';
+            }
             return $this->advPlayer() . ' Adv';
         }
 
