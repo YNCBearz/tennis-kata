@@ -41,11 +41,16 @@ class Game019
      */
     public function score()
     {
-        if ($this->getFirstPlayerPoint() == $this->getSecondPlayerPoint()) {
+        if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
         return $this->normalScore();
+    }
+
+    private function isSamePoint()
+    {
+        return ($this->getFirstPlayerPoint() == $this->getSecondPlayerPoint());
     }
 
     /**
@@ -53,10 +58,17 @@ class Game019
      */
     private function samePointScore()
     {
-        if ($this->getFirstPlayerPoint() == 3) {
-            return 'Deuce';
-        }
-        return $this->lookup[$this->getFirstPlayerPoint()] . 'All';
+        return ($this->getFirstPlayerPoint() == 3)
+            ? $this->deuceScore()
+            : $this->lookup[$this->getFirstPlayerPoint()] . 'All';
+    }
+
+    /**
+     * @return string
+     */
+    private function deuceScore()
+    {
+        return 'Deuce';
     }
 
     /**
