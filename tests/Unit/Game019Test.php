@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use App\TennisGame\Game019;
+use App\TennisGame\Player;
 
 class Game019Test extends TestCase
 {
@@ -12,7 +13,10 @@ class Game019Test extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->sut = new Game019();
+
+        $firstPlayer = new Player('Bear');
+        $secondPlayer = new Player('Lin');
+        $this->sut = new Game019($firstPlayer, $secondPlayer);
     }
 
     public function testLoveAll()
