@@ -17,15 +17,17 @@ class Game019Test extends TestCase
 
     public function testLoveAll()
     {
-        $expected = 'LoveAll';
-        $actual = $this->sut->score();
-        $this->assertEquals($expected, $actual);
+        $this->scoreShouldBe('LoveAll');
     }
 
     public function testFifteenLove()
     {
-        $expected = 'FifteenLove';
         $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('FifteenLove');
+    }
+
+    private function scoreShouldBe($expected)
+    {
         $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }
