@@ -45,7 +45,16 @@ class Game019
             return $this->samePointScore();
         }
 
+        if ($this->getFirstPlayerPoint() >= 4) {
+            return $this->getFirstPlayerName() . ' Adv';
+        }
+
         return $this->normalScore();
+    }
+
+    private function getFirstPlayerName()
+    {
+        return $this->firstPlayer->getName();
     }
 
     private function isSamePoint()
