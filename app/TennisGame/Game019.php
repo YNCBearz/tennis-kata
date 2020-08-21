@@ -45,16 +45,30 @@ class Game019
             return $this->samePointScore();
         }
 
-        if ($this->getFirstPlayerPoint() >= 4) {
-            return $this->getFirstPlayerName() . ' Adv';
+        if ($this->getFirstPlayerPoint() >= 4 || $this->getSecondPlayerPoint() >= 4) {
+            return $this->advPlayer() . ' Adv';
         }
 
         return $this->normalScore();
     }
 
+    private function advPlayer()
+    {
+        if ($this->getFirstPlayerPoint() > $this->getSecondPlayerPoint()) {
+            return $this->getFirstPlayerName();
+        }
+
+        return $this->getSecondPlayerName();
+    }
+
     private function getFirstPlayerName()
     {
         return $this->firstPlayer->getName();
+    }
+
+    private function getSecondPlayerName()
+    {
+        return $this->secondPlayer->getName();
     }
 
     private function isSamePoint()
