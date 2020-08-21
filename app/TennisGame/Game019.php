@@ -44,6 +44,10 @@ class Game019
             return $this->normalScore();
         }
 
+        if ($this->getSecondPlayerPoint() > 0) {
+            return 'LoveFifteeen';
+        }
+
         return 'LoveAll';
     }
 
@@ -55,9 +59,24 @@ class Game019
         return $this->lookup[$this->getFirstPlayerPoint()] . 'Love';
     }
 
+    private function getSecondPlayerPoint()
+    {
+        return $this->secondPlayer->getPoint();
+    }
+
     private function getFirstPlayerPoint()
     {
         return $this->firstPlayer->getPoint();
+    }
+
+    /**
+     * @param int $point
+     */
+    public function secondPlayerWinPoint(int $point = 1)
+    {
+        // for ($i = 0; $i < $point; $i++) {
+        $this->secondPlayer->winPoint();
+        // }
     }
 
     /**
