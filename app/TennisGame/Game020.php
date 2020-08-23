@@ -42,21 +42,28 @@ class Game020
 
     public function score()
     {
-        if ($this->isAnyPlayerWin4Point()) {
-            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
-                return $this->advScore();
-            }
-
-            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2) {
-                return $this->advPlayer() . ' Win';
-            }
-        }
-
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
+        if ($this->isAnyPlayerWin4Point()) {
+            return ($this->isGameSet())
+                ? $this->winScore()
+                : $this->advScore();
+        }
+
+
         return $this->normalScore();
+    }
+
+    private function isGameSet()
+    {
+        return ($this->isAnyPlayerWin4Point() && abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2);
+    }
+
+    private function winScore()
+    {
+        return $this->advPlayer() . ' Win';
     }
 
     private function advScore()
