@@ -27,14 +27,19 @@ class Game020
     public function score()
     {
         if ($this->isSamePoint()) {
-            return ($this->firstPlayerPoint >= 3)
-                ? $this->deuceScore()
-                : $this->samePointScoreUnder3Point();
+            return $this->samePointScore();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
+    }
+
+    private function samePointScore()
+    {
+        return ($this->firstPlayerPoint >= 3)
+            ? $this->deuceScore()
+            : $this->samePointScoreUnder3Point();
     }
 
     private function deuceScore()
