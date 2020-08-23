@@ -42,7 +42,7 @@ class Game020
 
     public function score()
     {
-        if ($this->firstPlayerPoint == 4) {
+        if ($this->firstPlayerPoint >= 4 && ($this->firstPlayerPoint - $this->secondPlayerPoint == 1)) {
             return $this->firstPlayerName . ' Adv';
         }
 

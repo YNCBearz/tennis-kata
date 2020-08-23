@@ -86,6 +86,7 @@ class Game020Test extends TestCase
         $this->scoreShouldBe('FifteenAll');
     }
 
+
     public function testFirstPlayerAdv()
     {
         $this->sut->firstPlayerWinPoint(4);
