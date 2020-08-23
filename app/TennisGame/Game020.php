@@ -46,6 +46,10 @@ class Game020
             return $this->firstPlayerName . ' Adv';
         }
 
+        if ($this->secondPlayerPoint >= 4 && ($this->secondPlayerPoint - $this->firstPlayerPoint == 1)) {
+            return $this->secondPlayerName . ' Adv';
+        }
+
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
