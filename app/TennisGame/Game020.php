@@ -10,6 +10,11 @@ class Game020
     protected $firstPlayerPoint = 0;
 
     /**
+     * @var int
+     */
+    protected $secondPlayerPoint = 0;
+
+    /**
      * @var array
      */
     protected $lookup = [
@@ -23,7 +28,19 @@ class Game020
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . 'Love';
         }
+
+        if ($this->secondPlayerPoint > 0) {
+            return 'LoveFifteen';
+        }
         return 'LoveAll';
+    }
+
+    /**
+     * @var int $point
+     */
+    public function secondPlayerWinPoint()
+    {
+        $this->secondPlayerPoint++;
     }
 
     /**
