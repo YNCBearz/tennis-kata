@@ -55,6 +55,12 @@
 ### ci" : change something inside double quotes
 ### cc : change entire line
 --------------------------------
+### r : 取代單個字
+--------------------------------
+### (number) + dd : 刪除下面 (number) 行
+--------------------------------
+### { : 往前跳一個 paragraph
+### } : 往後跳一個 paragraph
 
 ## **[Insert Mode]**
 
