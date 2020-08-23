@@ -9,13 +9,18 @@ class Game020
      */
     protected $firstPlayerPoint = 0;
 
+    /**
+     * @var array
+     */
+    protected $lookup = [
+        1 => 'Fifteen',
+        2 => 'Thirty'
+    ];
+
     public function score()
     {
         if ($this->firstPlayerPoint > 0) {
-            if ($this->firstPlayerPoint == 2) {
-                return 'ThirtyLove';
-            }
-            return 'FifteenLove';
+            return $this->lookup[$this->firstPlayerPoint] . 'Love';
         }
         return 'LoveAll';
     }
