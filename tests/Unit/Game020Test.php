@@ -12,7 +12,7 @@ class Game020Test extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->sut = new Game020();
+        $this->sut = new Game020('Bear', 'Lin');
     }
 
     public function testLoveAll()
@@ -84,5 +84,12 @@ class Game020Test extends TestCase
         $this->sut->firstPlayerWinPoint();
         $this->sut->secondPlayerWinPoint();
         $this->scoreShouldBe('FifteenAll');
+    }
+
+    public function testFirstPlayerAdv()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Adv');
     }
 }

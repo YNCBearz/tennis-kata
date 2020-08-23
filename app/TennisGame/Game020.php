@@ -24,8 +24,28 @@ class Game020
         3 => 'Forty'
     ];
 
+    /**
+     * @var string
+     */
+    protected $firstPlayerName;
+
+    /**
+     * @var string
+     */
+    protected $secondPlayerName;
+
+    public function __construct($firstPlayerName, $secondPlayerName)
+    {
+        $this->firstPlayerName = $firstPlayerName;
+        $this->secondPlayerName = $secondPlayerName;
+    }
+
     public function score()
     {
+        if ($this->firstPlayerPoint == 4) {
+            return $this->firstPlayerName . ' Adv';
+        }
+
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
