@@ -42,21 +42,36 @@ class Game020
 
     public function score()
     {
-        if ($this->firstPlayerPoint >= 4 && ($this->firstPlayerPoint - $this->secondPlayerPoint == 1)) {
-            return $this->firstPlayerName . ' Adv';
-        }
-
-        if ($this->secondPlayerPoint >= 4 && ($this->secondPlayerPoint - $this->firstPlayerPoint == 1)) {
-            return $this->secondPlayerName . ' Adv';
+        if ($this->isAnyPlayerWin4Point()) {
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
+                return $this->advScore();
+            }
         }
 
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->normalScore();
+        return $this->normalScore();
+    }
+
+    private function advScore()
+    {
+        return $this->advPlayer() . ' Adv';
+    }
+
+    private function advPlayer()
+    {
+        if ($this->firstPlayerPoint > $this->secondPlayerPoint) {
+            return $this->firstPlayerName;
         }
+
+        return $this->secondPlayerName;
+    }
+
+    private function isAnyPlayerWin4Point()
+    {
+        return ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4);
     }
 
     private function samePointScore()
