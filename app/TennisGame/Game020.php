@@ -30,6 +30,10 @@ class Game020
             return 'FifteenAll';
         }
 
+        if ($this->firstPlayerPoint == 2 && $this->secondPlayerPoint == 2) {
+            return 'ThirtyAll';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
