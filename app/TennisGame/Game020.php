@@ -12,13 +12,21 @@ class Game020
     public function score()
     {
         if ($this->firstPlayerPoint > 0) {
+            if ($this->firstPlayerPoint == 2) {
+                return 'ThirtyLove';
+            }
             return 'FifteenLove';
         }
         return 'LoveAll';
     }
 
-    public function firstPlayerWinPoint()
+    /**
+     * @var int $point
+     */
+    public function firstPlayerWinPoint($point = 1)
     {
-        $this->firstPlayerPoint++;
+        for ($i = 0; $i < $point; $i++) {
+            $this->firstPlayerPoint++;
+        }
     }
 }
