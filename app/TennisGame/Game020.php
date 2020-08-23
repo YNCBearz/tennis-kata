@@ -47,8 +47,8 @@ class Game020
                 return $this->advScore();
             }
 
-            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2) {
-                return $this->firstPlayerName . ' Win';
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2) {
+                return $this->advPlayer() . ' Win';
             }
         }
 
