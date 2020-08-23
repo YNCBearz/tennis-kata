@@ -27,10 +27,9 @@ class Game020
     public function score()
     {
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint >= 3) {
-                return 'Deuce';
-            }
-            return $this->samePointScoreUnder3Point();
+            return ($this->firstPlayerPoint >= 3)
+                ? $this->deuceScore()
+                : $this->samePointScoreUnder3Point();
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
@@ -38,6 +37,10 @@ class Game020
         }
     }
 
+    private function deuceScore()
+    {
+        return 'Deuce';
+    }
     private function samePointScoreUnder3Point()
     {
         return $this->lookup[$this->firstPlayerPoint] . 'All';
