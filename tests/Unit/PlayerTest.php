@@ -12,7 +12,7 @@ class PlayerTest extends TestCase
      */
     protected $sut;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->sut = new Player('test');
