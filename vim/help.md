@@ -64,6 +64,11 @@
 --------------------------------
 ### gc : 註解 (ex. gcc, gc2j )
 ### gC : 註解 (ex. gCi} )
+--------------------------------
+### dt(+character) : 刪除到 (character) 前的字
+### df(+character) : 刪除到 (character) 的字
+--------------------------------
+### . : repeat last command
 
 ## **[Insert Mode]**
 
