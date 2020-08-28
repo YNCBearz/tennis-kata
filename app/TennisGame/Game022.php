@@ -8,6 +8,10 @@ class Game022
 
     protected $secondPlayerPoint = 0;
 
+    protected $firstPlayer;
+
+    protected $secondPlayer;
+
     protected $lookup = [
         0 => 'Love',
         1 => 'Fifteen',
@@ -15,10 +19,19 @@ class Game022
         3 => 'Forty'
     ];
 
+    public function __construct($firstPlayer, $secondPlayer)
+    {
+        $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
+    }
     public function score()
     {
         if ($this->isSamePoint()) {
             return $this->samePointScore();
+        }
+
+        if ($this->firstPlayerPoint >= 4) {
+            return $this->firstPlayer . ' Adv';
         }
 
         return $this->normalScore();
