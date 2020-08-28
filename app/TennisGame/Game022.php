@@ -17,19 +17,7 @@ class Game022
 
     public function score()
     {
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        if ($this->secondPlayerPoint == 3) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        if ($this->secondPlayerPoint == 2) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        if ($this->secondPlayerPoint == 1) {
+        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
