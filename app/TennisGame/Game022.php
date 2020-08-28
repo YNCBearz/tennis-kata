@@ -30,15 +30,18 @@ class Game022
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4) {
-            return $this->firstPlayer . ' Adv';
-        }
-
-        if ($this->secondPlayerPoint >= 4) {
-            return $this->secondPlayer . ' Adv';
+        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
+            return $this->advPlayer() . ' Adv';
         }
 
         return $this->normalScore();
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
     }
 
     private function samePointScore()
