@@ -41,7 +41,7 @@ class Game022
 
     private function isGameSet()
     {
-        return $this->isAnyPlayerGet4Point() && $this->firstPlayerPoint - $this->secondPlayerPoint >= 2;
+        return $this->isAnyPlayerGet4Point() && (abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2);
     }
 
     private function isAnyPlayerGet4Point()
