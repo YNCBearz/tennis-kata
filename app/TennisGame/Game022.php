@@ -21,6 +21,14 @@ class Game022
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
 
+        if ($this->secondPlayerPoint == 3) {
+            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+        }
+
+        if ($this->secondPlayerPoint == 2) {
+            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+        }
+
         if ($this->secondPlayerPoint == 1) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
@@ -30,9 +38,9 @@ class Game022
 
     public function secondPlayerWinPoint($point = 1)
     {
-        // for ($i = 0; $i < $point; $i++) {
-        $this->secondPlayerPoint++;
-        // }
+        for ($i = 0; $i < $point; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 
     public function firstPlayerWinPoint($point = 1)
