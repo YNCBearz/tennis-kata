@@ -26,7 +26,7 @@ class Game022
 
     private function samePointScore()
     {
-        return ($this->firstPlayerPoint == 3)
+        return ($this->firstPlayerPoint >= 3)
             ? 'Deuce'
             : $this->lookup[$this->firstPlayerPoint] . '-All';
     }
