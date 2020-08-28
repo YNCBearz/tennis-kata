@@ -8,6 +8,10 @@ class Game022
 
     public function score()
     {
+        if ($this->firstPlayerPoint == 3) {
+            return 'Forty-Love';
+        }
+
         if ($this->firstPlayerPoint == 2) {
             return 'Thirty-Love';
         }
