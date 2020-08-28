@@ -12,6 +12,13 @@ class Game022Test extends TestCase
         $this->sut = new Game022();
     }
 
+    public function testThirtyAll()
+    {
+        $this->sut->firstPlayerWinPoint(2);
+        $this->sut->secondPlayerWinPoint(2);
+        $this->scoreShouldBe('Thirty-All');
+    }
+
     public function testFifteenAll()
     {
         $this->sut->firstPlayerWinPoint();
