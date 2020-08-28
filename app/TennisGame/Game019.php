@@ -2,17 +2,17 @@
 
 namespace App\TennisGame;
 
-use App\TennisGame\Player;
+use App\TennisGame\Player019;
 
 class Game019
 {
     /**
-     * @var Player
+     * @var Player019
      */
     protected $firstPlayer;
 
     /**
-     * @var Player
+     * @var Player019
      */
     protected $secondPlayer;
 
@@ -27,10 +27,10 @@ class Game019
     ];
 
     /**
-     * @param Player $firstPlayer
-     * @param Player $secondPlayer
+     * @param Player019 $firstPlayer
+     * @param Player019 $secondPlayer
      */
-    public function __construct(Player $firstPlayer, Player $secondPlayer)
+    public function __construct(Player019 $firstPlayer, Player019 $secondPlayer)
     {
         $this->firstPlayer = $firstPlayer;
         $this->secondPlayer = $secondPlayer;

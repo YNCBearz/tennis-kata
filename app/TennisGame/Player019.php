@@ -2,7 +2,7 @@
 
 namespace App\TennisGame;
 
-class Player
+class Player019
 {
     /**
      * @var string

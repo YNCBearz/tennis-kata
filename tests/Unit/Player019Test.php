@@ -3,19 +3,19 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use App\TennisGame\Player;
+use App\TennisGame\Player019;
 
-class PlayerTest extends TestCase
+class Player019Test extends TestCase
 {
     /**
-     * @var Player
+     * @var Player019
      */
     protected $sut;
 
     protected function setUp(): void
     {
         parent::setUp();
-        $this->sut = new Player('test');
+        $this->sut = new Player019('test');
     }
 
     public function testGetName()
