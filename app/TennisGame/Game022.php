@@ -34,6 +34,10 @@ class Game022
             return $this->firstPlayer . ' Adv';
         }
 
+        if ($this->secondPlayerPoint >= 4) {
+            return $this->secondPlayer . ' Adv';
+        }
+
         return $this->normalScore();
     }
 
