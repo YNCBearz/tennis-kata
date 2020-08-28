@@ -8,8 +8,10 @@
 ### ^ : 跳到該行第一個非空白字元
 ### $ : 跳到行尾
 --------------------------------
-### w / W : 往後跳到最近 字的開頭 (忽略標點)
+### w / W : 往後跳到最近 字的開頭
 ### b : 往前跳到最近 字的開頭
+### e : 往後跳到最近 字的結尾
+### ge : 往前跳到最近 字的結尾
 ### f + [該行要跳轉的字首] : 跳轉到該字
 --------------------------------
 ### gg : 跳到頁首
@@ -74,7 +76,6 @@
 
 ### ctrl + n : autocomplete next
 ### ctrl + p : autocomplete previous
-
 --------------------------------
 ### ctrl + h : delete the last character you typed
 ### ctrl + w : delete the last word you typed
