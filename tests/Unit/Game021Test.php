@@ -9,7 +9,7 @@ class Game021Test extends TestCase
 {
     protected $sut;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->sut = new Game021();
     }
