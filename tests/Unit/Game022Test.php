@@ -13,6 +13,14 @@ class Game022Test extends TestCase
     }
 
 
+    public function testFifteenLove()
+    {
+        $expected = 'Fifteen-Love';
+        $this->sut->firstPlayerWinPoint();
+        $actual = $this->sut->score();
+        $this->assertEquals($expected, $actual);
+    }
+
     public function testLoveAll()
     {
         $expected = 'Love-All';
