@@ -74,7 +74,22 @@
 ### df(+character) : 刪除到 (character) 的字
 --------------------------------
 ### . : repeat last command
+--------------------------------
+## **[vim-surround]**
 
+### ys w { : 到下一個字的周圍加上 {
+### yS w { : 到下一個字的周圍加上 {，並新增一行
+### yss ( : 對整行的周圍加上 (
+### ySS ( : 對整行的周圍加上 (，並新增一行
+--------------------------------
+## **[easy motion]**
+
+### <leader><leader> w/b : 向前/向後到可見範圍字的開頭
+### <leader><leader> e/ge : 向前/向後到可見範圍字的結尾
+### <leader><leader> t/T : 向前/向後到可見範圍的字符(<char>)位置
+### <leader><leader> k/j : 向前/向後到可見範圍任何行的行首
+--------------------------------
+--------------------------------
 ## **[Insert Mode]**
 
 ### ctrl + n : autocomplete next
@@ -83,6 +98,7 @@
 ### ctrl + h : delete the last character you typed
 ### ctrl + w : delete the last word you typed
 ### ctrl + u : delete the last line you typed
+--------------------------------
 --------------------------------
 ## **[Visual Mode]**
 
@@ -94,10 +110,7 @@
 ### yy : 複製當前行
 ### yap : 複製段落 (method)
 --------------------------------
-## **[easy motion]**
+## **[vim-surround]**
 
-### <leader><leader> w/b : 向前/向後到可見範圍字的開頭
-### <leader><leader> e/ge : 向前/向後到可見範圍字的結尾
-### <leader><leader> t/T : 向前/向後到可見範圍的字符(<char>)位置
-### <leader><leader> k/j : 向前/向後到可見範圍任何行的行首
---------------------------------
+### S { : 已選字的周圍加上 {
+### gS { : 已選字的周圍加上 {，並新增一行
