@@ -19,6 +19,7 @@
 --------------------------------
 ### gg : 跳到頁首
 ### G : 跳到頁尾
+### {line}gg : 跳到指定行
 --------------------------------
 ### Esc / Ctrl + [ : enter Normal Mode
 --------------------------------
@@ -98,7 +99,6 @@
 ### ctrl + n : autocomplete next
 ### ctrl + p : autocomplete previous
 --------------------------------
-### ctrl + h : delete the last character you typed
 ### ctrl + w : delete the last word you typed
 ### ctrl + u : delete the last line you typed
 --------------------------------
