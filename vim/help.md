@@ -75,6 +75,7 @@
 ### dt(+character) : 刪除到 (character) 前的字
 ### df(+character) : 刪除到 (character) 的字
 --------------------------------
+### ; : repeat last find(f) command
 ### . : repeat last command
 --------------------------------
 ## **[vim-surround]**
