@@ -21,6 +21,7 @@
 ### G : 跳到頁尾
 ### H : 移到目前螢幕的最上方
 ### L : 移到目前螢幕的最下方
+### {line}gg : 跳到指定行
 --------------------------------
 ### Esc / Ctrl + [ : enter Normal Mode
 --------------------------------
@@ -38,7 +39,7 @@
 ### {number} + gt: 第{number}個分頁
 --------------------------------
 ### X : delete
-### x : backspace
+### x : backspace 刪除游標所在處的字元
 --------------------------------
 ### dd : 刪除行
 ### D : 刪除至行尾
@@ -76,6 +77,7 @@
 ### dt(+character) : 刪除到 (character) 前的字
 ### df(+character) : 刪除到 (character) 的字
 --------------------------------
+### ; : repeat last find(f) command
 ### . : repeat last command
 --------------------------------
 ## **[vim-surround]**
@@ -102,7 +104,6 @@
 ### ctrl + n : autocomplete next
 ### ctrl + p : autocomplete previous
 --------------------------------
-### ctrl + h : delete the last character you typed
 ### ctrl + w : delete the last word you typed
 ### ctrl + u : delete the last line you typed
 --------------------------------
@@ -129,6 +130,8 @@
 
 ### :sp {nameoffile} : 往下分割視窗
 ### :vsp {nameoffile} : 往右分割視窗
+
+### :6,10s/foo/bar/g : 取代6~10行的foo成bar
 --------------------------------
 --------------------------------
 ## **[Search Mode]**
