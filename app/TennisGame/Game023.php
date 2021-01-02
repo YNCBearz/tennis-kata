@@ -28,8 +28,12 @@ class Game023
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint == 4) {
+        if ($this->firstPlayerPoint >= 4) {
             return $this->firstPlayer . ' Adv';
+        }
+
+        if ($this->secondPlayerPoint >= 4) {
+            return 'Lin Adv';
         }
 
         return $this->normalScore();
