@@ -11,7 +11,7 @@ class Game023Test extends TestCase
 
     protected function setUp(): void
     {
-        $this->sut = new Game023('Bear');
+        $this->sut = new Game023('Bear', 'Lin');
     }
 
     public function testLoveAll()
