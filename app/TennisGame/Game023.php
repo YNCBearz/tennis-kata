@@ -6,6 +6,8 @@ class Game023
 {
     protected $firstPlayerPoint = 0;
 
+    protected $secondPlayerPoint = 0;
+
     protected $lookup = [
         1 => 'Fifteen',
         2 => 'Thirty',
@@ -14,6 +16,10 @@ class Game023
 
     public function score()
     {
+        if ($this->secondPlayerPoint == 1) {
+            return 'Love-Fifteen';
+        }
+
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-Love';
         }
@@ -26,5 +32,10 @@ class Game023
         for ($i = 0; $i < $times; $i++) {
             $this->firstPlayerPoint++;
         }
+    }
+
+    public function secondPlayerWinPoint()
+    {
+        $this->secondPlayerPoint++;
     }
 }
