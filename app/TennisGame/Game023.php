@@ -33,7 +33,7 @@ class Game023
 
         if ($this->isAnyPlayerGet4Point()) {
             return ($this->isPointDiffOver2())
-                ? $this->winScore()
+                ? $this->gameSetScore()
                 : $this->advScore();
         }
 
@@ -88,7 +88,7 @@ class Game023
         return abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2;
     }
 
-    private function winScore()
+    private function gameSetScore()
     {
         return $this->advPlayer() . ' Win';
     }
