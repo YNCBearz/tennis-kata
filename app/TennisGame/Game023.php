@@ -32,11 +32,9 @@ class Game023
         }
 
         if ($this->isAnyPlayerGet4Point()) {
-            if ($this->isPointDiffOver2()) {
-                return $this->winScore();
-            }
-
-            return $this->advScore();
+            return ($this->isPointDiffOver2())
+                ? $this->winScore()
+                : $this->advScore();
         }
 
         return $this->normalScore();
