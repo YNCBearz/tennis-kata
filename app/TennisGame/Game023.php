@@ -15,6 +15,13 @@ class Game023
         3 => 'Forty'
     ];
 
+    protected $firstPlayer;
+
+    public function __construct($firstPlayer)
+    {
+        $this->firstPlayer = $firstPlayer;
+    }
+
     public function score()
     {
         if ($this->isSamePoint()) {
@@ -22,7 +29,7 @@ class Game023
         }
 
         if ($this->firstPlayerPoint == 4) {
-            return 'Bear Adv';
+            return $this->firstPlayer . ' Adv';
         }
 
         return $this->normalScore();
