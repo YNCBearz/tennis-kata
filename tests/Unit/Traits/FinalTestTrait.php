@@ -54,7 +54,15 @@ trait FinalTestTrait
      */
     public function testScore($firstPlayerPoint, $secondPlayerPoint, $expected)
     {
-        $actual = $this->sut->score($firstPlayerPoint, $secondPlayerPoint);
+        if ($firstPlayerPoint > 0) {
+            $this->sut->firstPlayerWinPoint($firstPlayerPoint);
+        }
+
+        if ($secondPlayerPoint > 0) {
+            $this->sut->secondPlayerWinPoint($secondPlayerPoint);
+        }
+
+        $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }
 }
