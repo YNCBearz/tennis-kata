@@ -32,9 +32,7 @@ class Game023
         }
 
         if ($this->isAnyPlayerGet4Point()) {
-
-
-            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2 || $this->secondPlayerPoint - $this->firstPlayerPoint >= 2) {
+            if ($this->isPointDiffOver2()) {
                 return $this->advPlayer() . ' Win';
             }
 
@@ -85,5 +83,10 @@ class Game023
     private function isAnyPlayerGet4Point()
     {
         return $this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4;
+    }
+
+    private function isPointDiffOver2()
+    {
+        return abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2;
     }
 }
