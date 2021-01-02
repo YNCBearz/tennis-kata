@@ -21,6 +21,10 @@ class Game023
             return $this->samePointScore();
         }
 
+        if ($this->firstPlayerPoint == 4) {
+            return 'Bear Adv';
+        }
+
         return $this->normalScore();
     }
 
