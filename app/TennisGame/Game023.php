@@ -19,10 +19,7 @@ class Game023
     {
 
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint >= 3) {
-                return 'Deuce';
-            }
-            return $this->lookup[$this->firstPlayerPoint] . '-All';
+            return $this->samePointScore();
         }
 
         if ($this->secondPlayerPoint > 0) {
@@ -51,5 +48,12 @@ class Game023
     private function isSamePoint()
     {
         return $this->firstPlayerPoint == $this->secondPlayerPoint;
+    }
+
+    private function samePointScore()
+    {
+        return ($this->firstPlayerPoint >= 3)
+            ? 'Deuce'
+            : $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 }
