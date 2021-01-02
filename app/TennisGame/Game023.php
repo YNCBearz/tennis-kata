@@ -17,18 +17,11 @@ class Game023
 
     public function score()
     {
-
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
-        if ($this->secondPlayerPoint > 0) {
-            return 'Love-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-Love';
-        }
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint($times = 1)
@@ -55,5 +48,10 @@ class Game023
         return ($this->firstPlayerPoint >= 3)
             ? 'Deuce'
             : $this->lookup[$this->firstPlayerPoint] . '-All';
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 }
