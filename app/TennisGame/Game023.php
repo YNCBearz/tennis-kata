@@ -32,6 +32,9 @@ class Game023
         }
 
         if ($this->isAnyPlayerGet4Point()) {
+            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2) {
+                return $this->firstPlayer . ' Win';
+            }
             return $this->advPlayer() . ' Adv';
         }
 
