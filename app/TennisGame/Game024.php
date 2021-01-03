@@ -31,13 +31,10 @@ class Game024
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
-            return $this->firstPlayer . ' Adv';
+        if ($this->isAnyPlayerWin4Point() && $this->pointDiff() == 1) {
+            return $this->advPlayer() . ' Adv';
         }
 
-        if ($this->secondPlayerPoint >= 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 1) {
-            return $this->secondPlayer . ' Adv';
-        }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
@@ -68,5 +65,23 @@ class Game024
         return ($this->firstPlayerPoint >= 3)
             ? 'Deuce'
             : $this->lookup[$this->firstPlayerPoint] . '-All';
+    }
+
+    private function isAnyPlayerWin4Point()
+    {
+        return $this->firstPlayerPoint >= 4
+            || $this->secondPlayerPoint >= 4;
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
+    }
+
+    private function pointDiff()
+    {
+        return abs($this->firstPlayerPoint - $this->secondPlayerPoint);
     }
 }
