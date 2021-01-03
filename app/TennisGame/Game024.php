@@ -21,6 +21,10 @@ class Game024
             return $this->samePointScore();
         }
 
+        if ($this->firstPlayerPoint >= 4 && $this->firstPlayerPoint - $this->secondPlayerPoint == 1) {
+            return 'Bear Adv';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
