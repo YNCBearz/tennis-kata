@@ -18,7 +18,7 @@ class Game024
     public function score()
     {
         if (
-            $this->firstPlayerPoint == $this->secondPlayerPoint
+            $this->isSamePoint()
             && $this->firstPlayerPoint == 1
         ) {
             return 'Fifteen-All';
@@ -43,5 +43,10 @@ class Game024
         for ($i = 0; $i < $times; $i++) {
             $this->secondPlayerPoint++;
         }
+    }
+
+    private function isSamePoint()
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
     }
 }
