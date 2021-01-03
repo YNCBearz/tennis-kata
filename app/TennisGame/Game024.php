@@ -31,8 +31,12 @@ class Game024
             return $this->samePointScore();
         }
 
-        if ($this->isAnyPlayerWin4Point() && $this->pointDiff() == 1) {
-            return $this->advPlayer() . ' Adv';
+        if ($this->isAnyPlayerWin4Point()) {
+            if ($this->pointDiff() == 1) {
+                return $this->advPlayer() . ' Adv';
+            }
+
+            return $this->firstPlayer . ' Win';
         }
 
 
