@@ -28,6 +28,10 @@ class Game024
             return 'Love-Thirty';
         }
 
+        if ($this->secondPlayerPoint == 3) {
+            return 'Love-Forty';
+        }
+
         return 'Love-All';
     }
 
