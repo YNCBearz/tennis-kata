@@ -32,6 +32,11 @@ class Game024
             return $this->firstPlayer . ' Adv';
         }
 
+        if ($this->secondPlayerPoint >= 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 1) {
+            // return $this->firstPlayer . ' Adv';
+            return 'Lin Adv';
+        }
+
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
         }
