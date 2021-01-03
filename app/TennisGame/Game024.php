@@ -19,9 +19,15 @@ class Game024
     {
         if (
             $this->isSamePoint()
-            && $this->firstPlayerPoint == 1
         ) {
-            return 'Fifteen-All';
+            switch ($this->firstPlayerPoint) {
+                case 1:
+                    return 'Fifteen-All';
+                    break;
+                case 2:
+                    return 'Thirty-All';
+                    break;
+            }
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
