@@ -17,9 +17,12 @@ class Game024
 
     protected $firstPlayer;
 
-    public function __construct($firstPlayer)
+    protected $secondPlayer;
+
+    public function __construct($firstPlayer, $secondPlayer)
     {
         $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
     }
 
     public function score()
@@ -33,8 +36,7 @@ class Game024
         }
 
         if ($this->secondPlayerPoint >= 4 && $this->secondPlayerPoint - $this->firstPlayerPoint == 1) {
-            // return $this->firstPlayer . ' Adv';
-            return 'Lin Adv';
+            return $this->secondPlayer . ' Adv';
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
