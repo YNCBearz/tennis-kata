@@ -36,7 +36,7 @@ class Game024
                 return $this->advPlayer() . ' Adv';
             }
 
-            return $this->firstPlayer . ' Win';
+            return $this->advPlayer() . ' Win';
         }
 
 
