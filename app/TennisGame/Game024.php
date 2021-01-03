@@ -32,17 +32,12 @@ class Game024
         }
 
         if ($this->isAnyPlayerWin4Point()) {
-            if ($this->pointDiff() == 1) {
-                return $this->advPlayer() . ' Adv';
-            }
-
-            return $this->advPlayer() . ' Win';
+            return ($this->pointDiff() == 1)
+                ? $this->advPlayer() . ' Adv'
+                : $this->advPlayer() . ' Win';
         }
 
-
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint($times = 1)
@@ -87,5 +82,10 @@ class Game024
     private function pointDiff()
     {
         return abs($this->firstPlayerPoint - $this->secondPlayerPoint);
+    }
+
+    private function normalScore()
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 }
