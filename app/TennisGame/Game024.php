@@ -8,14 +8,20 @@ class Game024
 
     public function score()
     {
+        if ($this->firstPlayerPoint == 2) {
+            return 'Thirty-Love';
+        }
+
         if ($this->firstPlayerPoint == 1) {
             return 'Fifteen-Love';
         }
         return 'Love-All';
     }
 
-    public function firstPlayerWinPoint()
+    public function firstPlayerWinPoint($times = 1)
     {
-        $this->firstPlayerPoint++;
+        for ($i = 0; $i < $times; $i++) {
+            $this->firstPlayerPoint++;
+        }
     }
 }

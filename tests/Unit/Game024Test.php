@@ -30,4 +30,10 @@ class Game024Test extends TestCase
         $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }
+
+    public function testThirtyLove()
+    {
+        $this->sut->firstPlayerWinPoint(2);
+        $this->scoreShouldBe('Thirty-Love');
+    }
 }
