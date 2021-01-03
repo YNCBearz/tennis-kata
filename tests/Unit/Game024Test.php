@@ -74,4 +74,18 @@ class Game024Test extends TestCase
         $this->sut->secondPlayerWinPoint(2);
         $this->scoreShouldBe('Thirty-All');
     }
+
+    public function testDeuceWhen3v3()
+    {
+        $this->sut->firstPlayerWinPoint(3);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Deuce');
+    }
+
+    public function testDeuceWhen4v4()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Deuce');
+    }
 }

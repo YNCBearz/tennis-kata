@@ -18,6 +18,9 @@ class Game024
     public function score()
     {
         if ($this->isSamePoint()) {
+            if ($this->firstPlayerPoint >= 3) {
+                return 'Deuce';
+            }
             return $this->lookup[$this->firstPlayerPoint] . '-All';
         }
 
