@@ -32,9 +32,7 @@ class Game024
         }
 
         if ($this->isAnyPlayerWin4Point()) {
-            return ($this->pointDiff() == 1)
-                ? $this->advPlayer() . ' Adv'
-                : $this->advPlayer() . ' Win';
+            return $this->afterDeuceScore();
         }
 
         return $this->normalScore();
@@ -87,5 +85,12 @@ class Game024
     private function normalScore()
     {
         return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+    }
+
+    private function afterDeuceScore()
+    {
+        return ($this->pointDiff() == 1)
+            ? $this->advPlayer() . ' Adv'
+            : $this->advPlayer() . ' Win';
     }
 }
