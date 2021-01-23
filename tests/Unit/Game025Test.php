@@ -39,4 +39,36 @@ class Game025Test extends TestCase
         $this->sut->firstPlayerWinPoint(2);
         $this->scoreShouldBe('Thirty-Love');
     }
+
+    public function testFortyLove()
+    {
+        $this->sut->firstPlayerWinPoint(3);
+        $this->scoreShouldBe('Forty-Love');
+    }
+
+    public function testLoveFifteen()
+    {
+        $this->sut->secondPlayerWinPoint();
+        $this->scoreShouldBe('Love-Fifteen');
+    }
+
+    public function testLoveThirty()
+    {
+        $this->sut->secondPlayerWinPoint(2);
+        $this->scoreShouldBe('Love-Thirty');
+    }
+
+    public function testFifteenAll()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->sut->secondPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen-All');
+    }
+
+    public function testDeuceWhen3v3()
+    {
+        $this->sut->firstPlayerWinPoint(3);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Deuce');
+    }
 }
