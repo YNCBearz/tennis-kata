@@ -14,7 +14,7 @@ class Game025Test extends TestCase
 
     protected function setUp(): void
     {
-        $this->sut = new Game025();
+        $this->sut = new Game025('Bear', 'Lin');
     }
 
     public function testLoveAll()
@@ -70,5 +70,54 @@ class Game025Test extends TestCase
         $this->sut->firstPlayerWinPoint(3);
         $this->sut->secondPlayerWinPoint(3);
         $this->scoreShouldBe('Deuce');
+    }
+
+    public function testDeuceWhen4v4()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Deuce');
+    }
+
+    public function testFirstPlayerAdv()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Adv');
+    }
+
+    public function testFirstPlayerAdvWhen5v4()
+    {
+        $this->sut->firstPlayerWinPoint(5);
+        $this->sut->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Bear Adv');
+    }
+
+    public function testSecondPlayerAdv()
+    {
+        $this->sut->firstPlayerWinPoint(3);
+        $this->sut->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Lin Adv');
+    }
+
+    public function testSecondPlayerAdvWhen4v5()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(5);
+        $this->scoreShouldBe('Lin Adv');
+    }
+
+    public function testFirstPlayerWin()
+    {
+        $this->sut->firstPlayerWinPoint(5);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Win');
+    }
+
+    public function testSecondPlayerWin()
+    {
+        $this->sut->firstPlayerWinPoint(2);
+        $this->sut->secondPlayerWinPoint(4);
+        $this->scoreShouldBe('Lin Win');
     }
 }
