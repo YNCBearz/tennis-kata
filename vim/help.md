@@ -116,6 +116,8 @@
 ### yap : 複製段落 (method)
 
 ### cmd + d gb : 選取多個相同字
+### U : uppercase
+### u : lowercase
 --------------------------------
 ## **[vim-surround]**
 
