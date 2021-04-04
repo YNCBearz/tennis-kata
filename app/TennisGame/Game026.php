@@ -38,6 +38,10 @@ class Game026
             return $this->advPlayer().' Win';
         }
 
+        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+            return $this->samePointScore();
+        }
+
         if ($this->firstPlayerPoint != $this->secondPlayerPoint) {
             if ($this->firstPlayerPoint >= 4) {
                 return $this->firstPlayer.' Adv';
@@ -45,8 +49,6 @@ class Game026
 
             return $this->normalScore();
         }
-
-        return $this->samePointScore();
     }
 
     public function firstPlayerWinPoint($times = 1)
