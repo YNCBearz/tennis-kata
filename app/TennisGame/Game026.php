@@ -88,7 +88,7 @@ class Game026
      */
     private function isGameSet(): bool
     {
-        return ($this->firstPlayerPoint == 4 || $this->secondPlayerPoint == 4)
+        return ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4)
             && abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2;
     }
 

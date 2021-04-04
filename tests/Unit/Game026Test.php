@@ -78,10 +78,24 @@ class Game026Test extends \PHPUnit\Framework\TestCase
         $this->scoreShouldBe('Deuce');
     }
 
+    public function testFirstPlayerWinWhen5v3()
+    {
+        $this->sut->firstPlayerWinPoint(5);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Win');
+    }
+
     public function testFirstPlayerWin()
     {
         $this->sut->firstPlayerWinPoint(4);
         $this->scoreShouldBe('Bear Win');
+    }
+
+    public function testSecondPlayerWinWhen3v5()
+    {
+        $this->sut->firstPlayerWinPoint(3);
+        $this->sut->secondPlayerWinPoint(5);
+        $this->scoreShouldBe('Lin Win');
     }
 
     public function testSecondPlayerWin()
