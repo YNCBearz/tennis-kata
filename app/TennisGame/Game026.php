@@ -35,7 +35,7 @@ class Game026
     public function score(): string
     {
         if ($this->isGameSet()) {
-            return $this->advPlayer().' Win';
+            return $this->advPlayer() . ' Win';
         }
 
         if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
@@ -44,7 +44,7 @@ class Game026
 
         if ($this->firstPlayerPoint != $this->secondPlayerPoint) {
             if ($this->firstPlayerPoint >= 4) {
-                return $this->firstPlayer.' Adv';
+                return $this->firstPlayer . ' Adv';
             }
 
             return $this->normalScore();
@@ -74,7 +74,7 @@ class Game026
             return 'Deuce';
         }
 
-        return $this->lookup[$this->firstPlayerPoint].'-All';
+        return $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
     /**
@@ -82,7 +82,7 @@ class Game026
      */
     private function normalScore(): string
     {
-        return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 
     /**
@@ -102,5 +102,9 @@ class Game026
         return ($this->firstPlayerPoint > $this->secondPlayerPoint)
             ? $this->firstPlayer
             : $this->secondPlayer;
+    }
+
+    public function test()
+    {
     }
 }
