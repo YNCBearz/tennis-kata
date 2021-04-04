@@ -103,8 +103,4 @@ class Game026
             ? $this->firstPlayer
             : $this->secondPlayer;
     }
-
-    public function test()
-    {
-    }
 }
