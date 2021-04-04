@@ -3,8 +3,9 @@
 namespace Tests\Unit;
 
 use App\TennisGame\Game026;
+use PHPUnit\Framework\TestCase;
 
-class Game026Test extends \PHPUnit\Framework\TestCase
+class Game026Test extends TestCase
 {
     /**
      * @var Game026

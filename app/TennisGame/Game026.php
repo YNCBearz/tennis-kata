@@ -32,7 +32,7 @@ class Game026
         $this->secondPlayer = $secondPlayer;
     }
 
-    public function score()
+    public function score(): string
     {
         if ($this->isGameSet()) {
             return $this->advPlayer().' Win';
