@@ -15,16 +15,21 @@ class Game027
 
     public function score()
     {
+        $lookup = [
+            1 => 'Fifteen',
+            2 => 'Thirty',
+            3 => 'Forty',
+        ];
         if ($this->firstPlayerPoint == 1) {
-            return 'Fifteen-Love';
+            return $lookup[$this->firstPlayerPoint].'-Love';
         }
 
         if ($this->firstPlayerPoint == 2) {
-            return 'Thirty-Love';
+            return $lookup[$this->firstPlayerPoint].'-Love';
         }
 
         if ($this->firstPlayerPoint == 3) {
-            return 'Forty-Love';
+            return $lookup[$this->firstPlayerPoint].'-Love';
         }
 
         return 'Love-All';
