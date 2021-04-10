@@ -5,6 +5,7 @@ namespace App\TennisGame;
 class Game027
 {
     private $lookup = [
+        0 => 'Love',
         1 => 'Fifteen',
         2 => 'Thirty',
         3 => 'Forty',
@@ -22,7 +23,7 @@ class Game027
     public function score()
     {
         if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint].'-Love';
+            return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
         }
 
         if ($this->secondPlayerPoint > 0) {
