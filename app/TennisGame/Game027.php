@@ -23,6 +23,10 @@ class Game027
             return 'Thirty-Love';
         }
 
+        if ($this->firstPlayerPoint == 3) {
+            return 'Forty-Love';
+        }
+
         return 'Love-All';
     }
 
