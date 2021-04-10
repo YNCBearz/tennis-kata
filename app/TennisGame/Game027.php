@@ -22,8 +22,11 @@ class Game027
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint
-        ) {
+        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+            if ($this->firstPlayerPoint == 3) {
+                return 'Deuce';
+            }
+
             return $this->lookup[$this->firstPlayerPoint].'-All';
         }
 
