@@ -38,8 +38,8 @@ class Game027
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint == 4 || $this->secondPlayerPoint == 4) {
-            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 2) {
+        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2) {
                 return $this->advPlayer().' Win';
             }
 
