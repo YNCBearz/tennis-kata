@@ -16,14 +16,20 @@ class Game027
      * @var string
      */
     private $firstPlayer;
+    /**
+     * @var string
+     */
+    private $secondPlayer;
 
     /**
      * Game027 constructor.
      * @param string $firstPlayer
+     * @param string $secondPlayer
      */
-    public function __construct(string $firstPlayer)
+    public function __construct(string $firstPlayer, string $secondPlayer)
     {
         $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
     }
 
     public function score()
@@ -37,7 +43,7 @@ class Game027
         }
 
         if ($this->secondPlayerPoint == 4) {
-            return 'Lin'.' Adv';
+            return $this->secondPlayer.' Adv';
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
