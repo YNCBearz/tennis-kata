@@ -39,8 +39,10 @@ class Game027
         }
     }
 
-    public function secondPlayerWinPoint()
+    public function secondPlayerWinPoint($times = 1)
     {
-        $this->secondPlayerPoint++;
+        for ($i = 0; $i < $times; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 }
