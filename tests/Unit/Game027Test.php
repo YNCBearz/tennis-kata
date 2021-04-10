@@ -51,4 +51,11 @@ class Game027Test extends TestCase
         $this->sut->secondPlayerWinPoint();
         $this->scoreShouldBe('Love-Fifteen');
     }
+
+    public function testFifteenAll()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->sut->secondPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen-All');
+    }
 }
