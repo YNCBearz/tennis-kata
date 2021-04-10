@@ -12,18 +12,28 @@ class Game027
     ];
     private $firstPlayerPoint = 0;
     private $secondPlayerPoint = 0;
+    /**
+     * @var string
+     */
+    private $firstPlayer;
 
     /**
      * Game027 constructor.
+     * @param string $firstPlayer
      */
-    public function __construct()
+    public function __construct(string $firstPlayer)
     {
+        $this->firstPlayer = $firstPlayer;
     }
 
     public function score()
     {
         if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
             return $this->samePointScore();
+        }
+
+        if ($this->firstPlayerPoint == 4) {
+            return $this->firstPlayer.' Adv';
         }
 
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
