@@ -5,6 +5,11 @@ namespace App\TennisGame;
 class Game027
 {
     private $firstPlayerPoint = 0;
+    private $lookup = [
+        1 => 'Fifteen',
+        2 => 'Thirty',
+        3 => 'Forty',
+    ];
 
     /**
      * Game027 constructor.
@@ -15,21 +20,8 @@ class Game027
 
     public function score()
     {
-        $lookup = [
-            1 => 'Fifteen',
-            2 => 'Thirty',
-            3 => 'Forty',
-        ];
-        if ($this->firstPlayerPoint == 1) {
-            return $lookup[$this->firstPlayerPoint].'-Love';
-        }
-
-        if ($this->firstPlayerPoint == 2) {
-            return $lookup[$this->firstPlayerPoint].'-Love';
-        }
-
-        if ($this->firstPlayerPoint == 3) {
-            return $lookup[$this->firstPlayerPoint].'-Love';
+        if ($this->firstPlayerPoint > 0) {
+            return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
 
         return 'Love-All';
