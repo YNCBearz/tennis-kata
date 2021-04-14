@@ -4,12 +4,9 @@ namespace Tests\Unit;
 
 use App\TennisGame\Game027;
 use PHPUnit\Framework\TestCase;
-use Tests\Unit\Traits\FinalTestTrait;
 
 class Game027Test extends TestCase
 {
-    use FinalTestTrait;
-
     /**
      * @var Game027
      */

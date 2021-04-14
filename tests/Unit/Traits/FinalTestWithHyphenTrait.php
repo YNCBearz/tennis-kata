@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Traits;
 
-trait FinalTestTrait
+trait FinalTestWithHyphenTrait
 {
     /**
      * @return mixed[][]
      */
-    public function data()
+    public function data(): array
     {
         return [
             '0-0' => [0, 0, "Love-All"],
@@ -52,7 +52,7 @@ trait FinalTestTrait
      * @param string $expected
      * @dataProvider data
      */
-    public function testScore($firstPlayerPoint, $secondPlayerPoint, $expected)
+    public function testScore(int $firstPlayerPoint, int $secondPlayerPoint, string $expected)
     {
         if ($firstPlayerPoint > 0) {
             $this->sut->firstPlayerWinPoint($firstPlayerPoint);
