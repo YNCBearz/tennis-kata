@@ -32,7 +32,7 @@ class Game027
         $this->secondPlayer = $secondPlayer;
     }
 
-    public function score()
+    public function score(): string
     {
         if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
             return $this->samePointScore();
@@ -46,9 +46,7 @@ class Game027
             return $this->advPlayer().' Adv';
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
-        }
+        return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
     }
 
     public function firstPlayerWinPoint($times = 1)
@@ -77,7 +75,7 @@ class Game027
         return $this->lookup[$this->firstPlayerPoint].'-All';
     }
 
-    private function advPlayer()
+    private function advPlayer(): string
     {
         return ($this->firstPlayerPoint > $this->secondPlayerPoint)
             ? $this->firstPlayer
