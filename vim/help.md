@@ -143,6 +143,8 @@
 
 ### yS w { : 到下一個字的周圍加上 {，並新增一行
 
+### ys [motion] [desired] : Add desired surround around text defined by <motion>
+
 ### yss ( : 對整行的周圍加上 (
 
 ### ySS ( : 對整行的周圍加上 (，並新增一行
@@ -192,7 +194,9 @@
 
 ### yy : 複製當前行
 
-### yap : 複製段落 (method)
+### yi" : 複製""內的文字 (不含"")
+
+### ya" : 複製""內的文字 (含"")
 
 ### cmd + d gb : 選取多個相同字
 
