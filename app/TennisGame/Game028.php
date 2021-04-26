@@ -31,13 +31,11 @@ class Game028
             return $this->samePointScore();
         }
 
-        if (($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) && abs(
-                $this->firstPlayerPoint - $this->secondPlayerPoint
-            ) == 1) {
-            return $this->advPlayer().' Adv';
-        }
+        if ($this->isAnyPlayWin4Point()) {
+            if ($this->isPointDiff1()) {
+                return $this->advPlayer().' Adv';
+            }
 
-        if ($this->firstPlayerPoint >= 4) {
             return $this->firstPlayer.' Win';
         }
 
@@ -91,5 +89,23 @@ class Game028
         return ($this->firstPlayerPoint > $this->secondPlayerPoint)
             ? $this->firstPlayer
             : $this->secondPlayer;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isAnyPlayWin4Point(): bool
+    {
+        return ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4);
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isPointDiff1(): bool
+    {
+        return abs(
+                $this->firstPlayerPoint - $this->secondPlayerPoint
+            ) == 1;
     }
 }
