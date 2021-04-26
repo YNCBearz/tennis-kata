@@ -24,15 +24,7 @@ class Game028
         if ($this->secondPlayerPoint == 1) {
             return 'Fifteen-All';
         }
-        if ($this->firstPlayerPoint == 1) {
-            return $this->lookup[$this->firstPlayerPoint].'-Love';
-        }
-
-        if ($this->firstPlayerPoint == 2) {
-            return $this->lookup[$this->firstPlayerPoint].'-Love';
-        }
-
-        if ($this->firstPlayerPoint == 3) {
+        if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
 
