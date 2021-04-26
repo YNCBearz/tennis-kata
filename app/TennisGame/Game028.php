@@ -31,6 +31,12 @@ class Game028
             return $this->samePointScore();
         }
 
+        if (($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) && abs(
+                $this->firstPlayerPoint - $this->secondPlayerPoint
+            ) == 1) {
+            return $this->advPlayer().' Adv';
+        }
+
         if ($this->secondPlayerPoint >= 4 && ($this->secondPlayerPoint - $this->firstPlayerPoint == 1)) {
             return $this->secondPlayer.' Adv';
         }
@@ -81,5 +87,12 @@ class Game028
     protected function normalScore(): string
     {
         return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
+    }
+
+    private function advPlayer()
+    {
+        return ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
     }
 }
