@@ -32,6 +32,9 @@ class Game028
         if ($this->firstPlayerPoint == 4 && $this->secondPlayerPoint == 3) {
             return $this->firstPlayer.' Adv';
         }
+        if ($this->firstPlayerPoint == 5 && $this->secondPlayerPoint == 4) {
+            return $this->firstPlayer.' Adv';
+        }
 
         return $this->normalScore();
     }
