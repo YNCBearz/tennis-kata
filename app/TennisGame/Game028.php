@@ -37,6 +37,10 @@ class Game028
             return $this->advPlayer().' Adv';
         }
 
+        if ($this->firstPlayerPoint >= 4) {
+            return $this->firstPlayer.' Win';
+        }
+
         return $this->normalScore();
     }
 
