@@ -25,6 +25,9 @@ class Game028
         if ($this->secondPlayerPoint == 1 && $this->firstPlayerPoint == 0) {
             return 'Love-Fifteen';
         }
+        if ($this->secondPlayerPoint == 2 && $this->firstPlayerPoint == 0) {
+            return 'Love-Thirty';
+        }
 
         if ($this->isSamePoint()) {
             return $this->samePointScore();
