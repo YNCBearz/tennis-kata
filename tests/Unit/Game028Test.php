@@ -106,5 +106,12 @@ class Game028Test extends TestCase
         $this->scoreShouldBe('Lin Adv');
     }
 
+    public function testLinAdvWhen5v6()
+    {
+        $this->sut->firstPlayerWinPoint(5);
+        $this->sut->secondPlayerWinPoint(6);
+        $this->scoreShouldBe('Lin Adv');
+    }
+
 
 }

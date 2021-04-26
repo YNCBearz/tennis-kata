@@ -31,6 +31,10 @@ class Game028
             return $this->samePointScore();
         }
 
+        if ($this->firstPlayerPoint == 5 && $this->secondPlayerPoint == 6) {
+            return $this->secondPlayer.' Adv';
+        }
+
         if ($this->firstPlayerPoint == 4 && $this->secondPlayerPoint == 5) {
             return $this->secondPlayer.' Adv';
         }
