@@ -12,10 +12,18 @@ class Game028Test extends TestCase
      */
     protected $sut;
 
-    public function testLoveAll()
+    protected function setUp(): void
     {
         $this->sut = new Game028();
-        $expected = 'Love-All';
+    }
+
+    public function testLoveAll()
+    {
+        $this->scoreShouldBe('Love-All');
+    }
+
+    protected function scoreShouldBe($expected): void
+    {
         $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }

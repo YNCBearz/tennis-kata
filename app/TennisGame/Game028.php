@@ -12,7 +12,7 @@ class Game028
     {
     }
 
-    public function score()
+    public function score(): string
     {
         return 'Love-All';
     }
