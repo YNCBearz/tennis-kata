@@ -22,10 +22,10 @@ class Game028
     public function score(): string
     {
         if ($this->secondPlayerPoint == 1) {
-            return 'Fifteen-All';
+            return $this->lookup[$this->secondPlayerPoint].'-All';
         }
         if ($this->secondPlayerPoint == 2) {
-            return 'Thirty-All';
+            return $this->lookup[$this->secondPlayerPoint].'-All';
         }
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint].'-Love';
