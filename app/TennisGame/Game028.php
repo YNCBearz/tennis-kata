@@ -36,7 +36,7 @@ class Game028
                 return $this->advPlayer().' Adv';
             }
 
-            return $this->firstPlayer.' Win';
+            return $this->advPlayer().' Win';
         }
 
         return $this->normalScore();
