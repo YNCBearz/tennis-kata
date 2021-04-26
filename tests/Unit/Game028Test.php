@@ -85,5 +85,12 @@ class Game028Test extends TestCase
         $this->scoreShouldBe('Love-Forty');
     }
 
+    public function testBearAdv()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(3);
+        $this->scoreShouldBe('Bear Adv');
+    }
+
 
 }
