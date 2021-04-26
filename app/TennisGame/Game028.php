@@ -69,7 +69,7 @@ class Game028
      */
     protected function samePointScore(): string
     {
-        if ($this->secondPlayerPoint == 3) {
+        if ($this->secondPlayerPoint >= 3) {
             return 'Deuce';
         }
 
