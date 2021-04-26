@@ -19,6 +19,10 @@ class Game028
             return 'Fifteen-Love';
         }
 
+        if ($this->firstPlayerPoint == 2) {
+            return 'Thirty-Love';
+        }
+
         return 'Love-All';
     }
 
