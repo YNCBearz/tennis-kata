@@ -10,6 +10,7 @@ class Game028
         2 => 'Thirty',
         3 => 'Forty',
     ];
+    protected $secondPlayerPoint = 0;
 
     /**
      * Game028 constructor.
@@ -20,6 +21,9 @@ class Game028
 
     public function score(): string
     {
+        if ($this->secondPlayerPoint == 1) {
+            return 'Fifteen-All';
+        }
         if ($this->firstPlayerPoint == 1) {
             return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
@@ -40,5 +44,10 @@ class Game028
         for ($i = 0; $i < $times; $i++) {
             $this->firstPlayerPoint++;
         }
+    }
+
+    public function secondPlayerWinPoint()
+    {
+        $this->secondPlayerPoint++;
     }
 }
