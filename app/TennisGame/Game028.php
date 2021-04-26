@@ -23,10 +23,10 @@ class Game028
     public function score(): string
     {
         if ($this->secondPlayerPoint == 1 && $this->firstPlayerPoint == 0) {
-            return 'Love-Fifteen';
+            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
         }
         if ($this->secondPlayerPoint == 2 && $this->firstPlayerPoint == 0) {
-            return 'Love-Thirty';
+            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
         }
 
         if ($this->isSamePoint()) {
