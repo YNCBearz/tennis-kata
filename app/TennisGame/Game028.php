@@ -22,23 +22,11 @@ class Game028
 
     public function score(): string
     {
-        if ($this->secondPlayerPoint == 1 && $this->firstPlayerPoint == 0) {
-            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
-        }
-        if ($this->secondPlayerPoint == 2 && $this->firstPlayerPoint == 0) {
-            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
-        }
-        if ($this->secondPlayerPoint == 3 && $this->firstPlayerPoint == 0) {
-            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
-        }
-
         if ($this->isSamePoint()) {
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint].'-Love';
-        }
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint(int $times)
@@ -73,5 +61,13 @@ class Game028
         }
 
         return $this->lookup[$this->secondPlayerPoint].'-All';
+    }
+
+    /**
+     * @return string
+     */
+    protected function normalScore(): string
+    {
+        return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
     }
 }
