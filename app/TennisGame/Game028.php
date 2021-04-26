@@ -27,6 +27,9 @@ class Game028
         if ($this->secondPlayerPoint == 2) {
             return $this->lookup[$this->secondPlayerPoint].'-All';
         }
+        if ($this->secondPlayerPoint == 3) {
+            return 'Deuce';
+        }
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
