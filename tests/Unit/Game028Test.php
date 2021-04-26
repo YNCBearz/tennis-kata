@@ -28,4 +28,10 @@ class Game028Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testFifteenLove()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen-Love');
+    }
+
 }

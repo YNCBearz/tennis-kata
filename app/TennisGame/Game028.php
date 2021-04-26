@@ -4,6 +4,7 @@ namespace App\TennisGame;
 
 class Game028
 {
+    protected $firstPlayerPoint = 0;
 
     /**
      * Game028 constructor.
@@ -14,6 +15,15 @@ class Game028
 
     public function score(): string
     {
+        if ($this->firstPlayerPoint == 1) {
+            return 'Fifteen-Love';
+        }
+
         return 'Love-All';
+    }
+
+    public function firstPlayerWinPoint()
+    {
+        $this->firstPlayerPoint++;
     }
 }
