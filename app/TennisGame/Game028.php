@@ -21,6 +21,9 @@ class Game028
 
     public function score(): string
     {
+        if ($this->secondPlayerPoint == 1 && $this->firstPlayerPoint == 0) {
+            return 'Love-Fifteen';
+        }
         if ($this->secondPlayerPoint == 1) {
             return $this->lookup[$this->secondPlayerPoint].'-All';
         }
