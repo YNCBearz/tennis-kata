@@ -230,4 +230,5 @@
 
 ## **[Visual Block Mode]**
 
-### ctrl + v : 進入Visual Block Mode (可多行編輯)
+### ctrl + v : 進入Visual Block Mode，搭配I（大寫i） / A（大寫A）可多行編輯
+--------------------------------
