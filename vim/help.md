@@ -227,3 +227,7 @@
 
 ### :noh : 清除search highlight
 --------------------------------
+
+## **[Visual Block Mode]**
+
+### ctrl + v : 進入Visual Block Mode (可多行編輯)
