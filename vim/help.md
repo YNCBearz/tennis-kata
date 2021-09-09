@@ -139,21 +139,13 @@
 
 ## **[vim-surround]**
 
-### ys w { : 到下一個字的周圍加上 {
-
-### yS w { : 到下一個字的周圍加上 {，並新增一行
-
 ### ys [motion] [desired] : Add desired surround around text defined by <motion>
 
-### yss ( : 對整行的周圍加上 (
-
-### ySS ( : 對整行的周圍加上 (，並新增一行
-
-### S { : 已選字的周圍加上 {
-
-### gS { : 已選字的周圍加上 {，並新增一行
-
 ### ys iw] (iw is a text object) : 當前字的周圍加上 ]
+
+### ys w { : 到下一個字的周圍加上 {
+
+### yss ( : 對整行的周圍加上 (
 
 --------------------------------
 
