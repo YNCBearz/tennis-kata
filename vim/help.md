@@ -136,6 +136,8 @@
 
 ### } : 往後跳一個 paragraph
 
+### % : jump to a matching opening or closing parenthesis, bracket or curly brace
+
 --------------------------------
 
 ### gc : 註解 (ex. gcc, gc2j )
