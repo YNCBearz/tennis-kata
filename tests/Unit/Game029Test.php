@@ -9,15 +9,23 @@ class Game029Test extends TestCase
 {
     protected Game029 $sut;
 
+    public function scoreShouldBe($expected): void
+    {
+        $actual = $this->sut->score();
+        $this->assertEquals($expected, $actual);
+    }
+
+    protected function setUp(): void
+    {
+        $this->sut = new Game029();
+    }
+
     /**
      * @test
      */
     public function testLoveAll()
     {
-        $this->sut = new Game029();
-        $actual = $this->sut->score();
-        $expected = 'Love-All';
-        $this->assertEquals($expected, $actual);
+        $this->scoreShouldBe('Love-All');
     }
 
 }
