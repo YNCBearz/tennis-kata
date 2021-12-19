@@ -21,6 +21,10 @@ class Game029
             return 'Fifteen-All';
         }
 
+        if ($this->firstPlayerPoint == 2 && $this->secondPlayerPoint == 2) {
+            return 'Thirty-All';
+        }
+
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
