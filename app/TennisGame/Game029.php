@@ -39,10 +39,10 @@ class Game029
 
             $pointDiff = abs($this->firstPlayerPoint - $this->secondPlayerPoint);
             if ($pointDiff > 1) {
-                return $advPlayer.' Win';
+                return $advPlayer . ' Win';
             }
 
-            return $advPlayer.' Adv';
+            return $advPlayer . ' Adv';
         }
 
         return $this->normalScore();
@@ -71,7 +71,7 @@ class Game029
             return 'Deuce';
         }
 
-        return $this->lookup[$this->firstPlayerPoint].'-All';
+        return $this->lookup[$this->firstPlayerPoint] . '-All';
     }
 
     /**
@@ -99,6 +99,6 @@ class Game029
      */
     public function normalScore(): string
     {
-        return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 }
