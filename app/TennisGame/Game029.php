@@ -35,20 +35,12 @@ class Game029
         }
 
         if (($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4)) {
-            $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
-                ? $this->firstPlayer
-                : $this->secondPlayer;
+            $advPlayer = $this->advPlayer();
 
             return $advPlayer.' Adv';
         }
 
-        if ($this->firstPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint].'-Love';
-        }
-
-        if ($this->secondPlayerPoint > 0) {
-            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
-        }
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint(int $times = 1)
@@ -83,5 +75,25 @@ class Game029
     public function isSamePoint(): bool
     {
         return $this->firstPlayerPoint == $this->secondPlayerPoint;
+    }
+
+    /**
+     * @return string
+     */
+    public function advPlayer(): string
+    {
+        $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
+
+        return $advPlayer;
+    }
+
+    /**
+     * @return string
+     */
+    public function normalScore(): string
+    {
+        return $this->lookup[$this->firstPlayerPoint].'-'.$this->lookup[$this->secondPlayerPoint];
     }
 }
