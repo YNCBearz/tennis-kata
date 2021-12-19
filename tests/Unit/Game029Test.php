@@ -142,4 +142,14 @@ class Game029Test extends TestCase
         $this->sut->secondPlayerWinPoint(4);
         $this->scoreShouldBe('Bear Adv');
     }
+
+    /**
+     * @test
+     */
+    public function testLinAdvWhen4v5()
+    {
+        $this->sut->firstPlayerWinPoint(4);
+        $this->sut->secondPlayerWinPoint(5);
+        $this->scoreShouldBe('Lin Adv');
+    }
 }
