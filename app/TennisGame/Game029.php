@@ -6,14 +6,16 @@ class Game029
 {
 
     protected int $firstPlayerPoint = 0;
+   
+    protected array $lookup = [
+        1 => 'Fifteen',
+        2 => 'Thirty',
+    ];
 
     public function score(): string
     {
-        if ($this->firstPlayerPoint == 1) {
-            return 'Fifteen-Love';
-        }
-        if ($this->firstPlayerPoint == 2) {
-            return 'Thirty-Love';
+        if ($this->firstPlayerPoint > 0) {
+            return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
 
         return 'Love-All';
