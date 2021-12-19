@@ -18,12 +18,14 @@ class Game029
 
     protected string $firstPlayer;
 
-    /**
-     * @param string $firstPlayer
-     */
-    public function __construct(string $firstPlayer)
-    {
+    protected string $secondPlayer;
+
+    public function __construct(
+        string $firstPlayer,
+        string $secondPlayer
+    ) {
         $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
     }
 
     public function score(): string
@@ -34,6 +36,9 @@ class Game029
 
         if ($this->firstPlayerPoint == 4) {
             return $this->firstPlayer.' Adv';
+        }
+        if ($this->secondPlayerPoint == 4) {
+            return $this->secondPlayer.' Adv';
         }
 
         if ($this->firstPlayerPoint > 0) {
