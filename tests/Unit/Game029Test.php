@@ -69,8 +69,7 @@ class Game029Test extends TestCase
      */
     public function testLoveThirty()
     {
-        $this->sut->secondPlayerWinPoint();
-        $this->sut->secondPlayerWinPoint();
+        $this->sut->secondPlayerWinPoint(2);
         $this->scoreShouldBe('Love-Thirty');
     }
 }

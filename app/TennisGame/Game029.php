@@ -21,11 +21,8 @@ class Game029
             return $this->lookup[$this->firstPlayerPoint].'-Love';
         }
 
-        if ($this->secondPlayerPoint == 1) {
-            return 'Love-Fifteen';
-        }
-        if ($this->secondPlayerPoint == 2) {
-            return 'Love-Thirty';
+        if ($this->secondPlayerPoint > 0) {
+            return 'Love-'.$this->lookup[$this->secondPlayerPoint];
         }
 
         return 'Love-All';
@@ -38,8 +35,10 @@ class Game029
         }
     }
 
-    public function secondPlayerWinPoint()
+    public function secondPlayerWinPoint(int $times = 1)
     {
-        $this->secondPlayerPoint++;
+        for ($i = 0; $i < $times; $i++) {
+            $this->secondPlayerPoint++;
+        }
     }
 }
