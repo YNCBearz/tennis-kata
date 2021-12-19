@@ -19,8 +19,10 @@ class Game029
         return 'Love-All';
     }
 
-    public function firstPlayerWinPoint()
+    public function firstPlayerWinPoint(int $times = 1)
     {
-        $this->firstPlayerPoint++;
+        for ($i = 0; $i < $times; $i++) {
+            $this->firstPlayerPoint++;
+        }
     }
 }
