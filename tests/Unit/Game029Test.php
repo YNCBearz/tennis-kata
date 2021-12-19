@@ -37,4 +37,13 @@ class Game029Test extends TestCase
         $this->scoreShouldBe('Fifteen-Love');
     }
 
+    /**
+     * @test
+     */
+    public function testThirtyLove()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('Thirty-Love');
+    }
 }
