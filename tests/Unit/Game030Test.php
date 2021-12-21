@@ -15,6 +15,13 @@ class Game030Test extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function givenFirstPlayerWinPoint($times = 1): void
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->sut->firstPlayerWinPoint();
+        }
+    }
+
     protected function setUp(): void
     {
         $this->sut = new Game030();
@@ -42,8 +49,7 @@ class Game030Test extends TestCase
      */
     public function testThirtyLove()
     {
-        $this->sut->firstPlayerWinPoint();
-        $this->sut->firstPlayerWinPoint();
+        $this->givenFirstPlayerWinPoint(2);
         $this->scoreShouldBe('Thirty-Love');
     }
 
