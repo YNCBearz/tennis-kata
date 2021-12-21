@@ -33,10 +33,10 @@ class Game030
         }
 
         if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
-            if ($this->firstPlayerPoint - $this->secondPlayerPoint >= 2) {
-                return $this->firstPlayer . ' Win';
-            }
             $advPlayer = $this->advPlayer();
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) >= 2) {
+                return $advPlayer . ' Win';
+            }
 
             return $advPlayer . ' Adv';
         }
