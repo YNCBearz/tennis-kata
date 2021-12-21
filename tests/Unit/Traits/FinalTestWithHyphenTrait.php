@@ -55,11 +55,15 @@ trait FinalTestWithHyphenTrait
     public function testScore(int $firstPlayerPoint, int $secondPlayerPoint, string $expected)
     {
         if ($firstPlayerPoint > 0) {
-            $this->sut->firstPlayerWinPoint($firstPlayerPoint);
+            for ($i = 0; $i < $firstPlayerPoint; $i++) {
+                $this->sut->firstPlayerWinPoint();
+            }
         }
 
         if ($secondPlayerPoint > 0) {
-            $this->sut->secondPlayerWinPoint($secondPlayerPoint);
+            for ($i = 0; $i < $secondPlayerPoint; $i++) {
+                $this->sut->secondPlayerWinPoint();
+            }
         }
 
         $actual = $this->sut->score();
