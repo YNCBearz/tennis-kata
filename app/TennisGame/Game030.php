@@ -13,19 +13,25 @@ class Game030
         3 => 'Forty',
     ];
     protected $secondPlayerPoint = 0;
+    private string $firstPlayer;
 
-    public function __construct()
+    public function __construct(string $firstPlayer)
     {
+        $this->firstPlayer = $firstPlayer;
     }
 
     public function score()
     {
         if ($this->isSamePoint()) {
             if ($this->firstPlayerPoint >= 3) {
-                return 'Deuce';
+                return $this->deuceScore();
             }
 
             return $this->lookup[$this->firstPlayerPoint] . '-All';
+        }
+
+        if ($this->firstPlayerPoint >= 4) {
+            return $this->firstPlayer . ' Adv';
         }
 
         return $this->normalScore();
@@ -55,5 +61,13 @@ class Game030
     public function normalScore(): string
     {
         return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
+    }
+
+    /**
+     * @return string
+     */
+    public function deuceScore(): string
+    {
+        return 'Deuce';
     }
 }
