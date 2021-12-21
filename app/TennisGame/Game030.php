@@ -32,11 +32,10 @@ class Game030
             return $this->lookup[$this->firstPlayerPoint] . '-All';
         }
 
-        if ($this->firstPlayerPoint >= 4) {
-            return $this->firstPlayer . ' Adv';
-        }
-        if ($this->secondPlayerPoint >= 4) {
-            return $this->secondPlayer . ' Adv';
+        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
+            $advPlayer = $this->advPlayer();
+
+            return $advPlayer . ' Adv';
         }
 
         return $this->normalScore();
@@ -74,5 +73,17 @@ class Game030
     public function deuceScore(): string
     {
         return 'Deuce';
+    }
+
+    /**
+     * @return string
+     */
+    public function advPlayer(): string
+    {
+        $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
+
+        return $advPlayer;
     }
 }
