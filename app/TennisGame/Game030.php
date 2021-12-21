@@ -20,21 +20,11 @@ class Game030
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint
-        ) {
-            if ($this->firstPlayerPoint == 1) {
-                return 'Fifteen-All';
-            }
-            if ($this->firstPlayerPoint == 2) {
-                return 'Thirty-All';
-            }
+        if ($this->isSamePoint()) {
+            return $this->lookup[$this->firstPlayerPoint] . '-All';
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
-        }
-
-        return 'Love-All';
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint()
@@ -45,5 +35,21 @@ class Game030
     public function secondPlayerWinPoint()
     {
         $this->secondPlayerPoint++;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSamePoint(): bool
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
+    }
+
+    /**
+     * @return string
+     */
+    public function normalScore(): string
+    {
+        return $this->lookup[$this->firstPlayerPoint] . '-' . $this->lookup[$this->secondPlayerPoint];
     }
 }
