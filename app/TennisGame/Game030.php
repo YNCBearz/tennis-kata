@@ -29,6 +29,9 @@ class Game030
         if ($this->secondPlayerPoint == 2) {
             return 'Love-Thirty';
         }
+        if ($this->secondPlayerPoint == 3) {
+            return 'Love-Forty';
+        }
 
         return 'Love-All';
     }
