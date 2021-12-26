@@ -42,8 +42,14 @@ class Game031Test extends TestCase
      */
     public function testThirtyLove()
     {
-        $this->sut->firstPlayerWinPoint();
-        $this->sut->firstPlayerWinPoint();
+        $this->givenFirstPlayerWinTimes(2);
         $this->scoreShouldBe('Thirty-Love');
+    }
+
+    private function givenFirstPlayerWinTimes($times = 1)
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->sut->firstPlayerWinPoint();
+        }
     }
 }
