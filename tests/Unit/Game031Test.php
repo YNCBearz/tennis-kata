@@ -86,4 +86,14 @@ class Game031Test extends TestCase
             $this->sut->firstPlayerWinPoint();
         }
     }
+
+    /**
+     * @test
+     */
+    public function testFifteenAll()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->sut->secondPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen-All');
+    }
 }
