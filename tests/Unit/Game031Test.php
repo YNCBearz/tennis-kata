@@ -90,6 +90,16 @@ class Game031Test extends TestCase
     /**
      * @test
      */
+    public function testThirtyAll()
+    {
+        $this->givenFirstPlayerWinTimes(2);
+        $this->givenSecondPlayerWinTimes(2);
+        $this->scoreShouldBe('Thirty-All');
+    }
+
+    /**
+     * @test
+     */
     public function testFifteenAll()
     {
         $this->sut->firstPlayerWinPoint();
