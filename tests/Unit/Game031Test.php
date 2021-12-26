@@ -27,4 +27,13 @@ class Game031Test extends TestCase
     {
         $this->scoreShouldBe('Love-All');
     }
+
+    /**
+     * @test
+     */
+    public function testFifteenLove()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen-Love');
+    }
 }
