@@ -19,6 +19,9 @@ class Game031
         if ($this->firstPlayerPoint == 2) {
             return 'Thirty-Love';
         }
+        if ($this->firstPlayerPoint == 3) {
+            return 'Forty-Love';
+        }
 
         return 'Love-All';
     }

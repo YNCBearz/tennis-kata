@@ -40,6 +40,15 @@ class Game031Test extends TestCase
     /**
      * @test
      */
+    public function testFortyLove()
+    {
+        $this->givenFirstPlayerWinTimes(3);
+        $this->scoreShouldBe('Forty-Love');
+    }
+
+    /**
+     * @test
+     */
     public function testThirtyLove()
     {
         $this->givenFirstPlayerWinTimes(2);
