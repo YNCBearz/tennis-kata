@@ -31,7 +31,11 @@ class Game032
         if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
             $advPlayer = $this->advPlayer();
 
-            return $advPlayer . ' adv';
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) == 1) {
+                return $advPlayer . ' adv';
+            }
+
+            return $this->firstPlayer . ' win';
         }
 
         return $this->normalScore();
