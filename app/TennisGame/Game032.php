@@ -21,6 +21,9 @@ class Game032
         if ($this->secondPlayerPoint == 1) {
             return 'love fifteen';
         }
+        if ($this->secondPlayerPoint == 2) {
+            return 'love thirty';
+        }
 
         return 'love all';
     }
