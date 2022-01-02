@@ -87,4 +87,14 @@ class Game032Test extends TestCase
         $this->sut = new Game032();
     }
 
+    /**
+     * @test
+     */
+    public function testDeuce()
+    {
+        $this->givenFirstPlayerWinPoint(3);
+        $this->givenSecondPlayerWinPoint(3);
+        $this->scoreShouldBe('deuce');
+    }
+
 }
