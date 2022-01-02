@@ -9,11 +9,12 @@ class Game032
 
     public function score()
     {
-        if ($this->firstPlayerPoint == 2) {
-            return 'thirty love';
-        }
-        if ($this->firstPlayerPoint == 1) {
-            return 'fifteen love';
+        $lookup = [
+            1 => 'fifteen',
+            2 => 'thirty',
+        ];
+        if ($this->firstPlayerPoint > 0) {
+            return $lookup[$this->firstPlayerPoint] . ' love';
         }
 
         return 'love all';
