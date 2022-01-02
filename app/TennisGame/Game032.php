@@ -12,6 +12,7 @@ class Game032
         $lookup = [
             1 => 'fifteen',
             2 => 'thirty',
+            3 => 'forty',
         ];
         if ($this->firstPlayerPoint > 0) {
             return $lookup[$this->firstPlayerPoint] . ' love';
