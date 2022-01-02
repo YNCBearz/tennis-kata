@@ -121,6 +121,16 @@ class Game032Test extends TestCase
     /**
      * @test
      */
+    public function testLinWin()
+    {
+        $this->givenFirstPlayerWinPoint(2);
+        $this->givenSecondPlayerWinPoint(4);
+        $this->scoreShouldBe('Lin win');
+    }
+
+    /**
+     * @test
+     */
     public function testBearWin()
     {
         $this->givenFirstPlayerWinPoint(4);
