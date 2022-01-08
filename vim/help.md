@@ -152,9 +152,11 @@
 
 --------------------------------
 
-### ; : repeat last find(f) command
+### . :  repeat  a normal/insert-mode command
 
-### . : repeat last command
+### @: : repeat a command-line command
+
+### ; : repeat command (用f/F找字的command)
 
 --------------------------------
 
