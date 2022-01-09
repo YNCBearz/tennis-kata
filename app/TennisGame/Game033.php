@@ -28,11 +28,8 @@ class Game033
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4) {
-            return $this->firstPlayer . ' Adv';
-        }
-        if ($this->secondPlayerPoint >= 4) {
-            return $this->secondPlayer . ' Adv';
+        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
+            return $this->advPlayer() . ' Adv';
         }
 
         return $this->normalPointScore();
@@ -74,5 +71,17 @@ class Game033
         }
 
         return $this->lookup[$this->firstPlayerPoint] . ' All';
+    }
+
+    /**
+     * @return string
+     */
+    public function advPlayer(): string
+    {
+        $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
+
+        return $advPlayer;
     }
 }
