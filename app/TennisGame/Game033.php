@@ -14,10 +14,12 @@ class Game033
     ];
     protected $secondPlayerPoint = 0;
     private string $firstPlayer;
+    private string $secondPlayer;
 
-    public function __construct(string $firstPlayer)
+    public function __construct(string $firstPlayer, string $secondPlayer)
     {
         $this->firstPlayer = $firstPlayer;
+        $this->secondPlayer = $secondPlayer;
     }
 
     public function score()
@@ -28,6 +30,9 @@ class Game033
 
         if ($this->firstPlayerPoint >= 4) {
             return $this->firstPlayer . ' Adv';
+        }
+        if ($this->secondPlayerPoint >= 4) {
+            return $this->secondPlayer . ' Adv';
         }
 
         return $this->normalPointScore();
