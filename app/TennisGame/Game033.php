@@ -17,7 +17,7 @@ class Game033
     public function score()
     {
         if ($this->isSamePoint()) {
-            return 'Love All';
+            return $this->lookup[$this->firstPlayerPoint] . ' All';
         }
 
         return $this->normalPointScore();
