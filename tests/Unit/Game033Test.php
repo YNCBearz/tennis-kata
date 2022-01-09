@@ -120,6 +120,16 @@ class Game033Test extends TestCase
     /**
      * @test
      */
+    public function testBearWin()
+    {
+        $this->givenFirstPlayerWinPoint(4);
+        $this->givenSecondPlayerWinPoint(2);
+        $this->scoreShouldBe('Bear Win');
+    }
+
+    /**
+     * @test
+     */
     public function testBearAdv()
     {
         $this->givenFirstPlayerWinPoint(4);

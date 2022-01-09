@@ -29,7 +29,13 @@ class Game033
         }
 
         if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
-            return $this->advPlayer() . ' Adv';
+            $scoreDiff = abs($this->firstPlayerPoint - $this->secondPlayerPoint);
+
+            if ($scoreDiff == 1) {
+                return $this->advPlayer() . ' Adv';
+            }
+
+            return $this->firstPlayer . ' Win';
         }
 
         return $this->normalPointScore();
