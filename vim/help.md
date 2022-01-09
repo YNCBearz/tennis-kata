@@ -164,11 +164,13 @@
 
 ### ys [motion] [desired] : Add desired surround around text defined by <motion>
 
-### ys iw] (iw is a text object) : 當前字的周圍加上 ]
+### ys iw[ (iw is a text object) : 當前字的周圍加上 []
 
-### ys w { : 到下一個字的周圍加上 {
+### ys fr[ : 到r的字周圍加上 []]
 
-### yss ( : 對整行的周圍加上 (
+### ys w { : 到下一個字的周圍加上 {}
+
+### yss ( : 對整行的周圍加上 ()
 
 --------------------------------
 
