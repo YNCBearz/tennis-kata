@@ -5,6 +5,10 @@ namespace App\TennisGame;
 class Game035
 {
     protected $firstPlayerPoint = 0;
+    protected $lookup = [
+        1 => 'Fifteen',
+        2 => 'Thirty',
+    ];
 
     public function __construct()
     {
@@ -12,12 +16,8 @@ class Game035
 
     public function score()
     {
-        if ($this->firstPlayerPoint == 2) {
-            return 'Thirty Love';
-        }
-
-        if ($this->firstPlayerPoint == 1) {
-            return 'Fifteen Love';
+        if ($this->firstPlayerPoint > 0) {
+            return $this->lookup[$this->firstPlayerPoint] . ' Love';
         }
 
         return 'Love All';
