@@ -17,16 +17,10 @@ class Game034
     public function score()
     {
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint >= 3) {
-                return 'Deuce';
-            }
-
-            return $this->lookup[$this->firstPlayerPoint] . ' All';
+            return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->normalScore();
-        }
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint()
@@ -53,5 +47,17 @@ class Game034
     private function isSamePoint(): bool
     {
         return $this->firstPlayerPoint == $this->secondPlayerPoint;
+    }
+
+    /**
+     * @return string
+     */
+    private function samePointScore(): string
+    {
+        if ($this->firstPlayerPoint >= 3) {
+            return 'Deuce';
+        }
+
+        return $this->lookup[$this->firstPlayerPoint] . ' All';
     }
 }
