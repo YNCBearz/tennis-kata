@@ -28,12 +28,8 @@ class Game034
             return $this->samePointScore();
         }
 
-        if ($this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4) {
-            $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
-                ? $this->firstPlayer
-                : $this->secondPlayer;
-
-            return $advPlayer . ' Adv';
+        if ($this->isSomeoneWinMoreThanFourPoint()) {
+            return $this->advPlayer() . ' Adv';
         }
 
         return $this->normalScore();
@@ -75,5 +71,25 @@ class Game034
         }
 
         return $this->lookup[$this->firstPlayerPoint] . ' All';
+    }
+
+    /**
+     * @return string
+     */
+    private function advPlayer(): string
+    {
+        $advPlayer = ($this->firstPlayerPoint > $this->secondPlayerPoint)
+            ? $this->firstPlayer
+            : $this->secondPlayer;
+
+        return $advPlayer;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isSomeoneWinMoreThanFourPoint(): bool
+    {
+        return $this->firstPlayerPoint >= 4 || $this->secondPlayerPoint >= 4;
     }
 }
