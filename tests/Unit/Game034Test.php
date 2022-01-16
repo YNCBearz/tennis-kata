@@ -126,4 +126,11 @@ class Game034Test extends TestCase
         $this->givenSecondPlayerWinTimes(3);
         $this->scoreShouldBe('Bear Adv');
     }
+
+    public function testLinWin()
+    {
+        $this->givenFirstPlayerWinTimes(4);
+        $this->givenSecondPlayerWinTimes(6);
+        $this->scoreShouldBe('Lin Win');
+    }
 }

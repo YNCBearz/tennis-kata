@@ -29,6 +29,10 @@ class Game034
         }
 
         if ($this->isSomeoneWinMoreThanFourPoint()) {
+            if (abs($this->firstPlayerPoint - $this->secondPlayerPoint) > 1) {
+                return $this->advPlayer() . ' Win';
+            }
+
             return $this->advPlayer() . ' Adv';
         }
 
