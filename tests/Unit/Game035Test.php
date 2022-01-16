@@ -7,14 +7,24 @@ use PHPUnit\Framework\TestCase;
 
 class Game035Test extends TestCase
 {
+    protected $sut;
+
+    protected function setUp(): void
+    {
+        $this->sut = new Game035();
+    }
 
     /**
      * @test
      */
     public function testLoveAll()
     {
-        $sut = new Game035();
-        $actual = $sut->score();
-        $this->assertEquals('Love All', $actual);
+        $this->scoreShouldBe('Love All');
+    }
+
+    private function scoreShouldBe($expected): void
+    {
+        $actual = $this->sut->score();
+        $this->assertEquals($expected, $actual);
     }
 }
