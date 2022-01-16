@@ -115,6 +115,16 @@ class Game035Test extends TestCase
     /**
      * @test
      */
+    public function testLinWin()
+    {
+        $this->givenDeuce();
+        $this->givenSecondPlayerWinPointTimes(2);
+        $this->scoreShouldBe('Lin Win');
+    }
+
+    /**
+     * @test
+     */
     public function testLinAdv()
     {
         $this->givenDeuce();

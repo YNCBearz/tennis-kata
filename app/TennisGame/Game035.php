@@ -28,7 +28,12 @@ class Game035
         }
 
         if ($this->isAnyPlayerWinMoreThan3Point()) {
-            return $this->advPlayer() . ' Adv';
+            $scoreDiff = abs($this->firstPlayerPoint - $this->secondPlayerPoint);
+            if ($scoreDiff == 1) {
+                return $this->advPlayer() . ' Adv';
+            }
+
+            return $this->advPlayer() . ' Win';
         }
 
         return $this->normalScore();
