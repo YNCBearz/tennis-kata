@@ -16,6 +16,9 @@ class Game034
 
     public function score()
     {
+        if ($this->firstPlayerPoint == $this->secondPlayerPoint && $this->firstPlayerPoint == 1) {
+            return 'Fifteen All';
+        }
         if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
             return $this->normalScore();
         }
