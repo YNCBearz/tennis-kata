@@ -10,6 +10,7 @@ class Game035
         2 => 'Thirty',
         3 => 'Forty',
     ];
+    protected $secondPlayerPoint = 0;
 
     public function __construct()
     {
@@ -20,6 +21,9 @@ class Game035
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . ' Love';
         }
+        if ($this->secondPlayerPoint == 1) {
+            return 'Love Fifteen';
+        }
 
         return 'Love All';
     }
@@ -27,6 +31,11 @@ class Game035
     public function firstPlayerWinPoint()
     {
         $this->firstPlayerPoint++;
+    }
+
+    public function secondPlayerWinPoint()
+    {
+        $this->secondPlayerPoint++;
     }
 
 }
