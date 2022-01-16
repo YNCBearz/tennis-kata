@@ -13,11 +13,21 @@ class Game034
         3 => 'Forty',
     ];
     protected $secondPlayerPoint = 0;
+    private $firstPlayer;
+
+    public function __construct($firstPlayer)
+    {
+        $this->firstPlayer = $firstPlayer;
+    }
 
     public function score()
     {
         if ($this->isSamePoint()) {
             return $this->samePointScore();
+        }
+
+        if ($this->firstPlayerPoint >= 4) {
+            return $this->firstPlayer . ' Adv';
         }
 
         return $this->normalScore();
