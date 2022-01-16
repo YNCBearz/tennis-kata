@@ -19,14 +19,11 @@ class Game035
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+        if ($this->isSamePoint()) {
             return $this->lookup[$this->firstPlayerPoint] . ' All';
         }
-        if ($this->firstPlayerPoint > 0 || $this->secondPlayerPoint > 0) {
-            return $this->lookup[$this->firstPlayerPoint] . ' ' . $this->lookup[$this->secondPlayerPoint];
-        }
 
-        return 'Love All';
+        return $this->normalScore();
     }
 
     public function firstPlayerWinPoint()
@@ -37,6 +34,22 @@ class Game035
     public function secondPlayerWinPoint()
     {
         $this->secondPlayerPoint++;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isSamePoint(): bool
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
+    }
+
+    /**
+     * @return string
+     */
+    private function normalScore(): string
+    {
+        return $this->lookup[$this->firstPlayerPoint] . ' ' . $this->lookup[$this->secondPlayerPoint];
     }
 
 }
