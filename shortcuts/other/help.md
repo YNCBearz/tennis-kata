@@ -16,6 +16,14 @@ $ cat myfile.txt | pbcopy
 $ echo 'Hello' | pbcopy
 ```
 
+```zsh
+$ git rev-parse origin/develop | pbcopy
+```
+
 ### pbpaste : 在terminal中貼上
+
+```zsh
+$ pbpaste > bear-test.md
+```
 
 ---
