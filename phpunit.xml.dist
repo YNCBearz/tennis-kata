@@ -15,7 +15,7 @@
     <testsuites>
         <testsuite name="Test Suite">
             <!--      <directory>./tests</directory>-->
-            <file>tests/Unit/Game035Test.php</file>
+            <file>tests/Unit/Game036Test.php</file>
         </testsuite>
     </testsuites>
     <!-- <logging>
