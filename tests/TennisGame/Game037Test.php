@@ -11,7 +11,7 @@ class Game037Test extends TestCase
 
     protected function setUp(): void
     {
-        $this->sut = new Game037();
+        $this->sut = new Game037('Bear');
     }
 
     /**
@@ -110,5 +110,15 @@ class Game037Test extends TestCase
     {
         $this->givenFirstPlayerWinPointTimes(3);
         $this->givenSecondPlayerWinPointTimes(3);
+    }
+
+    /**
+     * @test
+     */
+    public function testBearAdv()
+    {
+        $this->givenDeuce();
+        $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('Bear Adv');
     }
 }
