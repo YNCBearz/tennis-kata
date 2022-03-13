@@ -102,8 +102,13 @@ class Game037Test extends TestCase
      */
     public function testDeuce()
     {
+        $this->givenDeuce();
+        $this->scoreShouldBe('Deuce');
+    }
+
+    private function givenDeuce(): void
+    {
         $this->givenFirstPlayerWinPointTimes(3);
         $this->givenSecondPlayerWinPointTimes(3);
-        $this->scoreShouldBe('Deuce');
     }
 }
