@@ -21,6 +21,9 @@ class Game037
         if ($this->secondPlayerPoint == 1) {
             return 'Love Fifteen';
         }
+        if ($this->secondPlayerPoint == 2) {
+            return 'Love Thirty';
+        }
         if ($this->firstPlayerPoint > 0) {
             return $this->lookup[$this->firstPlayerPoint] . ' Love';
         }
