@@ -67,8 +67,7 @@ class Game036Test extends TestCase
      */
     public function testLoveThirty()
     {
-        $this->sut->secondPlayerWinPoint();
-        $this->sut->secondPlayerWinPoint();
+        $this->givenSecondPlayerWinPointTimes(2);
         $this->scoreShouldBe('Love Thirty');
     }
 
@@ -79,5 +78,12 @@ class Game036Test extends TestCase
     {
         $this->sut->secondPlayerWinPoint();
         $this->scoreShouldBe('Love Fifteen');
+    }
+
+    private function givenSecondPlayerWinPointTimes($times): void
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->sut->secondPlayerWinPoint();
+        }
     }
 }
