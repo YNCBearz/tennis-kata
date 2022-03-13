@@ -28,6 +28,11 @@ class Game037
         }
 
         if ($this->firstPlayerPoint > 3 || $this->secondPlayerPoint > 3) {
+            $pointDiff = abs($this->firstPlayerPoint - $this->secondPlayerPoint);
+            if ($pointDiff > 1) {
+                return $this->advPlayer() . ' Win';
+            }
+
             return $this->advPlayer() . ' Adv';
         }
 
