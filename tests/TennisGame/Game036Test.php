@@ -27,4 +27,13 @@ class Game036Test extends TestCase
         $actual = $this->sut->score();
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function testFifteenLove()
+    {
+        $this->sut->firstPlayerWinPoint();
+        $this->scoreShouldBe('Fifteen Love');
+    }
 }
