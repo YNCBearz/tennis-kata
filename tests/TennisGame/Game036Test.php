@@ -86,4 +86,5 @@ class Game036Test extends TestCase
             $this->sut->secondPlayerWinPoint();
         }
     }
+
 }
