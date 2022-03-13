@@ -32,6 +32,11 @@ class Game036
                 ? $this->firstPlayer
                 : $this->secondPlayer;
 
+            $pointDiff = abs($this->firstPlayerPoint - $this->secondPlayerPoint);
+            if ($pointDiff > 1) {
+                return $advPlayer . ' Win';
+            }
+
             return $advPlayer . ' Adv';
         }
 
