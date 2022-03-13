@@ -8,6 +8,7 @@ class Game037
     protected $lookup = [
         1 => 'Fifteen',
         2 => 'Thirty',
+        3 => 'Forty',
     ];
 
     public function __construct()
