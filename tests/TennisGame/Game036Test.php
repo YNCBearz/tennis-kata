@@ -96,4 +96,14 @@ class Game036Test extends TestCase
         $this->sut->secondPlayerWinPoint();
         $this->scoreShouldBe('Fifteen All');
     }
+
+    /**
+     * @test
+     */
+    public function testDeuce()
+    {
+        $this->givenFirstPlayerWinPointTimes(3);
+        $this->givenSecondPlayerWinPointTimes(3);
+        $this->scoreShouldBe('Deuce');
+    }
 }
