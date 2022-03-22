@@ -1,10 +1,16 @@
-## **[Git]**
+## [PhpStorm]
+
+alt + m : Popup String Manipulation
+
+---
+
+## [Git]
 
 ### git rev-parse <branch-name> : 取得<branch-name>的commit sha
 
 ---
 
-## **[Mac]**
+## [Mac]
 
 ### pbcopy : 在terminal中複製
 
