@@ -1,4 +1,5 @@
 <?php
+
 namespace App\TennisGame;
 
 class Game001
@@ -50,7 +51,7 @@ class Game001
         return ($p1_score == $p2_score);
     }
 
-    private function isDeuce()
+    private function isDeuce(): bool
     {
         $score = $this->p1_score;
         return ($score >= 4);
@@ -87,7 +88,6 @@ class Game001
         }
 
         return 'player2';
-
     }
 
     private function isScoreDiffOverOne()
