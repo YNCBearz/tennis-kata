@@ -14,7 +14,7 @@ class Game001
         3 => 'Forty'
     ];
 
-    public function getScore()
+    public function getScore(): string
     {
         if ($this->isScoreEqual()) {
             return $this->getSameScore();
