@@ -32,4 +32,10 @@ $ git rev-parse origin/develop | pbcopy
 $ pbpaste > bear-test.md
 ```
 
+### symbolic link
+
+```zsh
+$ ln -s /Users/bear.hsiung/Documents/bear-setting/.vimrc .vimrc
+```
+
 ---
