@@ -39,3 +39,15 @@ $ ln -s /Users/bear.hsiung/Documents/bear-setting/.vimrc .vimrc
 ```
 
 ---
+
+## [Windows]
+
+### symbolic link
+
+- 以系統管理員身份執行Powershell
+```zsh
+$ cd ~
+$ New-Item -ItemType SymbolicLink -Path ".vimrc" -Target ".\Documents\bear-setting\.vimrc"
+```
+
+---
