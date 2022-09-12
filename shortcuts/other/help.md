@@ -1,8 +1,3 @@
-## [PhpStorm]
-
-alt + m : Popup String Manipulation
-
----
 
 ## [Git]
 
