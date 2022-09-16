@@ -14,8 +14,8 @@
     </coverage>
     <testsuites>
         <testsuite name="Test Suite">
-            <!--      <directory>./tests</directory>-->
-            <file>tests/TennisGame/Game038Test.php</file>
+            <directory>./tests</directory>
+            <!--            <file>tests/TennisGame/Game038Test.php</file>-->
         </testsuite>
     </testsuites>
     <!-- <logging>
